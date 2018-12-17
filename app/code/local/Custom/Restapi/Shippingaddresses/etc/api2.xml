@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<config>
+    <api2>
+        <resource_groups>
+            <catalog translate="title" module="api2">
+                <title>Catalog</title>
+                <sort_order>10</sort_order>
+            </catalog>
+        </resource_groups>
+        <resources>
+            <shippingaddresses translate="title" module="api2">
+                <group>catalog</group>
+                <model>shippingaddresses/api2_shippingaddress</model>
+                <title>Customers REST API</title>
+                <sort_order>10</sort_order>
+                <privileges>
+                    <admin>
+                        <create>1</create>
+                    </admin>
+
+                </privileges>
+                <attributes translate="">
+                    <firstname>First Name</firstname>
+                    <lastname>Last Name</lastname>
+                    <street>Street</street>
+                    <city>City</city>
+                    <Country_id>Country Id</Country_id>
+                    <region>Region</region>
+                    <building>Building</building>
+                    <is_gift>Is Gift</is_gift>
+                    <block>Block</block>
+                    <receiver_name>Receiver Name</receiver_name>
+                    <flat>Flat</flat>
+                    <avenue>Avenue</avenue>
+                    <postcode>Postcode</postcode>
+                    <telephone>Telephone</telephone>
+                </attributes>
+
+                <routes>
+                    <route_collection>
+                        <route>/custom/customer/:customer_id/shipping_address</route>
+                        <action_type>collection</action_type>
+                    </route_collection>
+
+                </routes>
+
+                <versions>1</versions>
+            </shippingaddresses>
+        </resources>
+    </api2>
+</config>

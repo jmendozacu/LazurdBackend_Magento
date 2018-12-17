@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Custom_Restapi_Customerlogin>
+            <version>0.1.0.0</version>
+        </Custom_Restapi_Customerlogin>
+    </modules>
+    <global>
+        <models>
+           <customerlogin>
+                <class>Custom_Restapi_Customerlogin_Model</class>
+            </customerlogin>
+        </models>
+
+    </global>
+</config>

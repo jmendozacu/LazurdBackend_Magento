@@ -1,0 +1,131 @@
+<!--
+  ~ Magestore
+  ~
+  ~ NOTICE OF LICENSE
+  ~
+  ~ This source file is subject to the Magestore.com license that is
+  ~ available through the world-wide-web at this URL:
+  ~ http://www.magestore.com/license-agreement.html
+  ~
+  ~ DISCLAIMER
+  ~
+  ~ Do not edit or add to this file if you wish to upgrade this extension to newer
+  ~ version in the future.
+  ~
+  ~ @category    Magestore
+  ~ @package     Magestore_Webpos
+  ~ @copyright   Copyright (c) 2016 Magestore (http://www.magestore.com/)
+  ~ @license     http://www.magestore.com/license-agreement.html
+  -->
+
+  <!--  //nnnnnnn2018-->
+
+  <!-- 1012018islam -->
+  <!--// Islam Kuywait 2018_2-->
+  <div class="col-sm-12">
+<div class="panel panel-default">
+    <div class="panel-heading" data-bind="text:'Filter'"></div>
+    <div class="fieldset panel-body">
+        <div class="col-sm-12">
+        <div class="field required input-box">
+            <label data-bind="text:'From'"></label>
+            <input type="date"  class="input-text required-entry"  data-validate="{'required-entry':true}"  name="from-period" id="from-period" data-bind="value:toperiodDefault">
+        </div>
+        </div>
+        <div class="col-sm-12">
+        <div class="field required input-box">
+            <label data-bind="text:'To'"></label>
+            <input type="date" class="input-text required-entry"  data-validate="{'required-entry':true}"  name="to-period" id="to-period" data-bind="value:toperiodDefault">
+        </div>
+        </div>
+        <div class="col-sm-12">
+        <div class="input-box">
+                <label data-bind="text:'Order Status'"></label>
+                <select  multiple style='width: 26%;height:120px;line-height:35px;color:#3c4857;font-size:14px;' data-bind="
+                        attr: { name:elementName2,id:elementName2,class:'selectpicker'},
+                        options: optionsArray2,
+                        optionsText: function(item) {return item.text;},
+                        optionsValue: function(item) {return item.value;  },
+                        " >
+                        
+                </select>
+        </div>
+</div>
+<div class="col-sm-12">
+        <div class="input-box">
+            <label data-bind="text:'Select Staff'"></label>
+            <select style='width: 26%;height:35px;line-height:35px;color:#3c4857;font-size:14px;' data-bind="
+                    attr: { name:elementName,id:elementName,class:'selectpicker'},
+                    options: optionsArray,
+                    optionsText: function(item) {return item.text;},
+                    optionsValue: function(item) {return item.value;  },
+                    " >
+                    
+            </select>
+        </div>
+    </div>
+
+    <div class="col-sm-12">
+            <div class="input-box">
+                    <label data-bind="text:'Shipping Method'"></label>
+                    <select style='width: 26%;height:35px;line-height:35px;color:#3c4857;font-size:14px;' data-bind="
+                            attr: { name:elementName3,id:elementName3,class:'selectpicker'},
+                            options: optionsArray3,
+                            optionsText: function(item) {return item.text;},
+                            optionsValue: function(item) {return item.value;  },
+                            " >
+                            
+                    </select>
+            </div>
+    
+    </div>
+       
+        
+    </div>
+</div>
+</div>
+<div class="col-sm-12">
+   
+<div class="panel panel-default">
+        <div class="panel-heading" data-bind="text:'Result'"></div>
+        <div class="fieldset panel-body">
+            <table cellspacing="0" class="data table" id="tbl_sales_report">
+                    <colgroup>
+                    <col>
+                    <col>
+                    <col width="100">
+                    <col width="160">
+                    <col width="160">
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    </colgroup>
+                    <thead>
+                        <tr class="headings">
+                            <th class=" no-link"><span class="nobr">Staff</span></th>
+                            <th class=" no-link"><span class="nobr">Order #</span></th>
+                            <th class=" no-link"><span class="nobr">Sales Total</span></th>
+                            <th class=" no-link"><span class="nobr">Created Date</span></th>
+                            <th class=" no-link"><span class="nobr">Delivery Date</span></th>
+                            <th class=" no-link"><span class="nobr">Discount Reason</span></th>
+                            <th class=" no-link"><span class="nobr">Discount By</span></th>
+                            <th class=" no-link"><span class="nobr">Return Reason</span></th>
+                            <th class=" no-link"><span class="nobr">Customer</span></th>
+                            <th class=" no-link last"><span class="nobr">Status</span></th>
+                            <th class=" no-link last"><span class="nobr">Shipping Method</span></th>
+                        </tr>
+                    </thead>
+                    <!--<tfoot id='tbl_sales_reportfooter'></tfoot>-->
+                    <tbody id='tbl_sales_reportBody'>
+                    <tr class="even">
+                        <td class="empty-text a-center" colspan="11">No records found.</td>
+                    </tr>
+                    </tbody>
+            </table>
+        </div>
+</div>
+</div>
+        

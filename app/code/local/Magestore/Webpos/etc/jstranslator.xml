@@ -1,0 +1,197 @@
+<!--
+  ~ Magestore
+  ~
+  ~ NOTICE OF LICENSE
+  ~
+  ~ This source file is subject to the Magestore.com license that is
+  ~ available through the world-wide-web at this URL:
+  ~ http://www.magestore.com/license-agreement.html
+  ~
+  ~ DISCLAIMER
+  ~
+  ~ Do not edit or add to this file if you wish to upgrade this extension to newer
+  ~ version in the future.
+  ~
+  ~ @category    Magestore
+  ~ @package     Magestore_Webpos
+  ~ @copyright   Copyright (c) 2016 Magestore (http://www.magestore.com/)
+  ~ @license     http://www.magestore.com/license-agreement.html
+  -->
+
+<jstranslator>
+    <error translate="message" module="webpos"><message>Error</message></error>
+    <success translate="message" module="webpos"><message>Success</message></success>
+    <message translate="message" module="webpos"><message>Message</message></message>
+    <warning translate="message" module="webpos"><message>Warning</message></warning>
+    <please_wait translate="message" module="webpos"><message>Please wait ...</message></please_wait>
+    <login translate="message" module="webpos"><message>Login</message></login>
+    <your_login_information_is_wrong translate="message" module="webpos"><message>Your login information is wrong!</message></your_login_information_is_wrong>
+    <do_you_want_to_delete_address translate="message" module="webpos"><message>Do you want to delete address?</message></do_you_want_to_delete_address>
+    <edit_address translate="message" module="webpos"><message>Edit Address</message></edit_address>
+    <the_customer_email_is_existed translate="message" module="webpos"><message>The customer email is existed</message></the_customer_email_is_existed>
+    <the_customer_is_saved_successfully translate="message" module="webpos"><message>The customer is saved successfully.</message></the_customer_is_saved_successfully>
+    <the_creditmemo_total_must_be_positive translate="message" module="webpos"><message>The credit memo's total must be positive.</message></the_creditmemo_total_must_be_positive>
+    <the_refundable_shipping_amount_is_limited_at translate="message" module="webpos"><message>The refundable shipping amount is limited at</message></the_refundable_shipping_amount_is_limited_at>
+    <the_refundable_amount_is_limited_at translate="message" module="webpos"><message>The refundable amount is limited at</message></the_refundable_amount_is_limited_at>
+    <a_creditmemo_has_been_created translate="message" module="webpos"><message>A creditmemo has been created!</message></a_creditmemo_has_been_created>
+    <pos_shipping_store_pickup translate="message" module="webpos"><message>POS Shipping - Store Pickup</message></pos_shipping_store_pickup>
+    <order_has_been_created_successfully translate="message" module="webpos"><message>Order has been created successfully </message></order_has_been_created_successfully>
+    <order_has_been_created_successfully_2 translate="message" module="webpos"><message>Order has been created successfully</message></order_has_been_created_successfully_2>
+    <custom_product translate="message" module="webpos"><message>Custom Product</message></custom_product>
+    <none translate="message" module="webpos"><message>None</message></none>
+    <hold translate="message" module="webpos"><message>Hold</message></hold>
+    <checkout translate="message" module="webpos"><message>Checkout</message></checkout>
+    <subtotal translate="message" module="webpos"><message>Subtotal</message></subtotal>
+    <add_discount translate="message" module="webpos"><message>Add Discount</message></add_discount>
+    <discount translate="message" module="webpos"><message>Discount</message></discount>
+    <shipping translate="message" module="webpos"><message>Shipping</message></shipping>
+    <tax translate="message" module="webpos"><message>Tax</message></tax>
+    <total translate="message" module="webpos"><message>Total</message></total>
+    <points translate="message" module="webpos"><message>Point(s)</message></points>
+    <points_2 translate="message" module="webpos"><message> point(s)</message></points_2>
+    <points_3 translate="message" module="webpos"><message>Points</message></points_3>
+    <has_maxium_quantity_allow_in_cart_id translate="message" module="webpos"><message> has maximum quantity allow in cart is </message></has_maxium_quantity_allow_in_cart_id>
+    <has_minimum_quantity_allow_in_cart_id translate="message" module="webpos"><message> has minimum quantity allow in cart is </message></has_minimum_quantity_allow_in_cart_id>
+    <you_are_able_to_apply_discount_under translate="message" module="webpos"><message> You are able to apply discount under </message></you_are_able_to_apply_discount_under>
+    <card_number_not_detected translate="message" module="webpos"><message>Card number not detected!</message></card_number_not_detected>
+    <expiration_month_not_detected translate="message" module="webpos"><message>Expiration month not detected!</message></expiration_month_not_detected>
+    <expiration_year_not_detected translate="message" module="webpos"><message>Expiration year not detected!</message></expiration_year_not_detected>
+    <the_card_might_be_expired translate="message" module="webpos"><message>The card might be expired!</message></the_card_might_be_expired>
+    <cannot_read_the_data translate="message" module="webpos"><message>Cannot read the data!</message></cannot_read_the_data>
+    <gift_card translate="message" module="webpos"><message>Gift card</message></gift_card>
+    <customer_will_earn translate="message" module="webpos"><message>Customer will earn</message></customer_will_earn>
+    <customer_points_balance translate="message" module="webpos"><message>Customer points balance</message></customer_points_balance>
+    <points_discount translate="message" module="webpos"><message>Points Discount</message></points_discount>
+    <customer_credit_balance translate="message" module="webpos"><message>Customer credit balance</message></customer_credit_balance>
+    <add_billing_address translate="message" module="webpos"><message>Add Billing Address</message></add_billing_address>
+    <cancel translate="message" module="webpos"><message>Cancel</message></cancel>
+    <new_address translate="message" module="webpos"><message>New Address</message></new_address>
+    <add_shipping_address translate="message" module="webpos"><message>Add Shipping Address</message></add_shipping_address>
+    <please_check_your_network_connection translate="message" module="webpos"><message>Please check your network connection</message></please_check_your_network_connection>
+    <are_you_sure_you_want_to_logout translate="message" module="webpos"><message>Are you sure you want to logout?</message></are_you_sure_you_want_to_logout>
+    <this_product_is_currently_out_of_stock translate="message" module="webpos"><message>This product is currently out of stock</message></this_product_is_currently_out_of_stock>
+    <items translate="message" module="webpos"><message>item(s)</message></items>
+    <maximum_qty_allow_in_cart_is translate="message" module="webpos"><message>Maximum qty allow in cart is </message></maximum_qty_allow_in_cart_is>
+    <minimum_qty_allow_in_cart_is translate="message" module="webpos"><message>Minimum qty allow in cart is </message></minimum_qty_allow_in_cart_is>
+    <please_choose_all_options translate="message" module="webpos"><message>Please choose all options</message></please_choose_all_options>
+    <place_order translate="message" module="webpos"><message>Place Order</message></place_order>
+    <mark_as_partial translate="message" module="webpos"><message>Mark as partial</message></mark_as_partial>
+    <please_enter_the_email_address translate="message" module="webpos"><message>Please enter the email address</message></please_enter_the_email_address>
+    <discount_maximum translate="message" module="webpos"><message>Discount - Maximum </message></discount_maximum>
+    <remove translate="message" module="webpos"><message>Remove</message></remove>
+    <apply translate="message" module="webpos"><message>Apply</message></apply>
+    <reference_number translate="message" module="webpos"><message>Reference Number</message></reference_number>
+    <browser_block_popup translate="message" module="webpos"><message>Your browser has blocked the automatic popup, please change your browser setting or print the receipt manually</message></browser_block_popup>
+    <customer_gift_card translate="message" module="webpos"><message>Customer's gift card</message></customer_gift_card>
+    <gift_card_balance translate="message" module="webpos"><message>Gift card's balance</message></gift_card_balance>
+    <select_existed_code translate="message" module="webpos"><message>-- Select existed code --</message></select_existed_code>
+    <edit_shipping_address translate="message" module="webpos"><message>Edit Shipping Address</message></edit_shipping_address>
+    <edit_shipping_address translate="message" module="webpos"><message>Edit Billing Address</message></edit_shipping_address>
+    <delete translate="message" module="webpos"><message>Delete</message></delete>
+    <use_store_address translate="message" module="webpos"><message>Use Store Address</message></use_store_address>
+    <add_address translate="message" module="webpos"><message>Add Address</message></add_address>
+    <the_order_has_been_canceled_successfully translate="message" module="webpos"><message>The order has been canceled successfully.</message></the_order_has_been_canceled_successfully>
+    <yes translate="message" module="webpos"><message>Yes</message></yes>
+    <no translate="message" module="webpos"><message>No</message></no>
+    <search translate="message" module="webpos"><message>Search</message></search>
+    <all_categories translate="message" module="webpos"><message>All Categories</message></all_categories>
+    <availability translate="message" module="webpos"><message>Availability</message></availability>
+    <we_could_not_find_any_record translate="message" module="webpos"><message>We couldn't find any records.</message></we_could_not_find_any_record>
+    <custom_sale translate="message" module="webpos"><message>Custom sale</message></custom_sale>
+    <payment translate="message" module="webpos"><message>Payment</message></payment>
+    <mark_as_shipped translate="message" module="webpos"><message>Mark as shipped</message></mark_as_shipped>
+    <create_invoice translate="message" module="webpos"><message>Create Invoice</message></create_invoice>
+    <add_payment translate="message" module="webpos"><message>Add Payment</message></add_payment>
+    <remain_money translate="message" module="webpos"><message>Remain money</message></remain_money>
+    <expected_change translate="message" module="webpos"><message>Expected Change</message></expected_change>
+    <order_id translate="message" module="webpos"><message>Order ID:  </message></order_id>
+    <send translate="message" module="webpos"><message>Send</message></send>
+    <no_payment_method_is_available translate="message" module="webpos"><message>No payment method is available</message></no_payment_method_is_available>
+    <invoice translate="message" module="webpos"><message>INVOICE</message></invoice>
+    <customer translate="message" module="webpos"><message>CUSTOMER:</message></customer>
+    <shipping translate="message" module="webpos"><message>SHIPPING:</message></shipping>
+    <delivery_time translate="message" module="webpos"><message>DELIVERY TIME:</message></delivery_time>
+    <item translate="message" module="webpos"><message>ITEM</message></item>
+    <qty translate="message" module="webpos"><message>Qty</message></qty>
+    <price translate="message" module="webpos"><message>PRICE</message></price>
+    <subtotal_receipt translate="message" module="webpos"><message>SUBTOTAL</message></subtotal_receipt>
+    <change translate="message" module="webpos"><message>Change</message></change>
+    <comment translate="message" module="webpos"><message>Comment</message></comment>
+    <select_delivery_date translate="message" module="webpos"><message>Select delivery date:</message></select_delivery_date>
+    <use_max_discount translate="message" module="webpos"><message>Use max amount</message></use_max_discount>
+    <customer_reward_points translate="message" module="webpos"><message>Customer reward points</message></customer_reward_points>
+    <use_max_points translate="message" module="webpos"><message>Use max points</message></use_max_points>
+    <customer_store_credit translate="message" module="webpos"><message>Customer store credit</message></customer_store_credit>
+    <use_max_credit translate="message" module="webpos"><message>Use max credit</message></use_max_credit>
+    <click_here_to_swipe translate="message" module="webpos"><message>Click here to swipe</message></click_here_to_swipe>
+    <name_on_card translate="message" module="webpos"><message>Name on card</message></name_on_card>
+    <credit_card_type translate="message" module="webpos"><message>Credit Card Type</message></credit_card_type>
+    <credit_card_number translate="message" module="webpos"><message>Credit Card Number</message></credit_card_number>
+    <expiration_date translate="message" module="webpos"><message>Expiration Date</message></expiration_date>
+    <cvv translate="message" module="webpos"><message>CVV</message></cvv>
+    <new_customer translate="message" module="webpos"><message>New Customer</message></new_customer>
+    <order_details translate="message" module="webpos"><message>Order Details</message></order_details>
+    <your_dont_have_any_on_hold_order_yet translate="message" module="webpos"><message>You don't have any on-hold orders yet</message></your_dont_have_any_on_hold_order_yet>
+    <onhold_orders translate="message" module="webpos"><message>On-Hold Orders</message></onhold_orders>
+    <order translate="message" module="webpos"><message>Order</message></order>
+    <paid translate="message" module="webpos"><message>Paid</message></paid>
+    <pay_later translate="message" module="webpos"><message>Pay Later</message></pay_later>
+    <auto_check_promotion translate="message" module="webpos"><message>Auto check the promotion rules on checkout (Offline mode)</message></auto_check_promotion>
+    <use_online_mode translate="message" module="webpos"><message>Use online mode</message></use_online_mode>
+    <catalog translate="message" module="webpos"><message>Catalog</message></catalog>
+    <display_out_of_stock translate="message" module="webpos"><message>Display out-of-stock products in search results</message></display_out_of_stock>
+    <currency translate="message" module="webpos"><message>Currency</message></currency>
+    <customer_credit translate="message" module="webpos"><message>Customer Credit</message></customer_credit>
+    <show_customer_credit_on_receipt translate="message" module="webpos"><message>Show customer credit balance on receipt</message></show_customer_credit_on_receipt>
+    <auto_sync_credit_balance translate="message" module="webpos"><message>Auto sync customer credit balance from server when creating order (Internet connection required)</message></auto_sync_credit_balance>
+    <reward_points translate="message" module="webpos"><message>Reward Points</message></reward_points>
+    <show_point_balance_on_receipt translate="message" module="webpos"><message>Show customer points balance on receipt</message></show_point_balance_on_receipt>
+    <auto_sync_point_balance translate="message" module="webpos"><message>Auto sync customer points balance from server when creating order (Internet connection required)</message></auto_sync_point_balance>
+    <sync_data translate="message" module="webpos"><message>Sync Data</message></sync_data>
+    <error_logs translate="message" module="webpos"><message>Error Logs</message></error_logs>
+    <orders translate="message" module="webpos"><message>Orders</message></orders>
+    <orders_history translate="message" module="webpos"><message>Orders History</message></orders_history>
+    <onhold_orders_2 translate="message" module="webpos"><message>On-hold Orders</message></onhold_orders_2>
+    <shift translate="message" module="webpos"><message>Shift</message></shift>
+    <cash_drawer translate="message" module="webpos"><message>Cash Drawer</message></cash_drawer>
+    <settings translate="message" module="webpos"><message>Settings</message></settings>
+    <general translate="message" module="webpos"><message>General</message></general>
+    <synchronization translate="message" module="webpos"><message>Synchronization</message></synchronization>
+    <account translate="message" module="webpos"><message>Account</message></account>
+    <please_select_cash_drawer translate="message" module="webpos"><message>Please select cash drawer</message></please_select_cash_drawer>
+    <no_cash_drawer_available translate="message" module="webpos"><message>No cash drawer are available, please try to login again or contact the administrator!</message></no_cash_drawer_available>
+    <logout translate="message" module="webpos"><message>Logout</message></logout>
+    <make_adjustment translate="message" module="webpos"><message>Make adjustment</message></make_adjustment>
+    <done translate="message" module="webpos"><message>Done</message></done>
+    <current_cash_drawer_balance translate="message" module="webpos"><message>The current balance of your cash drawer</message></current_cash_drawer_balance>
+    <cash_in translate="message" module="webpos"><message>Cash In</message></cash_in>
+    <cash_out translate="message" module="webpos"><message>Cash Out</message></cash_out>
+    <amount translate="message" module="webpos"><message>Amount</message></amount>
+    <balance translate="message" module="webpos"><message>Balance</message></balance>
+    <sales_by_payment translate="message" module="webpos"><message>Sales By Payments</message></sales_by_payment>
+    <z_report translate="message" module="webpos"><message>Z - report</message></z_report>
+    <x_report translate="message" module="webpos"><message>X - report</message></x_report>
+    <from translate="message" module="webpos"><message>From:</message></from>
+    <to translate="message" module="webpos"><message>To:</message></to>
+    <transaction translate="message" module="webpos"><message>Transaction</message></transaction>
+    <opening_amount translate="message" module="webpos"><message>Opening Amount</message></opening_amount>
+    <closed_amount translate="message" module="webpos"><message>Closed Amount</message></closed_amount>
+    <cash_sales translate="message" module="webpos"><message>Cash sales</message></cash_sales>
+    <cash_added translate="message" module="webpos"><message>Cash added</message></cash_added>
+    <cash_removed translate="message" module="webpos"><message>Cash removed</message></cash_removed>
+    <cash_left translate="message" module="webpos"><message>Cash Left</message></cash_left>
+    <sales translate="message" module="webpos"><message>Sales</message></sales>
+    <total_sales translate="message" module="webpos"><message>Total Sales</message></total_sales>
+    <refund translate="message" module="webpos"><message>Refund</message></refund>
+    <sales_by_payment_method translate="message" module="webpos"><message>Sales by payment method</message></sales_by_payment_method>
+    <print translate="message" module="webpos"><message>Print</message></print>
+    <close_store translate="message" module="webpos"><message>Close store</message></close_store>
+    <there_should_be translate="message" module="webpos"><message>There should be</message></there_should_be>
+    <in_your_cash_drawer translate="message" module="webpos"><message>in your cash drawer</message></in_your_cash_drawer>
+    <cash_counted translate="message" module="webpos"><message>Cash Counted</message></cash_counted>
+    <cash_left translate="message" module="webpos"><message>Cash Left</message></cash_left>
+    <cash_drawer_2 translate="message" module="webpos"><message>Cash drawer</message></cash_drawer_2>
+    <cash_transactions translate="message" module="webpos"><message>Cash Transactions</message></cash_transactions>
+    <manage_your_daily_cash_flow translate="message" module="webpos"><message>Manage your daily cash flow</message></manage_your_daily_cash_flow>
+    <shift_description translate="message" module="webpos"><message>Balance your cash drawer and keep track of how much your sell each shift</message></shift_description>
+</jstranslator>

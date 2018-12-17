@@ -1,0 +1,194 @@
+<?php
+$logoSrc = Mage::getStoreConfig('design/header/logo_src');
+$logoAlt = Mage::getStoreConfig('design/header/logo_alt');
+$imageurl = $this->getSkinUrl($logoSrc);
+?>
+<?php
+    $_order = $this->getOrder();
+?>
+<div class="header">
+    <a href="<?php echo Mage::helper('core/url')->getCurrentUrl(); ?>" title="<?php echo $logoAlt; ?>" class="logo">
+        <img src="<?php echo $imageurl; ?>" alt="<?php echo $logoAlt; ?>" />
+    </a>
+</div>
+<div class="order-items order-details">
+    <?php if ($this->helper('giftmessage/message')->getIsMessagesAvailable('items', $this->getOrder())): ?>
+    <script type="text/javascript">
+    //<![CDATA[
+    function giftMessageToogle(giftMessageIdentifier)
+    {
+        var link = $('order-item-gift-message-link-'+giftMessageIdentifier);
+        var container = $('order-item-gift-message-'+giftMessageIdentifier);
+        var row = $('order-item-row-'+giftMessageIdentifier);
+        if(link.expanded) {
+            link.expanded = false;
+            link.removeClassName('expanded');
+            if(container.hasClassName('last')) {
+                row.addClassName('last');
+            }
+            container.hide();
+        } else {
+            link.expanded = true;
+            link.addClassName('expanded');
+            if(container.hasClassName('last')) {
+                row.removeClassName('last');
+            }
+            container.show();
+        }
+
+        return false;
+    }   
+    //]]>
+    </script>
+    <?php endif; ?>
+    <script type="text/javascript">
+    //<![CDATA[
+        function PrintDiv() {    
+            window.print();
+        }
+
+        function OrderCancel(order_id){
+            var cancel_url = '<?php echo Mage::getUrl('guest/index/customerstatus'); ?>';
+            cancel_url += 'order_id/'+order_id;
+            window.location = cancel_url;
+        }
+    //]]>
+    </script>
+    <div>
+      <input type="button" class="button print" value="print" onclick="PrintDiv();" />
+      <?php 
+      /*$selected_value = array('canceled','delivered','returned');
+      if(!in_array($_order->getOrderStatus(), $selected_value)): 
+      ?>
+      <input type="button" class="button cancel" value="Cancel Order" onclick="OrderCancel('<?php echo $this->getRequest()->getParam('order_id'); ?>');" />
+  <?php endif;*/ ?>
+    </div>
+    <div class="clear"></div>
+    <?php $getShippingAddressId = Mage::helper('customconfig')->getGuestAddress($_order->getShippingAddressId()); ?>
+    <?php $getBillingAddressId = Mage::helper('customconfig')->getGuestAddress($_order->getBillingAddressId()); ?>    
+    <h2 class="table-caption left"><?php echo $this->__('Order #'.$_order->getIncrementId()) ?>
+        <?php if ($_order->getTracksCollection()->count()) : ?>
+            <span class="separator">|</span> <a href="#" onclick="popWin('<?php echo $this->helper('shipping')->getTrackingPopupUrlBySalesModel($_order) ?>','trackorder','top=0,left=0,width=800,height=600,resizable=yes,scrollbars=yes'); return false;" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Track your order')) ?>"><?php echo $this->__('Track your order') ?></a>
+        <?php endif; ?>
+    </h2>
+    <h2 class="table-caption right"><?php echo $_order->getOrderStatus(); ?></h2>
+    <div class="clear"></div>    
+    <?php 
+        $getWebposDeliveryDate = Mage::getModel('sales/order')->load($_order->getIncrementId(), 'increment_id')->getWebposDeliveryDate();
+    if($getWebposDeliveryDate){
+    ?>
+    <p class="order-date">
+    <?php echo $this->__('Order Date'); ?> : 
+    <?php         
+        echo date('F j Y', $getWebposDeliveryDate);
+    ?>
+    </p>
+    <?php } ?>
+    <div class="col2-set order-info-box">
+        <div class="col-1">
+            <div class="box">
+                <div class="box-title">
+                    <h2><?php echo $this->__('Shipping Address'); ?></h2>
+                </div>
+                <div class="box-content">
+                    <address><?php echo $getShippingAddressId->getName(); ?><br>
+                    <?php echo $getShippingAddressId->getEmail(); ?><br>
+                    <?php echo $getShippingAddressId->getStreetFull(); ?><br>
+                    <?php echo $getShippingAddressId->getCity().','.$getShippingAddressId->getRegion().','.$getShippingAddressId->getPostCode(); ?><br>
+                    <?php echo $getShippingAddressId->getCountry(); ?><br>
+                    T: <?php echo $getShippingAddressId->getTelephone(); ?>
+                    </address>
+                </div>
+            </div>
+        </div>
+        <div class="col-1">
+            <div class="box">
+                <div class="box-title">
+                    <h2><?php echo $this->__('Shipping Method'); ?></h2>
+                </div>
+                <div class="box-content"><?php echo $_order->getShippingDescription(); ?></div>
+            </div>
+        </div>    
+        <!-- <div class="col-1">
+            <div class="box">
+                <div class="box-title">
+                    <h2><?php echo $this->__('Billing Address'); ?></h2>
+                </div>
+                <div class="box-content">
+                    <address><?php echo $getBillingAddressId->getName(); ?><br>
+                    <?php echo $getBillingAddressId->getEmail(); ?><br>
+                    <?php echo $getBillingAddressId->getStreetFull(); ?><br>
+                    <?php echo $getBillingAddressId->getCity().','.$getBillingAddressId->getRegion().','.$getBillingAddressId->getPostCode(); ?><br>
+                    <?php echo $getBillingAddressId->getCountry(); ?><br>
+                    T: <?php echo $getBillingAddressId->getTelephone(); ?>
+                    </address>
+                </div>
+            </div>
+        </div> -->
+        <div class="col-1">
+            <div class="box">
+                <div class="box-title">
+                    <h2><?php echo $this->__('Payment Method'); ?></h2>
+                </div>
+                <div class="box-content"><?php echo $_order->getPayment()->getMethodInstance()->getTitle(); ?></div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <h2 class="table-caption"><?php echo $this->__('Items Ordered'); ?></h2>
+    <?php echo $this->getChildHtml('order_items') ?>
+
+    <?php if($this->helper('giftmessage/message')->getIsMessagesAvailable('order', $_order) && $_order->getGiftMessageId()): ?>
+    <div class="order-additional order-gift-message">
+        <h2 class="sub-title"><?php echo $this->__('Gift Message for This Order') ?></h2>
+        <?php $_giftMessage=$this->helper('giftmessage/message')->getGiftMessageForEntity($_order); ?>
+        <dl class="gift-message">
+            <dt><strong><?php echo $this->__('From:') ?></strong> <?php echo $this->escapeHtml($_giftMessage->getSender()) ?></dt>
+            <dt><strong><?php echo $this->__('To:') ?></strong> <?php echo $this->escapeHtml($_giftMessage->getRecipient()) ?></dt>
+            <dd><?php echo $this->helper('giftmessage/message')->getEscapedGiftMessage($_order) ?></dd>
+        </dl>
+    </div>
+    <?php endif; ?>
+    <?php $_history = $this->getOrder()->getVisibleStatusHistory() ?>
+    <?php 
+    $IsSurvey = Mage::getModel('sales/order')->load($_order->getIncrementId(), 'increment_id')->getIsSurvey();
+    if ($IsSurvey): ?>
+    <div class="col3-set order-info-box survey">        
+        <div class="col-2">
+            <div class="box">
+                <div class="box-title">
+                    <h2><?php echo $this->__('Survey'); ?></h2>
+                </div>
+                <div class="box-content">                    
+                    <form name="survey_form" method="post" action="<?php echo Mage::getUrl('guest/index/save'); ?>">
+                        <span><?php echo $this->__('Are you happy with this ?'); ?></span>
+                        <select id="survey_opton" class="survey_opton" name="survey_option" onChange="SurveyOpton()">
+                            <option value="1" selected>Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                        <textarea id="surveymessage" name="survey_message" rows="5" cols="75" style="display:none"></textarea>
+                        <input type="hidden" name="guest_name" value="<?php echo $getBillingAddressId->getName(); ?>">
+                        <input type="hidden" name="guest_email" value="<?php echo $_order->getCustomerEmail(); ?>">
+                        <?php $order_id = Mage::app()->getRequest()->getParam('order_id'); ?>
+                        <input type="hidden" name="order_id" value="<?php echo $order_id; ?>">
+                        <input class="button survey_btn" type="submit" name="survey_btn" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    //<![CDATA[
+        function SurveyOpton(){
+            var survey_opton = document.getElementById('survey_opton').value;
+            if(survey_opton == 1){
+                document.getElementById('surveymessage').style.display='none';
+            }else{
+                document.getElementById('surveymessage').style.display='block';
+            }
+        }
+    //]]>
+    </script>
+    <?php endif; ?>
+</div>

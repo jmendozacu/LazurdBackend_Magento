@@ -1,0 +1,85 @@
+<?php $status = $this->getOptionArray();?>
+<?php
+$admin_user_session = Mage::getSingleton('admin/session');
+$adminuserId = $admin_user_session->getUser()->getUserId();
+$role_data = Mage::getModel('admin/user')->load($adminuserId)->getRole();
+$dispatch_user = Mage::getStoreConfig('customconfig_options/section_two/dispatch');
+$operation_user = Mage::getStoreConfig('customconfig_options/section_two/operation');
+?>
+<?php if($role_data->getRoleId() != $operation_user) :?>
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-shipping-method"><?php echo Mage::helper('sales')->__('Assign Order Status') ?></h4>
+    </div>
+    <?php //echo '<pre>'; print_r($this->getOrder()->getData()); ?>
+    <fieldset>
+    	<form class="form status"
+    	      enctype="multipart/form-data"
+    	      action="<?php echo $this->getFormAction(); ?>"
+    	      id="assign_status_form"
+    	      method="post">
+            <div><input name="form_key" type="hidden" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" /></div>
+            <input name="order_id" type="hidden" value="<?php echo $this->getOrder()->getId();?>" />
+            <label class="normal" for="assign_status" style="padding: 10px;">Order Status</label>
+            <select name="assign_status" class="select" id="assign_status" style="width: 150px;" <?php echo Mage::helper('customconfig')->getKitchenuserReadystatus($role_data->getRoleId(),$this->getOrder()->getId());?> >
+                <option value=""><?php echo $this->__('Select Status..');?></option>
+            	<?php foreach ($status as $key => $stat) {?>
+            		<option value="<?php echo $key;?>" <?php if($this->getOrder()->getOrderStatus() == $key):?> selected ="selected" <?php endif;?>> <?php echo $stat;?> </option>
+            	<?php } ?>
+            </select>
+            <span class="submit_status" style="float:right">
+               <input class="assign scalable save submit-button" type ="submit" value="Assign Status" title="Assign Status"/>
+            </span>
+        </form>
+    </fieldset>
+    <style type="text/css">
+
+    .assign.submit-button {
+        border: none;
+        padding: 10px;
+        background: #25bce9;
+        color: #ffffff;
+        cursor: pointer;
+        font-weight: 400;
+        text-align: center !important;
+        margin-top: 0px;
+    }
+
+    #assign_status_form{
+        margin: 0px 0px 50px 0px;
+        overflow: hidden;
+        display: block;
+    }
+    </style>
+    <?php if($role_data->getRoleId() == $dispatch_user){?>
+    <script type="text/javascript">
+    var previous = jQuery('#assign_status option:selected').val();
+    var condition = '<?php echo $this->getOrder()->getDriverId();?>';
+    jQuery('#assign_status').on('change', function() {
+        if(jQuery('#assign_status option:selected').val() != 'correction'){
+            if(condition == ''){
+                alert('Please Assign Driver to change the order status.');
+                jQuery('#assign_status').val(previous);
+                return false;
+            }
+        }
+    });
+    </script>
+    <?php }?>
+<?php elseif($role_data->getRoleId() == $operation_user): ?>
+    <?php 
+        $order_staus  = Mage::helper('customconfig')->getCustomStatus();
+        $customstatus =array();
+        foreach($order_staus as $key => $status) {
+            $customstatus[$status['value']] = $status['label'];
+        }
+    ?>
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-shipping-method"><?php echo Mage::helper('sales')->__('Order Status') ?></h4>
+    </div>
+    <fieldset>
+        <p>
+            <label class="normal" for="assign_status" style="padding: 10px;">Order Status  :-</label>
+            <span style="padding-left:10px;font-weight:bold;"><?php echo $customstatus[$this->getOrder()->getOrderStatus()];?></span>
+        </p>            
+    </fieldset>
+<?php endif;?>

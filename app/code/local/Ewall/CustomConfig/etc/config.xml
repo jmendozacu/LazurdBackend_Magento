@@ -1,0 +1,403 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ewall_CustomConfig>
+            <version>0.1.12</version>
+        </Ewall_CustomConfig>
+    </modules>
+    <frontend>
+        <routers>
+          <customconfig>
+            <use>standard</use>
+              <args>
+                <module>Ewall_CustomConfig</module>
+                <frontName>guest</frontName>
+              </args>
+          </customconfig>
+        </routers>
+    </frontend>
+    <global>
+
+        <!-- <fieldsets>
+            <sales_convert_quote>
+                <kitchen_user_ids>
+                    <to_order>*</to_order>
+                </kitchen_user_ids>
+            </sales_convert_quote>
+        </fieldsets> -->
+        <fieldsets>
+            <sales_convert_quote>
+                <kitchen_user_ids>
+                    <to_order>*</to_order>
+                </kitchen_user_ids>
+                <is_customer_notify>
+                    <to_order>*</to_order>
+                </is_customer_notify>
+            </sales_convert_quote>        
+            <sales_convert_quote_item>
+                <category_id>
+                    <to_order_item>*</to_order_item>
+                </category_id>
+            </sales_convert_quote_item>
+        </fieldsets>
+        
+        <helpers>
+            <sales>
+                <rewrite>
+                    <guest>Ewall_CustomConfig_Helper_Guest</guest>
+                </rewrite>
+            </sales>
+        </helpers>
+        
+        <helpers>
+            <customconfig>
+                <class>Ewall_CustomConfig_Helper</class>
+            </customconfig>
+        </helpers>
+
+        <blocks>
+            <customconfig>
+                <class>Ewall_CustomConfig_Block</class>
+            </customconfig>
+            <adminhtml>
+                <rewrite>
+                    <sales_order_grid>Ewall_CustomConfig_Block_Adminhtml_Sales_Order_Grid</sales_order_grid>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+
+        <models>
+             <customconfig>
+                <class>Ewall_CustomConfig_Model</class>
+                <resourceModel>customconfig_mysql4</resourceModel>
+             </customconfig>
+
+             <usercategory>
+                <class>Ewall_CustomConfig_Model</class>
+                <resourceModel>usercategory_mysql4</resourceModel>
+             </usercategory>
+
+             <guest>
+                <class>Ewall_CustomConfig_Model</class>
+                <resourceModel>guest_mysql4</resourceModel>
+             </guest>
+
+             <customconfig_mysql4>
+                <class>Ewall_CustomConfig_Model_Mysql4</class>
+                <entities>
+                    <customconfig>
+                        <table>userrole_status</table>
+                    </customconfig>
+                    <usercategory>
+                        <table>userrole_category</table>
+                    </usercategory>
+                    <guest>
+                        <table>guest_survey</table>
+                    </guest>
+                </entities>
+            </customconfig_mysql4>
+
+            <!-- <reports_resource>
+                <rewrite>
+                    <product_collection>Ewall_CustomConfig_Model_Resource_Product_Collection</product_collection>
+                    <product_sold_collection>Ewall_CustomConfig_Model_Resource_Product_Sold_Collection</product_sold_collection>
+                </rewrite>
+            </reports_resource> -->
+
+        </models>
+        <events>
+            <adminhtml_block_html_before> 
+                <observers>
+                    <customconfig> 
+                        <type>model</type> 
+                        <class>customconfig/observer</class> 
+                        <method>appendMyNewCustomFiled</method> 
+                        <args></args>
+                    </customconfig>
+                </observers>
+            </adminhtml_block_html_before>
+            <admin_permissions_role_prepare_save> 
+                <observers>
+                    <customconfig> 
+                        <type>model</type> 
+                        <class>customconfig/observer</class> 
+                        <method>saveUserRoleData</method>
+                    </customconfig>
+                </observers>
+            </admin_permissions_role_prepare_save>
+            <admin_user_save_after> 
+                <observers>
+                    <customconfig> 
+                        <type>model</type> 
+                        <class>customconfig/observer</class> 
+                        <method>saveCategoriesToUser</method>
+                    </customconfig>
+                </observers>
+            </admin_user_save_after>
+            <admin_user_delete_after> 
+                <observers>
+                    <customconfig> 
+                        <type>model</type> 
+                        <class>customconfig/observer</class> 
+                        <method>deleteCategoriesToUser</method>
+                    </customconfig>
+                </observers>
+            </admin_user_delete_after>                    
+            <sales_quote_item_set_product> 
+                <observers>
+                    <customconfig> 
+                        <type>model</type> 
+                        <class>customconfig/observer</class> 
+                        <method>quoteItemSetProductCategory</method>
+                    </customconfig>
+                </observers>
+            </sales_quote_item_set_product>
+            <sales_order_place_before> 
+                <observers>
+                    <customconfig> 
+                        <type>model</type> 
+                        <class>customconfig/observer</class> 
+                        <method>orderItemSetProductCategory</method>
+                    </customconfig>
+                </observers>
+            </sales_order_place_before>
+            <sales_order_place_after>
+               <observers>
+                    <customconfig>
+                        <type>singleton</type>
+                         <class>customconfig/observer</class> 
+                        <method>updateKitchenUseronOrder</method>
+                    </customconfig>
+                </observers>
+            </sales_order_place_after>
+
+            <checkout_submit_all_after>
+               <observers>
+                    <customconfig>
+                        <type>singleton</type>
+                         <class>customconfig/observer</class> 
+                        <method>checkoutSubmitAllAfter</method>
+                    </customconfig>
+                </observers>
+            </checkout_submit_all_after>
+
+            <sales_convert_quote_item_to_order_item>
+                <observers>
+                    <custom_options>
+                        <type>model</type>
+                        <class>customconfig/observer</class>
+                        <method>addOptionsToOrderItem</method>
+                    </custom_options>
+                </observers>
+            </sales_convert_quote_item_to_order_item>
+ <!-- Edit by 24122017 Islam ELgarhy-->
+
+              <sales_convert_quote_item_to_order_item>
+                <observers>
+                    <custom_options>
+                        <type>model</type>
+                        <class>customconfig/observer</class>
+                        <method>convertyQuotaAttrToOrder</method>
+                    </custom_options>
+                </observers>
+            </sales_convert_quote_item_to_order_item>
+
+<!-- Edit by 24122017 Islam ELgarhy-->
+        </events>
+        
+        <resources>  
+            <customconfig_setup>
+                <setup>
+                    <module>Ewall_CustomConfig</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </customconfig_setup>
+            <customconfig_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </customconfig_write>
+            <customconfig_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </customconfig_read>
+        </resources>
+
+        <template>
+        <email>
+            <approval_email_template translate="label" module="customconfig">
+                <label>Approval Email</label>
+                <file>Approval_email.html</file>
+                <type>html</type>
+            </approval_email_template>            
+            <survey_email_template translate="label" module="customconfig">
+                <label>Survey Email</label>
+                <file>survey_email.html</file>
+                <type>html</type>
+            </survey_email_template>
+            <delay_email_template translate="label" module="customconfig">
+                <label>Delay Email</label>
+                <file>delay_email.html</file>
+                <type>html</type>
+            </delay_email_template>
+         </email>   
+     </template>     
+    </global>
+    <crontab>
+        <jobs>
+            <Ewall_CustomConfig>
+                <schedule>
+                    <cron_expr>* * * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>customconfig/observer::sendDeliveryDelayEmail</model>
+                    <model>customconfig/observer::checkoutSubmitAllAfterCron</model>
+                </run>
+            </Ewall_CustomConfig>
+        </jobs>
+    </crontab>
+    <admin>
+        <routers>
+          <adminhtml>
+                <args>
+                    <modules>
+                        <admin_customconfig before="Mage_Adminhtml">Ewall_CustomConfig</admin_customconfig>
+                        <Ewall_CustomConfig before="Mage_Adminhtml">Ewall_CustomConfig_Adminhtml</Ewall_CustomConfig>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>        
+        <menu>
+            <sales module="customconfig">
+                <children>
+                    <kitchenusers module="customconfig">
+                        <title>Kitchenusers Report</title>
+                        <sort_order>10</sort_order>
+                        <action>adminhtml/adminhtml_kitchenuser</action>
+                    </kitchenusers>
+                    <ordersummary module="customconfig">
+                        <title>Order Summary</title>
+                        <sort_order>11</sort_order>
+                        <action>adminhtml/adminhtml_ordersummary</action>
+                    </ordersummary>
+                    <orderstatussummary module="customconfig">
+                        <title>Order Status Summary</title>
+                        <sort_order>12</sort_order>
+                        <action>adminhtml/adminhtml_orderstatussummary</action>
+                    </orderstatussummary>
+                    <customoptionreportdefault module="customconfig">
+                        <title>Custom Option Report With Machine</title>
+                        <sort_order>13</sort_order>
+                        <action>adminhtml/adminhtml_customoptionreport</action>
+                    </customoptionreportdefault>
+					<customoptionreport module="customconfig">
+                        <title>Custom Option Report Without Machine</title>
+                        <sort_order>14</sort_order>
+                        <action>adminhtml/adminhtml_customoptionreport/withoutmachine</action>
+                    </customoptionreport>
+					<allorderreport module="customconfig">
+                        <title>Order Report</title>
+                        <sort_order>15</sort_order>
+                        <action>adminhtml/adminhtml_orderreport</action>
+                    </allorderreport>
+                </children>
+            </sales>
+        </menu>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <sales>
+                            <children>
+                                <kitchenusers>
+                                    <title>Kitchenusers Report</title>
+                                </kitchenusers>
+                                <ordersummary>
+                                    <title>Order Summary</title>
+                                </ordersummary>
+                                <orderstatussummary>
+                                    <title>Order Status Summary</title>
+                                </orderstatussummary>
+                                <customoptionreport>
+                                    <title>Custom Option Report Without Machine</title>
+                                </customoptionreport>
+								<customoptionreportdefault>
+									<title>Custom Option Report With Machine</title>
+								</customoptionreportdefault>
+								<allorderreport>
+									<title>Order Report</title>
+								</allorderreport>	
+                            </children>
+                        </sales>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <customconfig_options>
+                                            <title>Order Status Settings Section</title>
+                                        </customconfig_options>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <events>
+            <catalog_product_new_action>
+               <observers>
+                    <customconfig_catalog_product_new_action>
+                        <type>singleton</type>
+                         <class>customconfig/observer</class> 
+                        <method>catalogProductEditAction</method>
+                    </customconfig_catalog_product_new_action>
+                </observers>
+            </catalog_product_new_action>
+            <catalog_product_edit_action>
+               <observers>
+                    <customconfig_catalog_product_edit_action>
+                        <type>singleton</type>
+                         <class>customconfig/observer</class> 
+                        <method>catalogProductEditAction</method>
+                    </customconfig_catalog_product_edit_action>
+                </observers>
+            </catalog_product_edit_action>
+            <catalog_product_save_before>
+                  <observers>
+                      <customconfig_catalog_product_save_before>
+                        <class>customconfig/observer</class>
+                        <method>updateStoreView</method>
+                        <type>singleton</type>
+                      </customconfig_catalog_product_save_before>
+                  </observers>
+            </catalog_product_save_before> 
+            <catalog_product_save_after>
+               <observers>
+                    <customconfig_catalog_product_save_after>
+                        <type>singleton</type>
+                         <class>customconfig/observer</class> 
+                        <method>catalogProductLoadAfter</method>
+                    </customconfig_catalog_product_save_after>
+                </observers>
+            </catalog_product_save_after>
+            <adminhtml_widget_container_html_before>
+                <observers>
+                    <remove_order_cancel_button>
+                        <class>customconfig/observer</class>
+                        <type>singleton</type>
+                        <method>adminhtmlWidgetContainerHtmlBefore</method>
+                    </remove_order_cancel_button>
+                </observers>
+            </adminhtml_widget_container_html_before>
+        </events>   
+    </adminhtml>    
+</config>

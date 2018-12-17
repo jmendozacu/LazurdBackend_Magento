@@ -1,0 +1,202 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2016 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<div class="order-items order-details">
+    <?php if ($this->helper('giftmessage/message')->getIsMessagesAvailable('items', $this->getOrder())): ?>
+    <script type="text/javascript">
+    //<![CDATA[
+    function giftMessageToogle(giftMessageIdentifier)
+    {
+        var link = $('order-item-gift-message-link-'+giftMessageIdentifier);
+        var container = $('order-item-gift-message-'+giftMessageIdentifier);
+        var row = $('order-item-row-'+giftMessageIdentifier);
+        if(link.expanded) {
+            link.expanded = false;
+            link.removeClassName('expanded');
+            if(container.hasClassName('last')) {
+                row.addClassName('last');
+            }
+            container.hide();
+        } else {
+            link.expanded = true;
+            link.addClassName('expanded');
+            if(container.hasClassName('last')) {
+                row.removeClassName('last');
+            }
+            container.show();
+        }
+
+        return false;
+    }
+    //]]>
+    </script>
+    <?php endif; ?>
+    <?php 
+    $_order = $this->getOrder();
+    //echo "<pre>"; 
+    //print_r(Mage::app()->getRequest());
+    //echo get_class($this);
+    ?>
+    <?php $getShippingAddressId = Mage::helper('customconfig')->getGuestAddress($_order->getShippingAddressId()); ?>
+    <?php $getBillingAddressId = Mage::helper('customconfig')->getGuestAddress($_order->getBillingAddressId()); ?>
+    <h2 class="table-caption"><?php echo $this->__('Order #'.$_order->getIncrementId().' - '.$_order->getStatus()) ?>
+        <?php if ($_order->getTracksCollection()->count()) : ?>
+            <span class="separator">|</span> <a href="#" onclick="popWin('<?php echo $this->helper('shipping')->getTrackingPopupUrlBySalesModel($_order) ?>','trackorder','top=0,left=0,width=800,height=600,resizable=yes,scrollbars=yes'); return false;" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Track your order')) ?>"><?php echo $this->__('Track your order') ?></a>
+        <?php endif; ?>
+    </h2>
+    <dl class="order-info">
+        <dt>About This Order:</dt>
+        <dd>
+            <ul id="order-info-tabs">
+                <li class="current first last"><?php echo $this->__('Order Information'); ?></li>
+            </ul>
+        </dd>
+    </dl>
+    <p class="order-date">
+    <?php echo $this->__('Order Date'); ?> : 
+    <?php 
+        $dateTimestamp = Mage::getModel('core/date')->timestamp(strtotime($_order->getCreatedAt()));
+        echo date('F j Y', $dateTimestamp);
+    ?>
+    </p>
+
+    <div class="col2-set order-info-box">
+        <div class="col-1">
+            <div class="box">
+                <div class="box-title">
+                    <h2><?php echo $this->__('Shipping Address'); ?></h2>
+                </div>
+                <div class="box-content">
+                    <address><?php echo $getShippingAddressId->getName(); ?><br>
+                    <?php echo $getShippingAddressId->getEmail(); ?><br>
+                    <?php echo $getShippingAddressId->getStreetFull(); ?><br>
+                    <?php echo $getShippingAddressId->getCity().','.$getShippingAddressId->getRegion().','.$getShippingAddressId->getPostCode(); ?><br>
+                    <?php echo $getShippingAddressId->getCountry(); ?><br>
+                    T: <?php echo $getShippingAddressId->getTelephone(); ?>
+                    </address>
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="box">
+                <div class="box-title">
+                    <h2><?php echo $this->__('Shipping Method'); ?></h2>
+                </div>
+                <div class="box-content"><?php echo $_order->getShippingDescription(); ?></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col2-set order-info-box">
+        <div class="col-1">
+            <div class="box">
+                <div class="box-title">
+                    <h2><?php echo $this->__('Billing Address'); ?></h2>
+                </div>
+                <div class="box-content">
+                    <address><?php echo $getBillingAddressId->getName(); ?><br>
+                    <?php echo $getBillingAddressId->getEmail(); ?><br>
+                    <?php echo $getBillingAddressId->getStreetFull(); ?><br>
+                    <?php echo $getBillingAddressId->getCity().','.$getBillingAddressId->getRegion().','.$getBillingAddressId->getPostCode(); ?><br>
+                    <?php echo $getBillingAddressId->getCountry(); ?><br>
+                    T: <?php echo $getBillingAddressId->getTelephone(); ?>
+                    </address>
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="box">
+                <div class="box-title">
+                    <h2><?php echo $this->__('Payment Method'); ?></h2>
+                </div>
+                <div class="box-content"><?php echo $_order->getPayment()->getMethodInstance()->getTitle(); ?></div>
+            </div>
+        </div>
+    </div>
+    <div class="col3-set order-info-box">
+        <div class="col-1">
+            
+        </div>
+        <div class="col-2">
+            <div class="box">
+                <div class="box-title">
+                    <h2><?php echo $this->__('Survey'); ?></h2>
+                </div>
+                <div class="box-content">
+                    <form name="survey_form" action="">
+                    <span><?php echo $this->__('Are you happy with this ?'); ?></span>
+                    <select class="survey_opton" onselect="SurveyOpton()">
+                        <option value="">Select option..</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                    <textarea class="survey_message" style="display:none" width="250" height="100">
+                        
+                    </textarea>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    //<![CDATA[
+        function SurveyOpton(){
+            
+        }
+    //]]>
+    </script>
+
+    <h2 class="table-caption"><?php echo $this->__('Items Ordered'); ?></h2>
+    <?php echo $this->getChildHtml('order_items') ?>
+
+    <?php if($this->helper('giftmessage/message')->getIsMessagesAvailable('order', $_order) && $_order->getGiftMessageId()): ?>
+    <div class="order-additional order-gift-message">
+        <h2 class="sub-title"><?php echo $this->__('Gift Message for This Order') ?></h2>
+        <?php $_giftMessage=$this->helper('giftmessage/message')->getGiftMessageForEntity($_order); ?>
+        <dl class="gift-message">
+            <dt><strong><?php echo $this->__('From:') ?></strong> <?php echo $this->escapeHtml($_giftMessage->getSender()) ?></dt>
+            <dt><strong><?php echo $this->__('To:') ?></strong> <?php echo $this->escapeHtml($_giftMessage->getRecipient()) ?></dt>
+            <dd><?php echo $this->helper('giftmessage/message')->getEscapedGiftMessage($_order) ?></dd>
+        </dl>
+    </div>
+    <?php endif; ?>
+    <?php $_history = $this->getOrder()->getVisibleStatusHistory() ?>
+    <?php if (count($_history)): ?>
+    <div class="order-additional order-comments">
+        <h2 class="sub-title"><?php echo $this->__('About Your Order') ?></h2>
+        <dl class="order-about">
+            <?php foreach ($_history as $_historyItem): ?>
+                <dt><?php echo $this->formatDate($_historyItem->getCreatedAtStoreDate(), 'medium', true) ?></dt>
+                <dd><?php echo $this->escapeHtml($_historyItem->getComment()) ?></dd>
+            <?php endforeach; ?>
+        </dl>
+    </div>
+    <?php endif; ?>
+    <div class="buttons-set">
+        <p class="back-link"><a href="<?php echo $this->getBackUrl() ?>"><small>&laquo; </small><?php echo $this->getBackTitle() ?></a></p>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<config>
+    <modules>
+         <Cac_Restapi_Customers>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Cac_Restapi_Customers>
+         <Cac_Restapi_Sales>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Cac_Restapi_Sales>
+         <Cac_Restapi_Drivers>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Cac_Restapi_Drivers>
+        <Cac_Restapi_Users>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Cac_Restapi_Users>
+        <Cac_Restapi_Kitchen>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Cac_Restapi_Kitchen>
+    </modules>
+</config>

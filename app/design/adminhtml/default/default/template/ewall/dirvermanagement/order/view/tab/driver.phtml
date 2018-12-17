@@ -1,0 +1,84 @@
+<?php $drivers = $this->getOptionArray();?>
+
+<div class="entry-edit-head">
+
+    <h4 class="icon-head head-shipping-method"><?php echo Mage::helper('sales')->__('Assign Driver') ?></h4>
+
+</div>
+
+<fieldset>
+
+	<form class="form driver"
+
+	      enctype="multipart/form-data"
+
+	      action="<?php echo $this->getFormAction(); ?>"
+
+	      id="assign_driver_form"
+
+	      method="post">
+
+        <div><input name="form_key" type="hidden" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" /></div>
+
+        <input name="order_id" type="hidden" value="<?php echo $this->getOrder()->getId();?>" />
+
+        <label class="normal" for="assign_driver" style="padding: 10px;">Driver</label>
+
+        <select name="assign_driver" class="select" id="assign_driver" style="width: 150px;">
+
+            <option value=""><?php echo $this->__('Choose Driver..');?></option>
+
+        	<?php foreach ($drivers as $key => $driver) {?>
+
+        		<option value="<?php echo $key;?>" <?php if($this->getOrder()->getDriverId() == $key):?> selected ="selected" <?php endif;?>> <?php echo $driver;?> </option>
+
+        	<?php } ?>
+
+        </select>
+
+        <span class="submit_driver" style="float:right">
+
+           <input class="assign scalable save submit-button" type ="submit" value="Assign Driver" title="Assign Driver"/>
+
+        </span>
+
+    </form>
+
+</fieldset>
+
+<style type="text/css">
+
+
+
+.assign.submit-button {
+
+    border: none;
+
+    padding: 10px;
+
+    background: #25bce9;
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    font-weight: 400;
+
+    text-align: center !important;
+
+    margin-top: 0px;
+
+}
+
+#assign_driver_form{
+
+    margin: 0px 0px 50px 0px;
+
+    overflow: hidden;
+
+    display: block;
+
+}
+
+</style>
+

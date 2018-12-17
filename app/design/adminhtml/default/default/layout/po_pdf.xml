@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <adminhtml_potato_pdf_template_list>
+        <reference name="content">
+            <block type="po_pdf/adminhtml_template" name="po_pdf.template"/>
+        </reference>
+    </adminhtml_potato_pdf_template_list>
+    <adminhtml_potato_pdf_template_edit>
+        <update handle="editor"/>
+        <reference name="head">
+            <action method="setCanLoadTinyMce"><value>true</value></action>
+            <action method="addItem"><type>skin_js</type><name>po_pdf/js/template.js</name></action>
+        </reference>
+        <reference name="content">
+            <block type="po_pdf/adminhtml_template_edit" name="po_pdf.template_edit" />
+        </reference>
+    </adminhtml_potato_pdf_template_edit>
+    <adminhtml_sales_order_view>
+        <reference name="sales_order_edit">
+            <block type="po_pdf/adminhtml_sales_order_view_printBtn" name="po_pdf.sales_order_view_printBtn"/>
+        </reference>
+    </adminhtml_sales_order_view>
+</layout>

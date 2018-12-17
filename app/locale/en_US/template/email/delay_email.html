@@ -1,0 +1,36 @@
+<!--@subject Delayed # {{var order.increment_id}} @-->
+<!--@vars
+{"store url=\"\"":"Store Url",
+"var logo_url":"Email Logo Image Url",
+"var logo_alt":"Email Logo Image Alt",
+"var message":"Wishlist Message",
+"var items":"Wishlist Items"}
+@-->
+<!--@styles
+@-->
+
+{{template config_path="design/email/header"}}
+{{inlinecss file="email-inline.css"}}
+
+{{var data}}
+<table cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <td>
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td class="email-heading">
+                        <h1>One of our order has been delayed # {{var order.increment_id}}.</h1>
+                        <p>Kindly check the order progress and do an action</p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td class="order-details">
+            <h3>Delayed order <span class="no-link">#{{var order.increment_id}}</span></h3>
+        </td>
+    </tr>    
+</table>
+
+{{template config_path="design/email/footer"}}

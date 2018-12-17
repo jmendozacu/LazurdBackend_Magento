@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Custom_Restapi_Cartquotes>
+            <version>0.1.0.0</version>
+        </Custom_Restapi_Cartquotes>
+    </modules>
+    <global>
+        <models>
+           <cartquotes>
+                <class>Custom_Restapi_Cartquotes_Model</class>
+            </cartquotes>
+        </models>
+
+    </global>
+</config>

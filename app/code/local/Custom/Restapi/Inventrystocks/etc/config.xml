@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Custom_Restapi_Inventrystocks>
+            <version>0.1.0.0</version>
+        </Custom_Restapi_Inventrystocks>
+    </modules>
+    <global>
+        <models>
+           <inventrystocks>
+                <class>Custom_Restapi_Inventrystocks_Model</class>
+            </inventrystocks>
+        </models>
+
+    </global>
+</config>

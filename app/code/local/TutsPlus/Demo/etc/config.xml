@@ -1,0 +1,9 @@
+<config>
+    <global>
+        <models>
+            <demo>
+                <class>TutsPlus_Demo_Model</class>
+            </demo>
+        </models>
+    </global>
+</config>

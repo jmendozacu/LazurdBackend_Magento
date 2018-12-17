@@ -1,0 +1,17 @@
+<!--@subject Take a look at {{var customer.name}}'s @-->
+<!--@vars
+{"store url=\"\"":"Store Url",
+"var logo_url":"Email Logo Image Url",
+"var logo_alt":"Email Logo Image Alt",
+"var message":"Wishlist Message",
+"var items":"Wishlist Items"}
+@-->
+<!--@styles
+@-->
+
+{{template config_path="design/email/header"}}
+{{inlinecss file="email-inline.css"}}
+
+{{var data}}
+
+{{template config_path="design/email/footer"}}

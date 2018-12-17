@@ -1,0 +1,149 @@
+<div class="dashboard-w">
+    <div class="content-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-xs-12 admin-page-title">
+                    <h3 class="header-title head-dashboard"><?php echo $this->__('Order Summary') ?></h3>
+                    <span class="header-subtitle"><?php echo $this->__('overview & delivery report'); ?></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php $collection = '';  if($this->getCollection()) $collection = $this->getCollection() ;?>
+    <form class="form status" enctype="multipart/form-data" action="<?php echo Mage::helper('adminhtml')->getUrl('adminhtml/adminhtml_ordersummary/index',array('store'=>Mage::app()->getRequest()->getParam('store')));; ?>" 
+            id="summary_form" method="post" style="padding: 15px;display: block;">
+                <div><input name="form_key" type="hidden" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" /></div>
+        <table cellspacing="0" class="actions">
+           	<tr>
+	            <td class="a-left filter">
+	                <div class="f-left">
+	                    <div><?php echo $this->__('From') ?>:&nbsp;<input class="input-text no-changes required-entry" type="text" id="period_date_from" name="report_from" value="<?php echo $this->getFilter('report_from') ?>" style="width:5em" /> <img src="<?php echo $this->getSkinUrl('images/grid-cal.gif') ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Select Date')) ?>" id="period_date_from_trig" alt="<?php echo Mage::helper('core')->quoteEscape($this->__('Select Date')) ?>" class="v-middle"/>&nbsp;&nbsp;</div>
+	                    <div id="period_date_from_advaice"></div>
+	                </div>
+
+	                <div class="f-left">
+	                    <div><?php echo $this->__('To') ?>:&nbsp;<input  class="input-text no-changes required-entry" type="text" id="period_date_to" name="report_to"  value="<?php echo $this->getFilter('report_to') ?>" style="width:5em" /> <img src="<?php echo $this->getSkinUrl('images/grid-cal.gif') ?>" class="v-middle" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Select Date')) ?>"id="period_date_to_trig" alt="<?php echo Mage::helper('core')->quoteEscape($this->__('Select Date')) ?>"/>&nbsp;&nbsp;</div>
+	                    <div id="period_date_to_advaice"></div>
+	                </div>
+
+	                <div class="f-left">
+	                   <button id="id_<?php echo 'refresh';?>" title="Refresh" type="submit" class="scalable task" >
+	                   	<span><span><span>Refresh</span></span></span>
+	                   </button>
+	                </div>
+	                <script type="text/javascript">
+	                <!--
+	                Calendar.setup({
+	                    inputField : 'period_date_from',
+	                    ifFormat : '%m/%e/%Y',
+	                    button : 'period_date_from_trig',
+	                    align : 'Bl',
+	                    singleClick : true
+	                });
+	                Calendar.setup({
+	                    inputField : 'period_date_to',
+	                    ifFormat : '%m/%e/%Y',
+	                    button : 'period_date_to_trig',
+	                    align : 'Bl',
+	                    singleClick : true
+	                });
+	                //-->
+	                </script>
+	            </td>  
+            </tr>
+    	</table>
+	</form>
+    <div class="dashboard-container">
+        <div class="container">
+            <div class="row">
+
+               	<div class="col-md-3 col-sm-6 col-xs-12 top-report delivery-total">
+		            <div class="top-report-head">
+		            	<h4><?php echo 'Total Orders' ?></h4>
+		            </div>
+		            <div class="cms top-report-content">
+		                <div class="row">
+		                    <div class="col-xs-3 top-report-icon">
+		                            <i class="fa fa-line-chart"></i>
+		                    </div>
+		                    <div class="col-xs-9 top-report-value">
+		                	   <?php echo $collection ? $collection->count() : 0; ?>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+                <?php
+                $count = 0;
+                foreach (Mage::app()->getWebsites() as $website) {
+                    foreach ($website->getGroups() as $group) {
+                        foreach ($group->getStores() as $store) { 
+                        $count++;
+                ?>
+                        <div class="col-md-3 col-sm-6 col-xs-12 top-report delivery-store">
+                            <div class="top-report-head">
+                                <h4><?php echo $this->__('Total Orders in '.$group->getName().' - '.$store->getName());?></h4>
+                            </div>
+                            <div class="cms top-report-content">
+                                <div class="row">
+                                    <div class="col-xs-3 top-report-icon">
+                                        <i class="fa fa-line-chart"></i>  
+                                    </div>
+                                    <div class="col-xs-9 top-report-value">
+                                        <?php// echo $collection ? $collection['total_delivery_store_'.$_store.'_count'] : 0; ?>
+                                         <?php echo $collection ? $this->getFilteredData('store_id', $store->getId())->count() : 0; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php echo ($count == 3) ? '<div class="clear"></div>' : '';?>
+                        <?php echo ($count%4 == 0) ? '<div class="clear"></div>' : '';?>
+               <?php 
+                        }
+                    }
+                }
+                ?>
+                <div class="clear"></div>
+                <?php 
+                 $Timeslots = Mage::getModel('deliverydate/deliverydate')->getCollection()->setOrder('id','asc');                
+                 if(count($Timeslots)):
+                    $count = 0;
+                    foreach ($Timeslots as $key => $value) { 
+                    $count++;                      
+                ?>                
+                <div class="col-md-3 col-sm-6 col-xs-12 top-report delivery-slot">
+                    <div class="top-report-head">
+                        <h4><?php echo $this->__('Total Orders in '.$value->getData('fromtime')." - ".$value->getData('totime'));?></h4>
+                    </div>
+                    <div class="cms top-report-content">
+                        <div class="row">
+                            <div class="col-xs-3 top-report-icon">
+                                <i class="fa fa-line-chart"></i>  
+                            </div>
+                            <div class="col-xs-9 top-report-value">
+                                <?php //echo $collection ? $collection['total_delivery_slot_'.$value->getId().'_count'] : 0; ?>
+                                <?php echo $collection ? $this->getFilteredData('shipping_arrival_time_slot',$value->getId())->count() : 0; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php echo ($count%4 == 0) ? '<div class="clear"></div>' : '';?>
+                <?php } endif; ?>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+    var theForm = new Validation('summary_form', true);
+    var period_date_from = $('period_date_from');
+    var period_date_to   = $('period_date_to');
+    period_date_from.advaiceContainer = $('period_date_from_advaice');
+    period_date_to.advaiceContainer = $('period_date_to_advaice');
+
+//]]>   
+</script>
+<style type="text/css">
+    .clear{
+        clear: both;display: block;margin: 25px;
+    }
+</style>

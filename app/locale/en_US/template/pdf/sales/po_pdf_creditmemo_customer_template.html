@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="{{skin url='po_pdf/css/styles.css'}}" rel="stylesheet" />
+</head>
+<body>
+<div class="main">
+    <div class="row">
+        <div class="col-xs-6">
+            <h1>Refund #{{var creditmemo.increment_id}}</h1>
+            <h2>Order #{{var order.increment_id}}</h2>
+            <h2 class="secondary">{{var creditmemo_formatted_date}}</h2>
+        </div>
+        <div class="col-xs-6">
+            <a href="{{store url=''}}">
+                <img src="{{var logo_url}}" alt="{{var logo_alt}}" />
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+            <h2>Sold to</h2>
+            {{var order.billing_address.format('html')}}
+        </div>
+        <div class="col-xs-6">
+            <h2>Ship to</h2>
+            {{var order.shipping_address.format('html')}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+            {{depend order.getIsNotVirtual()}}
+            <h2>Shipping Method</h2>
+            {{var order.shipping_description}}
+            {{/depend}}
+        </div>
+        <div class="col-xs-6">
+            <h2>Payment Method</h2>
+            {{var payment_html}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            {{layout handle="po_pdf_sales_order_creditmemo_items"}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="right">
+                {{layout handle="po_pdf_sales_order_creditmemo_totals"}}
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

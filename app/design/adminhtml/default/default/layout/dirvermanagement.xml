@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+<!--   <adminhtml_sales_order_view>
+    <reference name="sales_order_tabs">
+      <action method="addTab">
+          <name>order_view_tab</name>
+          <block>dirvermanagement/adminhtml_order_view_tab_driver</block>
+      </action>
+      <action method="addTab">
+          <name>order_view_status_tab</name>
+           <block>dirvermanagement/adminhtml_order_view_tab_status</block>
+      </action>
+    </reference>
+	</adminhtml_sales_order_view> -->
+	<dirvermanagement_adminhtml_driver_index>
+  		<reference name="content">
+  		  <block type="dirvermanagement/adminhtml_driver" name="driver" />
+  		</reference>
+	</dirvermanagement_adminhtml_driver_index>
+  <dirvermanagement_adminhtml_report_index>
+    <reference name="content">
+      <block type="core/template" name="deliveryreport" template="ewall/dirvermanagement/searchform.phtml"/>
+    </reference>
+  </dirvermanagement_adminhtml_report_index>
+  <dirvermanagement_adminhtml_report_grid>
+    <reference name="content">
+        <block type="core/template" name="deliveryreport" template="ewall/dirvermanagement/searchform.phtml"/>
+        <!-- <block type="dirvermanagement/adminhtml_report" name="driverreport" /> -->
+        <block type="dirvermanagement/adminhtml_report" name="driverindividualreport" template="ewall/dirvermanagement/searchresult.phtml"/>
+    </reference>
+  </dirvermanagement_adminhtml_report_grid>
+  <dirvermanagement_adminhtml_driverlocation_index>
+    <reference name="content">
+      <block type="dirvermanagement/adminhtml_driverlocation" name="driverlocationbackend" template="ewall/dirvermanagement/driverlocation.phtml"/>
+    </reference>
+  </dirvermanagement_adminhtml_driverlocation_index>
+  <adminhtml_sales_order_index>
+      <reference name="js">
+          <block type="core/template" template="ewall/dirvermanagement/inlineorder-driveredit.phtml" />
+      </reference>
+  </adminhtml_sales_order_index>
+</layout>

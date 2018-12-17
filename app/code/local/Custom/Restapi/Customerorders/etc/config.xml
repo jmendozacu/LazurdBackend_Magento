@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Custom_Restapi_Customerorders>
+            <version>0.1.0.0</version>
+        </Custom_Restapi_Customerorders>
+    </modules>
+    <global>
+        <models>
+           <customerorders>
+                <class>Custom_Restapi_Customerorders_Model</class>
+            </customerorders>
+        </models>
+
+    </global>
+</config>

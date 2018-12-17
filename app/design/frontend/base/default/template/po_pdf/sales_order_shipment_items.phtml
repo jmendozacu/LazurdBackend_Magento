@@ -1,0 +1,19 @@
+<table class="table table-striped items" id="items">
+    <thead>
+    <tr>
+        <td><?php echo Mage::helper('po_pdf')->__('Product Name')?></td>
+        <td><?php echo Mage::helper('po_pdf')->__('Sku')?></td>
+        <td><?php echo Mage::helper('po_pdf')->__('Qty Shipped')?></td>
+    </tr>
+    </thead>
+    <?php $_items = $this->getShipment()->getAllItems(); ?>
+    <?php foreach ($_items as $_item): ?>
+        <?php if (!$_item->getOrderItem() || $_item->getOrderItem()->getParentItem()) continue; ?>
+        <tbody>
+        <?php echo $this->getItemHtml($_item) ?>
+        </tbody>
+    <?php endforeach; ?>
+</table>
+<script src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS);?>prototype/prototype.js" type="text/javascript"></script>
+<script src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS);?>varien/js.js" type="text/javascript"></script>
+<script type="text/javascript">decorateTable('items', {'tbody' : ['odd', 'even'], 'tbody tr' : ['first', 'last']})</script>

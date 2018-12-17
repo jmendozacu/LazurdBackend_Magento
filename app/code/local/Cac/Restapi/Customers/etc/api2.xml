@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config>
+    <api2>
+        <resource_groups>
+            <cac_restapi_customers translate="title" module="api2">
+                <title>CAC Catalog</title>
+                <sort_order>10</sort_order>
+            </cac_restapi_customers>
+        </resource_groups>
+        <resources>
+            <cac_restapi_customers translate="title" module="api2">
+                <group>cac_restapi_customers</group>
+                <model>cac_restapi_customers/api2_customer</model>
+                <title>CAC Customer Self Detail RestApi</title>
+                <sort_order>10</sort_order>
+                <privileges>
+                    <admin>
+                        <retrieve>1</retrieve>
+                    </admin>
+                </privileges>
+                <attributes translate="">
+                </attributes>
+                <routes>
+                    <route_entity>
+                        <route>/cac/customer/:id</route>
+                        <action_type>entity</action_type>
+                    </route_entity>
+                    <route_regions>
+                        <route>/cac/customer/regions</route>
+                        <action_type>regions</action_type>
+                    </route_regions>
+                </routes>
+                <versions>1</versions>
+            </cac_restapi_customers>
+        </resources>
+    </api2>
+</config>

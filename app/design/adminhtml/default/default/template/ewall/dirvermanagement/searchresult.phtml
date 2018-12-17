@@ -1,0 +1,65 @@
+<?php
+	$driver_collection = $this->getDriverOrderCollection();
+?>
+<?php foreach ($driver_collection as $drivers) : ?>
+<?php $collection = $this->getdriverOrders($drivers->getUserId());
+$orderStatus = Mage::helper('customconfig')->getCustomStatus();
+$customstatus =array();
+foreach($orderStatus as $key => $status) {
+    $customstatus[$status['value']] = $status['label'];
+}        
+if($collection->count()): ?>
+
+<h2 style="padding-left: 13px;"><?php echo $drivers->getFirstname().' '.$drivers->getLastname(); ?></h2>
+<div class="grid">
+<div class="container">
+<div class="hor-scroll table-responsive">
+<table cellspacing="0" class="data" id="timeGrid_table">
+<colgroup><col width="100">
+<col width="100">
+<col>
+<col width="160">
+<col>
+<col width="160">
+<col>
+<col>
+</colgroup><thead>
+<tr class="headings">
+        <th class=" no-link"><span class="nobr">Order Number</span></th>
+        <th class=" no-link"><span class="nobr">Customer Name</span></th>
+        <th class=" no-link"><span class="nobr">Delivery Date</span></th>
+        <th class=" no-link last"><span class="nobr">Status</span></th>
+    </tr>
+</thead>
+<tbody>
+<?php foreach($collection as $data): ?>
+<?php if($data->getData()) : ?>
+<tr title="#" class="even pointer">
+<td class="a-right a-right "><?php echo $data->getIncrementId(); ?></td>
+<td class="a-right a-right "><?php echo $data->getCustomerName(); ?></td>
+<td class="a-right "><?php if(!$data->getShippingArrivalDate()): echo '--'; else : echo $data->getShippingArrivalDate(); endif;?></td>
+<td class="a-right last"><?php echo $customstatus[$data->getOrderStatus()]; ?></td>
+</tr>
+<?php else : ?>
+<tr title="#" class="even pointer"><td>Sorry No Data Available</td></tr>
+<?php endif;?>
+<?php endforeach; ?>
+</tbody>
+</table>
+</div>
+</div>
+<?php endif; ?>
+<?php endforeach; ?>
+<?php if(!$collection->count()): ?>
+<div class="grid">
+<div class="container">
+	<b>Sorry No Data Available</b>
+</div>
+</div>
+<?php endif; ?>
+<style type="text/css">
+#timeGrid_table td{
+	width: 400px;
+}
+
+</style>

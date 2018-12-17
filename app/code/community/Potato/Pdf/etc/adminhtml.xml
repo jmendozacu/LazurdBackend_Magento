@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<config>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <sales>
+                        <children>
+                            <po_pdf translate="title" module="po_pdf">
+                                <title>Print PDF</title>
+                                <sort_order>2000</sort_order>
+                                <children>
+                                    <template translate="title" module="po_pdf">
+                                        <title>Templates</title>
+                                        <sort_order>10</sort_order>
+                                    </template>
+                                    <settings translate="title" module="po_pdf">
+                                        <title>Settings</title>
+                                        <sort_order>20</sort_order>
+                                    </settings>
+                                </children>
+                            </po_pdf>
+                        </children>
+                    </sales>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <po_pdf>
+                                        <title>PotatoCommerce - Print PDF</title>
+                                    </po_pdf>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <sales>
+            <children>
+                <po_pdf translate="title" module="po_pdf">
+                    <title>Print PDF</title>
+                    <sort_order>2000</sort_order>
+                    <children>
+                        <template translate="title" module="po_pdf">
+                            <title>Templates</title>
+                            <action>adminhtml/potato_pdf_template</action>
+                            <sort_order>10</sort_order>
+                        </template>
+                        <settings translate="title" module="po_pdf">
+                            <title>Settings</title>
+                            <action>adminhtml/system_config/edit/section/po_pdf</action>
+                            <sort_order>20</sort_order>
+                        </settings>
+                    </children>
+                </po_pdf>
+            </children>
+        </sales>
+    </menu>
+    <translate>
+        <modules>
+            <Potato_Compressor>
+                <files>
+                    <default>Potato_Compressor.csv</default>
+                </files>
+            </Potato_Compressor>
+        </modules>
+    </translate>
+</config>

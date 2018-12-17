@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Custom_Restapi_Countryregions>
+            <version>0.1.0.0</version>
+        </Custom_Restapi_Countryregions>
+    </modules>
+    <global>
+        <models>
+           <countryregions>
+                <class>Custom_Restapi_Countryregions_Model</class>
+            </countryregions>
+        </models>
+
+    </global>
+</config>

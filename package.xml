@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<package>
+    <name>nbm_mag_systemconfig_package</name>
+    <version>1.0.0</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">OSLv3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>nbm_mag_systemconfig_package</summary>
+    <description>nbm_mag_systemconfig_package</description>
+    <notes>http://opensource.org/licenses/osl-3.0.php</notes>
+    <authors><author><name>Nam</name><user>Nguyen</user><email>namnh0489@gmail.com</email></author></authors>
+    <date>2014-11-12</date>
+    <time>09:18:58</time>
+    <contents><target name="magecommunity"><dir name="Cmsmart"><dir name="Configsystem"><dir name="Block"><dir name="Adminhtml"><dir name="System"><dir name="Config"><dir name="Form"><dir name="Field"><file name="Color.php" hash="7cbe38c139e153bfafc461f619bb114d"/></dir></dir></dir></dir></dir></dir><dir name="Helper"><file name="Data.php" hash="44867fe861564d6ca782e024aebf85cd"/></dir><dir name="controllers"><dir name="Adminhtml"><file name="IndexController.php" hash="88a12096f2b898ea548c8808f8258705"/></dir><file name="IndexController.php" hash="ae592e4ad3625cfecf8d01d564307b4b"/></dir><dir name="etc"><file name="adminhtml.xml" hash="3900ed1a8abcc182a6c33d78eee630e3"/><file name="config.xml" hash="c65731a60eaa1393912741e5cbb39868"/><file name="system.xml" hash="440439a90b9ab69eb9423a12ff219bd1"/></dir></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><dir name="cmsmart"><file name="configsystem.xml" hash="7a838a7bc8094f765259613c502482b1"/></dir></dir></dir></dir></dir><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><dir name="cmsmart"><file name="configsystem.xml" hash="597f3bf134e90c5d95606dcceea0ab4a"/></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Cmsmart_Configsystem.xml" hash="56bc5fa012c4f468b9117111b1983d7d"/></dir></target><target name="mage"><dir name="js"><dir name="cmsmart"><dir name="jquery"><file name="jquery-migrate.js" hash="512b871a2830e44259bc3ce3343afcd0"/><file name="jquery-noconflict.js" hash="e892cb1ad1ddd8c990608b1e3f9d9d72"/><file name="jquery.js" hash="eaec1712551cd2792f4607f39fab12e7"/><dir name="plugins"><dir name="mcolorpicker"><dir name="images"><file name="Thumbs.db" hash="adb191971e39668edc20105729b898b0"/><file name="color.png" hash="e83e9461de67b11df1c5dbafb3ce3b75"/><file name="grid.gif" hash="68cd006d56482882fc5207951fce6c65"/><file name="meta100.png" hash="8f64a39cee2667863597690e67928278"/><file name="picker.png" hash="6f7b525c44e04220893082eb072c6605"/></dir><file name="mcolorpicker.min.js" hash="8e4bc0443c322a96903c84a624f3dc91"/></dir></dir></dir></dir></dir></target><target name="magemedia"><dir name="cmsmart"><dir name="configsystem"><file name="pnew.png" hash="7a5ebdf7739494b1bb0d6c328ff0574c"/></dir></dir></target><target name="mageskin"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="cmsmart"><dir name="configsystem"><file name="styles.css" hash="d41d8cd98f00b204e9800998ecf8427e"/></dir></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php></required></dependencies>
+</package>
+
+<package>
+    <name>raveinfosys+Raveinfosys_Deleteorder</name>
+    <version>1.1.2</version>
+    <stability>stable</stability>
+    <license>OSL v3.0</license>
+    <channel>ad59b2fff21a6a2169f6e4ee60163d3c</channel>
+    <extends/>
+    <summary>Delete Order extension for Magento&amp;amp;#174; allows you to delete unnecessary orders from the store.</summary>
+    <description>Currently, Magento&amp;amp;#174; doesn't allow you to delete an order from the store. You can only mark them as Cancelled but can't delete them from store. This extension allows you to seamlessly delete any order and other associated data such as invoice and shipment, creditmemos.</description>
+    <notes>Fixed: User role permission issue.</notes>
+    <authors><author><name>Rave Infosys</name><user>raveinfo</user><email>mage.support@raveinfosys.com</email></author></authors>
+    <date>2018-01-12</date>
+    <time>11:34:07</time>
+    <contents><target name="mageetc"><dir name="modules"><file name="Raveinfosys_Deleteorder.xml" hash="1d73a901977f08e90563dd8c5c8adb64"/></dir></target><target name="magecommunity"><dir name="Raveinfosys"><dir name="Deleteorder"><dir name="Block"><dir name="Adminhtml"><dir name="Sales"><dir name="Order"><dir name="Render"><file name="Delete.php" hash="859ff60690afe9cad9e9a5cf4bb0e5bc"/></dir></dir></dir></dir></dir><dir name="Helper"><file name="Data.php" hash="6b6c75eb5a3c24423234f667bc4adbd1"/></dir><dir name="Model"><file name="Deleteorder.php" hash="7a39916ba5278193993e62b4a4057858"/><file name="Observer.php" hash="830b30d94b77f1eb744ad4e77aadd577"/><dir name="System"><dir name="Config"><dir name="Order"><file name="Status.php" hash="957e28e0aa19cc1ce763f173d5181ff9"/></dir></dir></dir></dir><dir name="controllers"><dir name="Adminhtml"><file name="DeleteorderController.php" hash="d805e888c7038caf0ff59281c59a0d24"/></dir></dir><dir name="etc"><file name="config.xml" hash="8c26b2589f5351b4976f65b944a6093f"/><file name="system.xml" hash="32dc905d92dfdca52493d50f31bb290c"/></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>7.0.99</max></php></required></dependencies>
+</package>

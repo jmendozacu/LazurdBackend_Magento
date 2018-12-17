@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Custom_Restapi_Categoryproducts>
+            <version>0.1.0.0</version>
+        </Custom_Restapi_Categoryproducts>
+    </modules>
+    <global>
+        <models>
+           <categoryproducts>
+                <class>Custom_Restapi_Categoryproducts_Model</class>
+            </categoryproducts>
+        </models>
+
+    </global>
+</config>

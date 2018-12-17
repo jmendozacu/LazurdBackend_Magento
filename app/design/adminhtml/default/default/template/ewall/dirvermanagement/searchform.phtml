@@ -1,0 +1,67 @@
+<?php
+$data = Mage::getSingleton('admin/session')->getDriversTime();
+$cookie = Mage::getSingleton('core/cookie');
+if($data){
+$cookie->set('drivertime', $data ,time()+86400,'/');
+}
+print_r($cookie->get('drivertime'));
+?>
+<div class="driver main-data ">
+<form role="form" action="<?php echo Mage::helper("adminhtml")->getUrl("admin_dirvermanagement/adminhtml_report/grid/"); ?>" method="post">
+  <div class="form-group">
+    <label for="date_from"><?php echo $this->__('From Date') ?> :</label>
+    <input type="text" class="form-control" id="date_from" name="form-date" value="<?php echo $data['form-date']; ?>" required>
+  </div>
+  <div class="form-group">
+    <label for="date_to"><?php echo $this->__('To Date') ?> :</label>
+    <input type="date_to" class="form-control" id="date_to" name="to-date" value="<?php echo $data['to-date']; ?>" required>
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox" name="delivery" value="1" <?php if($data['delivery']) : echo 'checked'; endif; ?>><?php echo $this->__('Except Delivered') ?></label>
+  </div>
+  <input name="form_key" type="hidden" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+  <button type="submit" class="scalable add"><?php echo $this->__('Submit') ?></button>
+</form>
+<script type="text/javascript">// <![CDATA[
+Calendar.setup({
+    inputField : 'date_from',
+    ifFormat : '20%y-%m-%e',
+    button : 'date_from_trig',
+    align : 'Bl',
+    singleClick : true
+});
+
+Calendar.setup({
+    inputField : 'date_to',
+    ifFormat : '20%y-%m-%e',
+    button : 'date_to_trig',
+    align : 'Bl',
+    singleClick : true
+});
+// ]]></script>
+</div>
+<style type="text/css">
+.driver.main-data {
+  width: 40%;
+  height: auto;
+  margin: auto;
+  display: table;
+  padding-top: 50px;
+}
+
+.driver.main-data form{
+  width: 100%;
+  display: table;
+  height: auto;
+
+}
+.driver.main-data form .form-group {
+  width: 36%;
+  position: relative;
+  float: left;
+  margin-right: 8px;
+}
+.driver.main-data form .checkbox {
+  clear: both;
+}
+</style>

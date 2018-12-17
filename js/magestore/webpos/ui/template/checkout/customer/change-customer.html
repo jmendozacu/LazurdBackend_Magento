@@ -1,0 +1,104 @@
+<!--
+  ~ Magestore
+  ~
+  ~ NOTICE OF LICENSE
+  ~
+  ~ This source file is subject to the Magestore.com license that is
+  ~ available through the world-wide-web at this URL:
+  ~ http://www.magestore.com/license-agreement.html
+  ~
+  ~ DISCLAIMER
+  ~
+  ~ Do not edit or add to this file if you wish to upgrade this extension to newer
+  ~ version in the future.
+  ~
+  ~ @category    Magestore
+  ~ @package     Magestore_Webpos
+  ~ @copyright   Copyright (c) 2016 Magestore (http://www.magestore.com/)
+  ~ @license     http://www.magestore.com/license-agreement.html
+  -->
+
+<div id="popup-change-customer" class="hide-popup popup-for-right" role="dialog">
+    <div class="wrap-change-customer">
+        <div class="title-header">
+            <a id="btn-add-new-customer" class="btn-cl-cfg-active" data-toggle="modal"
+               data-bind="click: showCreateCustomerForm, text: __('Create Customer')"
+               data-target="#form-add-customer"></a>
+
+        </div>
+        <!--<a href="#" data-toggle="modal" data-target="#form-add-customer" class="btn-use-guest"
+           data-bind="click: useGuestCustomer, text: 'Use Guest'"></a> -->
+           
+        <div class="form-inline" role="form" data-bind="visible: isSearchable">
+            <div class="form-group">
+                <span class="icon-iconPOS-search"></span>
+                <input type="search"
+                       data-bind="event: {change: filter}, attr: {placeholder: __('Search by name/ email/ phone')}"
+                       class="form-control" id="search-customer"/>
+                <a class="remove-text"><span class="icon-iconPOS-search"></span></a>
+            </div>
+            <button type="submit" class="btn btn-default" data-bind="text: __('Search')"></button>
+        </div>
+
+        <div style="position: relative">
+            <div id='customer-overlay'
+                 style="opacity: 1; background: rgba(255,255,255,0.8); position: absolute; display: none; z-index: 99999;
+                    top:0;left:0;right: 0;bottom: 0">
+                <span class="customer-loader"></span>
+            </div>
+            <ul class="list-customer-old" data-bind="foreach: items, event: {scroll: lazyload}">
+                <li data-bind="click: $parent.selectCustomer.bind($parent)">
+                    <!-- <a href="" title="Cutomer 1" data-bind="text: firstname + ' ' + lastname"></a> -->
+                    <a href="" title="Cutomer 1" data-bind="text: firstname "></a>
+                    <span class="phone-number" data-bind="text: telephone"></span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <a class="arrow"></a>
+</div>
+
+<div id="popup-change-customer-order" data-reset="false" class="hide-popup" role="dialog" style="width: 60%;top: 20%;position: absolute;left: 20%;/* opacity: 1; */background-color: #fff;z-index: 500;">
+    <div class="wrap-change-customer modal-footer">
+        <div class="title-header action-accept" style="text-align:center;">
+          <span style="line-height: 40px;color: #FFF;font-size: 18px;font-weight: bold;" data-bind="text: __('Last Order')"></span>
+        </div>
+
+        <div style="position: relative">
+           <table class="table table-hover">
+            <thead>
+              <tr>
+                <th style="text-align: left;" data-bind="text:__('Order #')"></th>
+                <th style="text-align: left;" data-bind="text: __('Purchased On')"></th>
+                <th style="text-align: right;" data-bind="text: __('Grand Total (Base)')"></th>
+                <th style="text-align: right;" data-bind="text: __('Customer Name')"></th>
+                <th style="text-align: center;" data-bind="text: __('Status')"></th>
+              </tr>
+            </thead>
+            <tbody data-bind="foreach: order_customer">
+              <tr>
+                <td style="text-align: left;" data-bind="text: increment_id"></td>
+                <td style="text-align: left;" class="time" data-bind="text: $parent.getFullDatetime(created_at)"></td>
+                <td class="price" data-bind="text: $parent.formatPriceWithoutSymbol(grand_total)"></td>
+                <!-- <td style="text-align: right;" data-bind="text: customer_firstname + ' ' + customer_lastname"></td> -->
+                <td style="text-align: right;" data-bind="text: customer_firstname "></td>
+                <td style="text-align: center;" data-bind="text: status"></td>
+              </tr>
+            </tbody>
+            <!-- ko ifnot: order_customer().length -->
+            <tbody>
+              <tr>
+                <td data-bind="text: __('No order')" style="line-height: 40px;text-align: center;" colspan="4"></td>
+              </tr>
+            </tbody>
+            <!-- /ko -->
+          </table>
+        </div>
+
+    </div>
+    <a class="arrow"></a>
+</div>
+
+
+<div class="wrap-backover hide-popup" data-bind="click: webposBackoverClicked"></div>

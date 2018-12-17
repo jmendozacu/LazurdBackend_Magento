@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<config>
+    <api2>
+        <resource_groups>
+            <cac_restapi_kitchen translate="title" module="api2">
+                <title>CAC kitchen</title>
+                <sort_order>10</sort_order>
+            </cac_restapi_kitchen>
+        </resource_groups>
+        <resources>
+            <cac_restapi_kitchen translate="title" module="api2">
+                <group>cac_restapi_kitchen</group>
+                <model>cac_restapi_kitchen/api2_kitchen</model>
+                <title>CAC kitchen</title>
+                <sort_order>10</sort_order>
+                <privileges>
+                    <admin>
+                        <create>1</create>
+                        <retrieve>1</retrieve>
+                        <update>1</update>
+                        <delete>1</delete>
+                    </admin>
+                </privileges>
+                <attributes translate="">
+                </attributes>
+                <routes>
+                    <route_cats>
+                        <route>/cac/kitchen/cats</route>
+                        <action_type>cats</action_type>
+                    </route_cats>
+                    <route_today>
+                        <route>/cac/kitchen/today</route>
+                        <action_type>today</action_type>
+                    </route_today>
+                    <route_products>
+                        <route>/cac/kitchen/products</route>
+                        <action_type>products</action_type>
+                    </route_products>
+                    <route_items>
+                        <route>/cac/kitchen/items</route>
+                        <action_type>items</action_type>
+                    </route_items>
+                    <route_ready>
+                        <route>/cac/kitchen/ready</route>
+                        <action_type>ready</action_type>
+                    </route_ready>
+                </routes>
+                <versions>1</versions>
+            </cac_restapi_kitchen>
+        </resources>
+    </api2>
+</config>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">	
+    <default translate="label" module="local">
+    	<reference name="root">
+		    <remove name="breadcrumbs" />
+		</reference>
+		<reference name="header">
+			<remove name="top.search" />
+			<remove name="top.links" />
+			<remove name="cart_sidebar" />
+			<remove name="top.menu" />
+			<remove name="store_switcher" />
+			<remove name="welcome" />
+			<remove name="cart_header" />	
+			<remove name="store_language"/>
+			<remove name="store_language_2" />
+			<remove name="currency" />
+			<remove name="currency_2" />
+			<remove name="catalog.topnav" />
+        </reference>
+    	<reference name="footer">
+    		<remove name="left.newsletter"/>
+	        <remove name="footer_list"/>
+	        <remove name="bottom.container"/>
+	        <remove name="footer_links"/>
+        </reference>
+    </default>
+</layout>

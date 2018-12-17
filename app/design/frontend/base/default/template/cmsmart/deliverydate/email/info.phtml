@@ -1,0 +1,10 @@
+<?php $_order = $this->getOrder() ?>
+<?php
+    $shipping_arrival_date = $_order->getShippingArrivalDate();
+    if ($shipping_arrival_date != '')
+        echo "Shipping Arrival Date : " . $shipping_arrival_date;
+    else
+        echo "Shipping Arrival Date : N/A";
+   if ($_order->getShippingArrivalComments()!='')
+    echo "<br/>Comment : ".$_order->getShippingArrivalComments();
+?>

@@ -1,0 +1,184 @@
+<!--
+  ~ Magestore
+  ~
+  ~ NOTICE OF LICENSE
+  ~
+  ~ This source file is subject to the Magestore.com license that is
+  ~ available through the world-wide-web at this URL:
+  ~ http://www.magestore.com/license-agreement.html
+  ~
+  ~ DISCLAIMER
+  ~
+  ~ Do not edit or add to this file if you wish to upgrade this extension to newer
+  ~ version in the future.
+  ~
+  ~ @category    Magestore
+  ~ @package     Magestore_Webpos
+  ~ @copyright   Copyright (c) 2016 Magestore (http://www.magestore.com/)
+  ~ @license     http://www.magestore.com/license-agreement.html
+  -->
+<form id="form-customer-add-address-checkout" class="modal fade customer-popup-form" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="popup-header">
+                <button type="button" class="close" data-dismiss="modal" data-bind="click: cancelAddress, text:__('Cancel')"></button>
+                <h4 class="modal-title" data-bind="text: addressTitle"></h4>
+                <button type="submit" class="btn-save link-cl-cfg" data-bind="click: saveAddress, text:__('Save')"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+
+                        <div class="col-sm-12">
+                            <div class="input-box">
+                                <label> Receiver Name
+                                    <em>*</em>
+                                </label>
+                                <input type="text" name="first-name" class="customer-fname" data-bind="value: firstName, attr: {placeholder: __('Receiver Name')}, event: {change: setFirstName}, event: {change: setReceiverName}"
+                                    data-validate="{'required-entry':true}" />
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="input-box">
+                                <label>Block</label>
+                                <input type="text" name="company" data-bind="value: company, attr: {placeholder: __('Block')}, event: {change: setCompany}"
+                                    class="customer-company" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="input-box">
+                                <label>Phone</label>
+                                <input type="text" name="phone" class="customer-phone" data-bind="value: phone, attr: {placeholder: __('Phone')}, event: {change: setPhone}"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="input-box">
+                                <label>Street</label>
+                                <input type="text" name="street1" class="customer-street" data-bind="value: street1, attr: {placeholder: __('Street')}, event: {change: setStreet1}"
+                                />
+                                <!--<em>*</em>-->
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="input-box">
+                                <label>Avenue</label>
+                                <input type="text" name="Street2" class="customer-street2" data-bind="value: street2, attr: {placeholder: __('Avenue')}, event: {change: setStreet2}"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="input-box">
+                                <label>Building</label>
+                                <input type="text" name="city" class="customer-street" data-bind="value: city, attr: {placeholder: __('Building')}, event: {change: setCity}"
+                                />
+                                <!--<em>*</em>-->
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="input-box">
+                                <label>Flat</label>
+                                <input type="text" name="zipcode" class="customer-street2" id="zip" data-bind="value: zipcode, attr: {placeholder: __('Flat')}, event: {change: setZipCode}"
+                                />
+                                <!--<em>*</em>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="input-box">
+                                <label>Select Country : </label>
+                                <select class="selectpicker" data-bind="options: countryArray,
+                                                value: country,
+                                                optionsText: function(item) {
+                                                    return item.label
+                                                },
+                                                optionsValue: function(item) {
+                                                    return item.value
+                                                },
+                                                optionsCaption: __('Please choose country...'), event: {change: setCountry}"
+                                    id="country_id" data-validate="{'required-entry':true}">
+                                </select>
+                                <!--<em>*</em>-->
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="input-box">
+                                <label>Select State / Area : </label>
+                                <select class="selectpicker" data-bind="value: region_id, event: {change: setRegionId}" id="region_id" name="region_id">
+                                    <option value="" data-bind="text:__('Please select state or province')"></option>
+                                </select>
+                                <!--<select class="selectpicker"
+                                        data-bind="options: region_id,
+                                                value: region_id,
+                                                optionsCaption: __('Please select state or province'), event: {change: setRegionId}"
+                                        id="region_id"
+                                        name="region_id"
+                                >
+                                </select>-->
+                                <input type="text" id="region" data-bind="value: region, attr: {placeholder: __('Area')}, event: {change: setRegion}" name="region"
+                                    class="selectpicker" />
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class='row'>
+                        <div class="col-sm-6">
+                            <div class="input-box">
+                                <label>Sender Name
+                                    <em></em>
+                                </label>
+                                <input type="text" name="last-name" data-bind="value: lastName, attr: {placeholder: __('Sender Name')}, event: {change: setLastName}"
+                                    class="customer-lname" />
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-6">
+                            <div class="input-box">
+                                <label>Is Gift</label>
+                                <!-- <select disabled="true" class="selectpicker" data-bind="value: is_gift, event: {change: setIsGift}" id="is_gift" name="is_gift">
+                                    
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                </select> -->
+                                <input disabled="true" type="text" name="is_gift" class="customer-street2" id="is_gift" data-bind="value: is_gift, event: {change: setIsGift}"
+                                />
+                                <!--<em>*</em>-->
+                            </div>
+                        </div>
+                        <div class="col-sm-6" style="visibility: collapse;">
+                                <div class="input-box">
+                                    <label>Receiver Name</label>
+                                    <input type="text" name="receiver_name" id="receiver_name" class="customer-receiver_name" data-bind="value: receiver_name, attr: {placeholder: __('Reciver Name')}, event: {change: setReceiverName}"
+                                    />
+                                    <!--<em>*</em>-->
+                                </div>
+                            </div>
+                    </div>
+                    <!--<div class="row">
+                        <div class="col-sm-6">
+                            <div class="input-box">
+                                <label>VAT</label>
+                                <input type="text"
+                                       data-bind="value: vatId, attr: {placeholder: __('VAT')}, event: {change: setVat}"
+                                       name="vat" class="customer-VAT"/>
+
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

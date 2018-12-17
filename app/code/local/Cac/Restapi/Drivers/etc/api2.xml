@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<config>
+    <api2>
+        <resource_groups>
+            <cac_restapi_drivers translate="title" module="api2">
+                <title>CAC drivers</title>
+                <sort_order>10</sort_order>
+            </cac_restapi_drivers>
+        </resource_groups>
+        <resources>
+            <cac_restapi_drivers translate="title" module="api2">
+                <group>cac_restapi_drivers</group>
+                <model>cac_restapi_drivers/api2_driver</model>
+                <title>CAC drivers</title>
+                <sort_order>10</sort_order>
+                <privileges>
+                    <admin>
+                        <create>1</create>
+                        <retrieve>1</retrieve>
+                        <update>1</update>
+                        <delete>1</delete>
+                    </admin>
+                </privileges>
+                <attributes translate="">
+                    
+                </attributes>
+
+                <routes>
+                    <route_collection>
+                        <route>/cac/driver/list</route>
+                        <action_type>list</action_type>
+                    </route_collection>
+                    <route_assign>
+                        <route>/cac/driver/order/assign/:driver_id</route>
+                        <action_type>assign</action_type>
+                    </route_assign>
+                    <route_orders>
+                        <route>/cac/driver/order/list/:driver_id/</route>
+                        <action_type>orders</action_type>
+                    </route_orders>
+                    <route_status>
+                        <route>/cac/driver/order/status/:driver_id/</route>
+                        <action_type>status</action_type>
+                    </route_status>
+
+
+
+                </routes>
+
+                <versions>1</versions>
+            </cac_restapi_drivers>
+        </resources>
+    </api2>
+</config>

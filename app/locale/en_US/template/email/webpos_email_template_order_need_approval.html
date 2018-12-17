@@ -1,0 +1,55 @@
+<!--@subject {{var store.getFrontendName()}}: New Order Need Approval #{{var order.increment_id}} @-->
+<!--@vars
+{"store url=\"\"":"Store Url",
+"var logo_url":"Email Logo Image Url",
+"var logo_alt":"Email Logo Image Alt",
+"htmlescape var=$order.getCustomerName()":"Customer Name",
+"var store.getFrontendName()":"Store Name",
+"var order.increment_id":"Order Id",
+"var order.getCreatedAtFormated('long')":"Order Created At (datetime)",
+"var payment_html":"Payment Details",
+"layout handle=\"sales_email_order_items\" order=$order":"Order Items Grid",
+"var order.getEmailCustomerNote()":"Email Order Note"}
+@-->
+<!--@styles
+@-->
+
+{{template config_path="design/email/header"}}
+{{inlinecss file="email-inline.css"}}
+
+<table cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <td>
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td class="email-heading">
+                        <h1>Have order need approval from {{var store.getFrontendName()}}.</h1>
+                        <p>This email is automatically sent when there is a order need approval from the Magestore Webpos extension.</p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td class="order-details">
+            <h3>Order ID <span class="no-link">#{{var order.increment_id}}</span></h3>
+            <p>Placed on {{var order.getCreatedAtFormated('long')}}</p>
+            {{if order.getWebposStaffId()}}
+            	<p>Order created by "{{var order.getWebposStaffName() }}" with extension Magestore Webpos!</p>
+            {{/if}}
+        </td>
+    </tr>
+    <tr class="order-information">
+        <td>
+            {{if order.getEmailCustomerNote()}}
+            <table cellspacing="0" cellpadding="0" class="message-container">
+                <tr>
+                    <td>{{var order.getEmailCustomerNote()}}</td>
+                </tr>
+            </table>
+            {{/if}}
+        </td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer"}}

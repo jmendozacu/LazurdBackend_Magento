@@ -1,0 +1,109 @@
+<script type="text/javascript">
+
+function updateField(button, fieldId)
+
+{
+
+    var selected = jQuery('#assign_driver_'+ fieldId +' option:selected').val();
+
+    new Ajax.Request("<?php echo Mage::helper('adminhtml')->getUrl('dirvermanagement/adminhtml_driver/updateDriver') ?>", {
+
+        method: 'post',
+
+        parameters: { id: fieldId, driver_id: selected },
+
+        onSuccess: function(response) {
+
+            sales_order_gridJsObject.doFilter();
+
+        }
+
+    });
+
+}
+
+
+
+function updateStatus(button, fieldId,status)
+
+{   if(!status){
+
+        var selected = jQuery('#assign_status_'+ fieldId +' option:selected').val();
+
+    }else{
+
+    var selected = jQuery(button).attr('rel');}
+
+    new Ajax.Request("<?php echo Mage::helper('adminhtml')->getUrl('dirvermanagement/adminhtml_driver/updateStatus') ?>", {
+
+        method: 'post',
+
+        parameters: { id: fieldId, assign_status: selected },
+
+        onSuccess: function(response) {
+
+            sales_order_gridJsObject.doFilter();
+
+        }
+
+
+
+    });
+
+}
+
+
+
+// //jQuery(document).ready(function($) {
+
+//     jQuery('.updatestatus').click(function(event) {
+
+//         event.preventDefault();
+
+//         select = jQuery(this).attr('rel');
+
+//         fieldId = jQuery(this).attr('key');
+
+//         updateNew(select, fieldId);
+
+//         return false;
+
+//     });
+
+// //});
+
+
+
+// function updateNew(button, fieldId)
+
+// {
+
+//     // event.preventDefault()
+
+//     var selected = jQuery(button).attr('rel');
+
+//     new Ajax.Request("<?php echo Mage::helper('adminhtml')->getUrl('dirvermanagement/adminhtml_driver/updateStatus') ?>", {
+
+//         method: 'post',
+
+//         parameters: { id: fieldId, assign_status: selected },
+
+//         onSuccess: function(response) {
+
+//             sales_order_gridJsObject.doFilter();
+
+//         }
+
+
+
+//     });
+
+// }
+
+window.setInterval(function(){
+
+   sales_order_gridJsObject.doFilter();
+
+}, 60000);
+
+</script>

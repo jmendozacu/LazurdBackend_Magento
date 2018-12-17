@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<config>
+    <api2>
+        <resource_groups>
+            <cac_restapi_sales translate="title" module="api2">
+                <title>CAC Sales</title>
+                <sort_order>10</sort_order>
+            </cac_restapi_sales>
+        </resource_groups>
+        <resources>
+            <cac_restapi_sales translate="title" module="api2">
+                <group>cac_restapi_sales</group>
+                <model>cac_restapi_sales/api2_sale</model>
+                <title>CAC Sales</title>
+                <sort_order>10</sort_order>
+                <privileges>
+                    <admin>
+                        <create>1</create>
+                        <retrieve>1</retrieve>
+                        <update>1</update>
+                        <delete>1</delete>
+                    </admin>
+                </privileges>
+                <attributes translate="">
+                </attributes>
+                <routes>
+                    <route_period>
+                        <route>/cac/sale/period/:year/:month/:day</route>
+                        <action_type>period</action_type>
+                    </route_period>
+                    <route_status>
+                        <route>/cac/sale/status/:year/:month/:day</route>
+                        <action_type>status</action_type>
+                    </route_status>
+                    <route_list>
+                        <route>/cac/sale/list</route>
+                        <action_type>list</action_type>
+                    </route_list>
+                    <route_list24h>
+                        <route>/cac/sale/list24h/:year/:month/:day</route>
+                        <action_type>list24h</action_type>
+                    </route_list24h>
+                    <route_kitchen>
+                        <route>/cac/sale/kitchen</route>
+                        <action_type>kitchen</action_type>
+                    </route_kitchen>
+                    <route_kitchen>
+                        <route>/cac/sale/kitchen_departments</route>
+                        <action_type>kitchen_departments</action_type>
+                    </route_kitchen>
+                </routes>
+                <versions>1</versions>
+            </cac_restapi_sales>
+        </resources>
+    </api2>
+</config>

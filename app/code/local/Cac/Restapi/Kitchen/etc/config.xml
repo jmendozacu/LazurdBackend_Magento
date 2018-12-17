@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Cac_Restapi_kitchen>
+            <version>0.1.0.0</version>
+        </Cac_Restapi_kitchen>
+    </modules>
+    <global>
+        <models>
+           <cac_restapi_kitchen>
+                <class>Cac_Restapi_Kitchen_Model</class>
+            </cac_restapi_kitchen>
+        </models>
+    </global>
+</config>

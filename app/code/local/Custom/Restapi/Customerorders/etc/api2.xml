@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<config>
+    <api2>
+        <resource_groups>
+            <catalog translate="title" module="api2">
+                <title>Catalog</title>
+                <sort_order>10</sort_order>
+            </catalog>
+        </resource_groups>
+        <resources>
+            <customerorders translate="title" module="api2">
+                <group>catalog</group>
+                <model>customerorders/api2_customerorder</model>
+                <title>Customers REST API</title>
+                <sort_order>10</sort_order>
+                <privileges>
+                    <admin>
+                        <retrieve>1</retrieve>
+                        <create>1</create>
+                    </admin>
+
+                </privileges>
+                <attributes translate="">
+                    
+                </attributes>
+
+                <routes>
+
+                    <route_entity>
+                        <route>/customer/:customer_id/orders</route>
+                        <action_type>entity</action_type>
+                    </route_entity>
+
+                </routes>
+
+                <versions>1</versions>
+            </customerorders>
+        </resources>
+    </api2>
+</config>

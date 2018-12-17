@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Custom_Restapi_Customerorders>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Custom_Restapi_Customerorders>
+    </modules>
+</config>

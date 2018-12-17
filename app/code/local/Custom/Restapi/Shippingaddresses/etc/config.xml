@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Custom_Restapi_Shippingaddresses>
+            <version>0.1.0.0</version>
+        </Custom_Restapi_Shippingaddresses>
+    </modules>
+    <global>
+        <models>
+           <shippingaddresses>
+                <class>Custom_Restapi_Shippingaddresses_Model</class>
+            </shippingaddresses>
+        </models>
+
+    </global>
+</config>

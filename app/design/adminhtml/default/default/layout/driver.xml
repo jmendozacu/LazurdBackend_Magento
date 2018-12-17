@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+<!--   <driver_adminhtml_driverbackend_index>
+	<reference name="content">
+	  <block type="driver/adminhtml_driverbackend" name="driverbackend" template="driver/driverbackend.phtml"/>
+	</reference>
+  </driver_adminhtml_driverbackend_index> -->
+  <driver_adminhtml_driver_index>
+	<reference name="content">
+	  <block type="driver/adminhtml_driver" name="driver" />
+	</reference>
+  </driver_adminhtml_driver_index>
+</layout>

@@ -1,0 +1,75 @@
+
+    <table>
+        <tr>
+            <td>From Time :</td>
+            <td>
+                <select name="hours">
+                    <?php
+                    for ($i = 0; $i < 25; $i++) {
+                    ?>
+                    <option value="<?php echo $i; ?>" ><?php echo $i; ?></option> 
+                     <?php
+                    }
+                    ?>
+                </select>Hours
+            </td>
+             <td>
+                <select name="minutes">
+                    <?php
+                    for ($i = 0; $i < 60; $i++) {
+                    ?>
+                    <option value="<?php echo $i; ?>" ><?php echo $i; ?></option> 
+                     <?php
+                    }
+                    ?>
+                </select>Minutes
+            </td>
+            <td>
+                 <select name="seconds">
+                    <?php
+                    for ($i = 0; $i < 60; $i++) {
+                    ?>
+                    <option value="<?php echo $i; ?>" ><?php echo $i; ?></option> 
+                     <?php
+                    }
+                    ?>
+                </select>Seconds
+            </td>
+        </tr>
+        <tr>
+            <td>To Time :</td>
+            <td>
+                <select name="hours1">
+                    <?php
+                    for ($i = 0; $i < 25; $i++) {
+                    ?>
+                    <option value="<?php echo $i; ?>" ><?php echo $i; ?></option> 
+                     <?php
+                    }
+                    ?>
+                </select>Hours
+            </td>
+             <td>
+                <select name="minutes1">
+                    <?php
+                    for ($i = 0; $i < 60; $i++) {
+                    ?>
+                    <option value="<?php echo $i; ?>" ><?php echo $i; ?></option> 
+                     <?php
+                    }
+                    ?>
+                </select>Minutes
+            </td>
+            <td>
+                 <select name="seconds1">
+                    <?php
+                    for ($i = 0; $i < 60; $i++) {
+                    ?>
+                    <option value="<?php echo $i; ?>" ><?php echo $i; ?></option> 
+                     <?php
+                    }
+                    ?>
+                </select>Seconds
+            </td>
+        </tr>
+    </table>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<layout>
+    <ordermanage_sales_order_index>
+    <!--<default>-->
+        <reference name="head">
+            <!-- <action method="addJs">
+                <script>Iksanika/ordermanage/jquery-1.9.1.min.js</script>
+            </action> -->
+            <action method="addJs">
+                <script>Iksanika/ordermanage/ordermanage.js</script>
+            </action>
+            <action method="addJs">
+                <script>Iksanika/ordermanage/ordergrid.js</script>
+            </action>
+
+            <action method="addJs">
+                <script>Iksanika/ordermanage/egsupplemental.js</script>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>Iksanika/ordermanage/resources/css/ordermanage.css</name>
+            </action>
+        </reference>
+      <reference name="js">
+          <block type="core/template" template="iksanika/ordermanage/inlineordermanage-driveredit.phtml" />
+      </reference>
+    <!--</default>-->
+    </ordermanage_sales_order_index>
+</layout>

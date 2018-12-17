@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Custom_Restapi_Customerlogin>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Custom_Restapi_Customerlogin>
+    </modules>
+</config>
