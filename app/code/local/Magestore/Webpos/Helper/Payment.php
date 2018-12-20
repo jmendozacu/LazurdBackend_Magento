@@ -93,6 +93,39 @@ class Magestore_Webpos_Helper_Payment extends Mage_Core_Helper_Abstract {
     public function isCp3PaymentEnabled() {
         return (Mage::getStoreConfig('payment/cp3forpos/active') && $this->isAllowOnWebPOS('cp3forpos'));
     }
+    // Added by Adnan Ebrahimi
+    public function getCp4MethodTitle() {
+        $title = Mage::getStoreConfig('payment/cp4forpos/title');
+        if ($title == '')
+            $title = $this->__("Web POS - Custom Payment 4");
+        return $title;
+    }
+
+    public function isCp4PaymentEnabled() {
+        return (Mage::getStoreConfig('payment/cp4forpos/active') && $this->isAllowOnWebPOS('cp4forpos'));
+    }
+
+    public function getCp5MethodTitle() {
+        $title = Mage::getStoreConfig('payment/cp5forpos/title');
+        if ($title == '')
+            $title = $this->__("Web POS - Custom Payment 5");
+        return $title;
+    }
+
+    public function isCp5PaymentEnabled() {
+        return (Mage::getStoreConfig('payment/cp5forpos/active') && $this->isAllowOnWebPOS('cp5forpos'));
+    }
+
+    public function getCp6MethodTitle() {
+        $title = Mage::getStoreConfig('payment/cp6forpos/title');
+        if ($title == '')
+            $title = $this->__("Web POS - Custom Payment 6");
+        return $title;
+    }
+
+    public function isCp6PaymentEnabled() {
+        return (Mage::getStoreConfig('payment/cp6forpos/active') && $this->isAllowOnWebPOS('cp6forpos'));
+    }
 
     public function getCodMethodTitle() {
         $title = Mage::getStoreConfig('payment/codforpos/title');
@@ -115,7 +148,7 @@ class Magestore_Webpos_Helper_Payment extends Mage_Core_Helper_Abstract {
     public function getMultipaymentActiveMethodTitle() {
         $payments = Mage::getStoreConfig('payment/multipaymentforpos/payments');
         if ($payments == '')
-            $payments = explode(',', 'cp1forpos,cp2forpos,cp3forpos,cashforpos,ccforpos,codforpos');
+            $payments = explode(',', 'cp1forpos,cp2forpos,cp3forpos,cp4forpos,cp5forpos,cp6forpos,cashforpos,ccforpos,codforpos');
         return explode(',', $payments);
     }
 
@@ -148,7 +181,7 @@ class Magestore_Webpos_Helper_Payment extends Mage_Core_Helper_Abstract {
     }
 
     public function isWebposPayment($code){
-        $payments = array('multipaymentforpos','cp1forpos','cp2forpos','cp3forpos','cashforpos','ccforpos','codforpos');
+        $payments = array('multipaymentforpos','cp1forpos','cp2forpos','cp3forpos','cp4forpos','cp5forpos','cp6forpos','cashforpos','ccforpos','codforpos');
         return in_array($code, $payments);
     }
 }

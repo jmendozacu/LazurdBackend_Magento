@@ -302,7 +302,7 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
                         | Mage_Payment_Model_Method_Abstract::CHECK_ZERO_TOTAL;
 
                     $orderCreateModel->setPaymentData($payment);
-                    Mage::log($payment, null, 'mylog377777.log');
+                    Mage::log($payment, null, 'Checkout-log.log');
                     $orderCreateModel->getQuote()->getPayment()->addData($payment);
                 }
             }

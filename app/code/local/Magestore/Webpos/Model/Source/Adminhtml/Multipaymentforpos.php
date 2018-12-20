@@ -23,6 +23,9 @@
  * Web POS by Magestore.com
  * Version 2.3
  * Updated by Daniel - 12/2015
+ *
+ * Update 2018-12-20 by Adnan:
+ * Changes: Add cp4, cp5, cp6 payment methods
  */
 
 class Magestore_Webpos_Model_Source_Adminhtml_Multipaymentforpos {
@@ -31,14 +34,17 @@ class Magestore_Webpos_Model_Source_Adminhtml_Multipaymentforpos {
     protected $_allowPaymentsWithLabel = array();
 
     public function __construct() {
-        $this->_allowPayments = array('cashforpos', 'ccforpos', 'codforpos', 'cp1forpos', 'cp2forpos', 'cp3forpos');
+        $this->_allowPayments = array('cashforpos', 'ccforpos', 'codforpos', 'cp1forpos', 'cp2forpos', 'cp3forpos','cp4forpos');
         $this->_allowPaymentsWithLabel = array(
             'cashforpos' => Mage::helper('webpos/payment')->getCashMethodTitle(),
             'ccforpos' => Mage::helper('webpos/payment')->getCcMethodTitle(),
             'codforpos' => Mage::helper('webpos/payment')->getCodMethodTitle(),
             'cp1forpos' => Mage::helper('webpos/payment')->getCp1MethodTitle(),
             'cp2forpos' => Mage::helper('webpos/payment')->getCp2MethodTitle(),
-            'cp3forpos' => Mage::helper('webpos/payment')->getCp3MethodTitle()
+            'cp3forpos' => Mage::helper('webpos/payment')->getCp3MethodTitle(),
+            'cp4forpos' => Mage::helper('webpos/payment')->getCp4MethodTitle(),
+            'cp5forpos' => Mage::helper('webpos/payment')->getCp5MethodTitle(),
+            'cp6forpos' => Mage::helper('webpos/payment')->getCp6MethodTitle(),
         );
     }
 
