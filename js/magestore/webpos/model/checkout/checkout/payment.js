@@ -41,7 +41,7 @@ define(
             },
             // Added by Ryan 08032018
             MULTIPLE_PAYMENT_CODE: 'multipaymentforpos',
-            WEBPOS_PAYMENTS: ['cashforpos', 'ccforpos', 'codforpos', 'cp1forpos', 'cp2forpos', 'cp3forpos'],
+            WEBPOS_PAYMENTS: ['cashforpos', 'ccforpos', 'codforpos', 'cp1forpos', 'cp2forpos', 'cp3forpos','cp4forpos','cp5forpos','cp6forpos'],
             items: ko.observableArray(DataManager.getData('payment')),
             selectedAmount: ko.observable(),
             selectedPayments: CheckoutModel.selectedPayments,

@@ -444,7 +444,7 @@
             </receipt>
             <payment>
                 <allowspecific_payment>1</allowspecific_payment>
-                <specificpayment>codforpos,cashforpos,ccforpos,cp1forpos,cp2forpos,cp3forpos</specificpayment>
+                <specificpayment>codforpos,cashforpos,ccforpos,cp1forpos,cp2forpos,cp3forpos,cp4forpos,cp5forpos,cp6forpos</specificpayment>
                 <defaultpayment>cashforpos</defaultpayment>
             </payment>
         </webpos>
@@ -453,7 +453,7 @@
                 <active>1</active>
                 <model>webpos/payment_method_multipayment</model>
                 <title>Multiple Payments</title>
-                <payments>cashforpos,ccforpos,codforpos,cp1forpos,cp2forpos,cp3forpos</payments>
+                <payments>cashforpos,ccforpos,codforpos,cp1forpos,cp2forpos,cp3forpos,cp4forpos,cp5forpos,cp6forpos</payments>
             </multipaymentforpos>
             <codforpos>
                 <active>1</active>
@@ -497,6 +497,27 @@
                 <use_reference_number>1</use_reference_number>
                 <pay_later>0</pay_later>
             </cp3forpos>
+            <cp4forpos>
+                <active>1</active>
+                <model>webpos/payment_method_custompayment4</model>
+                <title>Custom payment 4</title>
+                <use_reference_number>1</use_reference_number>
+                <pay_later>0</pay_later>
+            </cp4forpos>
+            <cp5forpos>
+                <active>1</active>
+                <model>webpos/payment_method_custompayment5</model>
+                <title>Custom payment 5</title>
+                <use_reference_number>1</use_reference_number>
+                <pay_later>0</pay_later>
+            </cp5forpos>
+            <cp6forpos>
+                <active>1</active>
+                <model>webpos/payment_method_custompayment6</model>
+                <title>Custom payment 6</title>
+                <use_reference_number>1</use_reference_number>
+                <pay_later>0</pay_later>
+            </cp6forpos>
         </payment>
         <product_search>
             <product_attribute>name,sku</product_attribute>

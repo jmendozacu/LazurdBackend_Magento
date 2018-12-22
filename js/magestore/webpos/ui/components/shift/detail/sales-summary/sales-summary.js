@@ -41,9 +41,9 @@ define(
                 this._super();
                 this._render();
             },
-            // Added by Ryan 08032018
+            // Added by Ryan 08032018 Updated by Adnan on  12202018
             generatePaymentCode: function (paymentMethod) {
-                var posPayment = ['cashforpos', 'codforpos', 'ccforpos', 'cp1forpos', 'cp2forpos', 'cp3forpos'];
+                var posPayment = ['cashforpos', 'codforpos', 'ccforpos', 'cp1forpos', 'cp2forpos', 'cp3forpos','cp4forpos','cp5forpos','cp6forpos'];
                 paymentMethod = ($.inArray(paymentMethod, posPayment) >= 0)?paymentMethod:'cp2forpos';
                 return "icon-iconPOS-payment-" + paymentMethod;
             }

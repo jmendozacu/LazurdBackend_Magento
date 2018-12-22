@@ -1,49 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b64c088e-445c-4af1-8df6-0cf3f23aa4fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/action/cart/reorder.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/action/cart/reorder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/action/customer/add/show-shipping-address-control.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/action/customer/add/show-shipping-address-control.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/action/customer/edit/delete-billing-preview.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/action/customer/edit/delete-billing-preview.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/action/customer/edit/delete-shipping-preview.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/action/customer/edit/delete-shipping-preview.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/action/customer/edit/save-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/action/customer/edit/save-form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/model/checkout/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/model/checkout/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/model/checkout/cart/items/item.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/model/checkout/cart/items/item.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/model/checkout/cart/totals.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/model/checkout/cart/totals.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/model/checkout/checkout.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/model/checkout/checkout.js" afterDir="false" />
+    <list default="true" id="675a0457-b9fe-45c9-bd06-8de839659577" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Block/Payment/Method/Cc/Info/Cp4.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Block/Payment/Method/Cc/Info/Cp5.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Block/Payment/Method/Cc/Info/Cp6.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Model/Payment/Method/Custompayment4.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Model/Payment/Method/Custompayment5.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Model/Payment/Method/Custompayment6.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Helper/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Helper/Payment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Model/Payment/Method/Multipayment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Model/Payment/Method/Multipayment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Model/Source/Adminhtml/Multipaymentforpos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Model/Source/Adminhtml/Multipaymentforpos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Model/Source/Adminhtml/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Model/Source/Adminhtml/Payment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Model/Source/Adminhtml/Paymentoffline.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Model/Source/Adminhtml/Paymentoffline.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/etc/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/etc/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/etc/system.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/etc/system.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/magestore/webpos/model/checkout/checkout/payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/model/checkout/checkout/payment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/model/checkout/checkout/shipping.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/model/checkout/checkout/shipping.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/model/collection/abstract.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/model/collection/abstract.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/model/customer/customer/new-customer.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/model/customer/customer/new-customer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/model/resource-model/magento-rest/checkout/abstract.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/model/resource-model/magento-rest/checkout/abstract.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/model/sales/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/model/sales/order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/model/sales/order/status.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/model/sales/order/status.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/ui/components/PosReports/sales/content.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/ui/components/PosReports/sales/content.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/ui/components/PosReports/sales/information.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/ui/components/PosReports/sales/information.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/ui/components/catalog/catalog-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/ui/components/catalog/catalog-list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/ui/components/catalog/product-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/ui/components/catalog/product-list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/ui/components/checkout/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/ui/components/checkout/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/ui/components/checkout/cart/discountpopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/ui/components/checkout/cart/discountpopup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/ui/components/checkout/checkout.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/ui/components/checkout/checkout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/ui/components/checkout/checkout/receipt.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/ui/components/checkout/checkout/receipt.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/ui/components/checkout/checkout/shipping.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/ui/components/checkout/checkout/shipping.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/ui/components/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/ui/components/menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/ui/components/onhold-order/detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/ui/components/onhold-order/detail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/ui/components/onhold-order/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/ui/components/onhold-order/list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/ui/components/order/detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/ui/components/order/detail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/ui/components/order/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/ui/components/order/list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/ui/components/order/print.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/ui/components/order/print.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/magestore/webpos/ui/components/shift/detail/sales-summary/sales-summary.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/ui/components/shift/detail/sales-summary/sales-summary.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/ui/template/PosReports/sales/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/ui/template/PosReports/sales/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/ui/template/PosReports/sales/information.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/ui/template/PosReports/sales/information.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/ui/template/checkout/checkout/payment_selected.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/ui/template/checkout/checkout/payment_selected.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/ui/template/checkout/checkout/receipt.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/ui/template/checkout/checkout/receipt.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/ui/template/checkout/success.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/ui/template/checkout/success.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/ui/template/order/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/ui/template/order/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/ui/template/order/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/ui/template/order/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/ui/template/order/print.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/ui/template/order/print.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/ui/template/order/view/payment/payment_selected.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/ui/template/order/view/payment/payment_selected.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/magestore/webpos/ui/template/order/view/top.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/magestore/webpos/ui/template/order/view/top.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skin/frontend/base/default/magestore/webpos/css/general.css" beforeDir="false" afterPath="$PROJECT_DIR$/skin/frontend/base/default/magestore/webpos/css/general.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skin/frontend/base/default/magestore/webpos/fonts/icomoon/icomoon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/skin/frontend/base/default/magestore/webpos/fonts/icomoon/icomoon.svg" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,78 +31,97 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/code/community/Potato/Pdf/etc/config.xml">
+        <entry file="file://$PROJECT_DIR$/js/magestore/webpos/model/checkout/checkout/payment.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1134">
-              <caret line="63" column="78" selection-start-line="63" selection-start-column="78" selection-end-line="63" selection-end-column="78" />
+            <state relative-caret-position="-5639">
+              <caret line="43" column="117" selection-start-line="43" selection-start-column="108" selection-end-line="43" selection-end-column="117" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/code/community/Potato/Pdf/Helper/Data.php">
+        <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Helper/Payment.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1836">
-              <caret line="102" selection-start-line="102" selection-end-line="102" />
+            <state relative-caret-position="550">
+              <caret line="117" selection-start-line="117" selection-end-line="117" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/code/community/Potato/Pdf/Model/Template.php">
+        <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Model/Source/Adminhtml/Payment.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
-              <caret line="48" selection-start-line="48" selection-end-line="48" />
+            <state relative-caret-position="-5">
+              <caret line="46" column="27" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/code/community/Potato/Pdf/controllers/Adminhtml/Sales/OrderController.php">
+        <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/etc/config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3132">
-              <caret line="174" column="29" selection-start-line="174" selection-start-column="27" selection-end-line="174" selection-end-column="29" />
+            <state relative-caret-position="1075">
+              <caret line="516" column="39" selection-start-line="516" selection-start-column="39" selection-end-line="516" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/Potato/App/HtmlToPdf.php">
+        <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Model/Source/Adminhtml/Paymentoffline.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="69" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="69" />
+            <state relative-caret-position="18">
+              <caret line="34" column="116" selection-start-line="34" selection-start-column="113" selection-end-line="34" selection-end-column="116" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/var/log/system.log">
-          <provider selected="true" editor-type-id="LogFileEditorProvider">
-            <state relative-caret-position="-17350" />
+        <entry file="file://$PROJECT_DIR$/js/magestore/webpos/ui/components/shift/detail/sales-summary/sales-summary.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="45" column="139" selection-start-line="45" selection-start-column="139" selection-end-line="45" selection-end-column="139" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/etc/system.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="271">
+              <caret line="1189" column="60" selection-start-line="1189" selection-start-column="60" selection-end-line="1189" selection-end-column="60" />
+              <folding>
+                <element signature="n#cp4forpos#0;n#groups#0;n#payment#0;n#sections#0;n#config#0;n#!!top" />
+                <element signature="n#cp5forpos#0;n#groups#0;n#payment#0;n#sections#0;n#config#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/skin/frontend/base/default/magestore/webpos/fonts/icomoon/icomoon.svg">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/skin/frontend/base/default/magestore/webpos/css/general.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="33" column="55" selection-start-line="33" selection-start-column="55" selection-end-line="33" selection-end-column="55" />
+            </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/var/log/exception.log">
-          <provider selected="true" editor-type-id="LogFileEditorProvider">
-            <state relative-caret-position="-4387" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/code/community/Potato/Pdf/Block/Adminhtml/Sales/Order/View/PrintBtn.php">
+        <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Mage.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8082">
-              <caret line="472" column="27" selection-start-line="472" selection-start-column="27" selection-end-line="472" selection-end-column="27" />
+            <state relative-caret-position="198">
+              <caret line="304" column="59" selection-start-line="304" selection-start-column="59" selection-end-line="304" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -134,33 +130,54 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>/sales_order/print</find>
-      <find>po_pdf_customer_order_print</find>
-      <find>potato_pdf_print/print/order/order_id</find>
-      <find>HtmltoPDF</find>
+      <find>cp3forpos</find>
+      <find>cp2forpos</find>
+      <find>/webpos/staff/login</find>
+      <find>backorders</find>
+      <find>cp5</find>
+      <find>cp6</find>
+      <find>cp4</find>
+      <find>cp4forpos</find>
+      <find>mylog377777</find>
     </findStrings>
+    <replaceStrings>
+      <replace>cp6</replace>
+      <replace>cp5</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/js/magestore/webpos" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/code/community/Potato/Pdf/Block/Adminhtml/Sales/Order/View/PrintBtn.php" />
+        <option value="$PROJECT_DIR$/js/magestore/webpos/login.js" />
+        <option value="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Model/Payment/Method/Custompayment4.php" />
+        <option value="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Model/Payment/Method/Custompayment5.php" />
+        <option value="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Model/Payment/Method/Custompayment6.php" />
+        <option value="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Model/Payment/Method/Multipayment.php" />
+        <option value="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Model/Source/Adminhtml/Multipaymentforpos.php" />
+        <option value="$PROJECT_DIR$/js/magestore/webpos/model/checkout/checkout/payment.js" />
+        <option value="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Model/Source/Adminhtml/Payment.php" />
+        <option value="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Model/Source/Adminhtml/Paymentoffline.php" />
+        <option value="$PROJECT_DIR$/js/magestore/webpos/ui/components/shift/detail/sales-summary/sales-summary.js" />
+        <option value="$PROJECT_DIR$/app/code/local/Magestore/Webpos/etc/system.xml" />
+        <option value="$PROJECT_DIR$/app/code/local/Magestore/Webpos/etc/config.xml" />
+        <option value="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Block/Payment/Method/Cc/Info/Cp6.php" />
+        <option value="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Block/Payment/Method/Cc/Info/Cp5.php" />
+        <option value="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Helper/Payment.php" />
+        <option value="$PROJECT_DIR$/skin/frontend/base/default/magestore/webpos/fonts/icomoon/icomoon.svg" />
+        <option value="$PROJECT_DIR$/skin/frontend/base/default/magestore/webpos/css/general.css" />
+        <option value="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php" />
       </list>
     </option>
   </component>
   <component name="JoomlaConfiguration" doNotAskAgain="true" />
-  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpServers">
-    <servers>
-      <server host="lazurd.localhost" id="9878aaf4-bea4-4f84-b960-3e5384ff08d3" name="lazurd" />
-    </servers>
+    <servers />
   </component>
-  <component name="PhpWebServerValidation" path_to_validation_script="D:\Projects\Narbashiyat\LAZURD\lazurd.localhost" selected_validation_type="LOCAL" web_path_to_validation_script="http://lazurd.localhost:80" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="568" />
-    <option name="y" value="90" />
+    <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -170,6 +187,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -177,19 +195,204 @@
               <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
               <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="local" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="local" type="462c0819:PsiDirectoryNode" />
+              <item name="Magestore" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="local" type="462c0819:PsiDirectoryNode" />
+              <item name="Magestore" type="462c0819:PsiDirectoryNode" />
+              <item name="Webpos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="local" type="462c0819:PsiDirectoryNode" />
+              <item name="Magestore" type="462c0819:PsiDirectoryNode" />
+              <item name="Webpos" type="462c0819:PsiDirectoryNode" />
+              <item name="Block" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="local" type="462c0819:PsiDirectoryNode" />
+              <item name="Magestore" type="462c0819:PsiDirectoryNode" />
+              <item name="Webpos" type="462c0819:PsiDirectoryNode" />
+              <item name="Block" type="462c0819:PsiDirectoryNode" />
+              <item name="Payment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="local" type="462c0819:PsiDirectoryNode" />
+              <item name="Magestore" type="462c0819:PsiDirectoryNode" />
+              <item name="Webpos" type="462c0819:PsiDirectoryNode" />
+              <item name="Block" type="462c0819:PsiDirectoryNode" />
+              <item name="Payment" type="462c0819:PsiDirectoryNode" />
+              <item name="Method" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="local" type="462c0819:PsiDirectoryNode" />
+              <item name="Magestore" type="462c0819:PsiDirectoryNode" />
+              <item name="Webpos" type="462c0819:PsiDirectoryNode" />
+              <item name="Block" type="462c0819:PsiDirectoryNode" />
+              <item name="Payment" type="462c0819:PsiDirectoryNode" />
+              <item name="Method" type="462c0819:PsiDirectoryNode" />
+              <item name="Cc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="local" type="462c0819:PsiDirectoryNode" />
+              <item name="Magestore" type="462c0819:PsiDirectoryNode" />
+              <item name="Webpos" type="462c0819:PsiDirectoryNode" />
+              <item name="Block" type="462c0819:PsiDirectoryNode" />
+              <item name="Payment" type="462c0819:PsiDirectoryNode" />
+              <item name="Method" type="462c0819:PsiDirectoryNode" />
+              <item name="Cc" type="462c0819:PsiDirectoryNode" />
+              <item name="Info" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="local" type="462c0819:PsiDirectoryNode" />
+              <item name="Magestore" type="462c0819:PsiDirectoryNode" />
+              <item name="Webpos" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="local" type="462c0819:PsiDirectoryNode" />
+              <item name="Magestore" type="462c0819:PsiDirectoryNode" />
+              <item name="Webpos" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="Payment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="local" type="462c0819:PsiDirectoryNode" />
+              <item name="Magestore" type="462c0819:PsiDirectoryNode" />
+              <item name="Webpos" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="Payment" type="462c0819:PsiDirectoryNode" />
+              <item name="Method" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="magestore" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="magestore" type="462c0819:PsiDirectoryNode" />
+              <item name="webpos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="magestore" type="462c0819:PsiDirectoryNode" />
+              <item name="webpos" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="magestore" type="462c0819:PsiDirectoryNode" />
+              <item name="webpos" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="checkout" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="magestore" type="462c0819:PsiDirectoryNode" />
+              <item name="webpos" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="checkout" type="462c0819:PsiDirectoryNode" />
+              <item name="checkout" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="magestore" type="462c0819:PsiDirectoryNode" />
+              <item name="webpos" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Cucumber" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\Narbashiyat\LAZURD\lazurd.localhost\app\code\local\Magestore\Webpos\Model\Payment\Method" />
+      <recent name="D:\Projects\Narbashiyat\LAZURD\lazurd.localhost\app\code\local\Magestore\Webpos\Block\Payment\Method\Cc\Info" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -203,62 +406,44 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="Lazurd Local" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="lazurd">
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="lazurd">
-      <method v="2" />
-    </configuration>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b64c088e-445c-4af1-8df6-0cf3f23aa4fb" name="Default Changelist" comment="" />
-      <created>1544680148877</created>
+      <changelist id="675a0457-b9fe-45c9-bd06-8de839659577" name="Default Changelist" comment="" />
+      <created>1545201351038</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1544680148877</updated>
-      <workItem from="1544680150127" duration="163000" />
-      <workItem from="1544680376344" duration="80000" />
-      <workItem from="1544680469699" duration="2390000" />
-      <workItem from="1544853257348" duration="598000" />
-      <workItem from="1544886479155" duration="139000" />
+      <updated>1545201351038</updated>
+      <workItem from="1545201353642" duration="7266000" />
+      <workItem from="1545284500557" duration="651000" />
+      <workItem from="1545288956761" duration="666000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3370000" />
-  </component>
-  <component name="TodoView" selected-index="1">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
+    <option name="totallyTimeSpent" value="12635000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26066098" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20522387" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49946696" weight="0.32936078" />
+      <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4989339" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49946696" weight="0.17551462" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32936078" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -268,133 +453,215 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$" />
-      <path value="$PROJECT_DIR$/js/magestore/webpos" />
-    </ignored-roots>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint type="php">
-          <url>file://$PROJECT_DIR$/app/code/community/Potato/Pdf/Helper/Data.php</url>
-          <line>61</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint type="php">
-          <url>file://$PROJECT_DIR$/app/code/community/Potato/Pdf/Helper/Data.php</url>
-          <line>14</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint type="php">
-          <url>file://$PROJECT_DIR$/app/code/community/Potato/Pdf/Helper/Data.php</url>
-          <line>132</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint type="php">
-          <url>file://$PROJECT_DIR$/app/code/community/Potato/Pdf/Helper/Data.php</url>
-          <line>143</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint type="php">
-          <url>file://$PROJECT_DIR$/app/code/community/Potato/Pdf/Helper/Data.php</url>
-          <line>151</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint type="php">
-          <url>file://$PROJECT_DIR$/app/code/community/Potato/Pdf/Helper/Data.php</url>
-          <line>160</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/lib/Potato/App/HtmlToPdf.php</url>
-          <line>24</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-    <watches-manager>
-      <configuration name="index.php">
-        <watch expression=" $_result" language="PHP" />
-      </configuration>
-    </watches-manager>
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="watch">
-      <expression>
-        <expression-string>$_result</expression-string>
-        <language-id>PHP</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>$e</expression-string>
-        <language-id>PHP</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Core/functions.php">
+    <entry file="file://$PROJECT_DIR$/app/design/frontend/base/default/layout/cataloginventory.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/community/Potato/Pdf/etc/config.xml">
+    <entry file="file://$PROJECT_DIR$/js/magestore/webpos/action/sales/order/payment/create.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1134">
-          <caret line="63" column="78" selection-start-line="63" selection-start-column="78" selection-end-line="63" selection-end-column="78" />
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/community/Potato/Pdf/Helper/Data.php">
+    <entry file="file://$PROJECT_DIR$/js/magestore/webpos/model/sales/order/payment.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1836">
-          <caret line="102" selection-start-line="102" selection-end-line="102" />
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/community/Potato/Pdf/Model/Template.php">
+    <entry file="file://$PROJECT_DIR$/js/magestore/webpos/action/checkout/select-customer-checkout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/community/Potato/Pdf/controllers/Adminhtml/Sales/OrderController.php">
+    <entry file="file://$PROJECT_DIR$/js/magestore/webpos/action/cart/checkout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3132">
-          <caret line="174" column="29" selection-start-line="174" selection-start-column="27" selection-end-line="174" selection-end-column="29" />
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/community/Potato/Pdf/Block/Adminhtml/Sales/Order/View/PrintBtn.php">
+    <entry file="file://$PROJECT_DIR$/js/magestore/webpos/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+        <state relative-caret-position="176">
+          <caret line="72" column="42" selection-start-line="72" selection-start-column="42" selection-end-line="72" selection-end-column="42" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Mage.php">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Block/Payment/Method/Cc/Info/Cp4.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8082">
-          <caret line="472" column="27" selection-start-line="472" selection-start-column="27" selection-end-line="472" selection-end-column="27" />
+        <state relative-caret-position="234">
+          <caret line="31" column="48" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Potato/App/HtmlToPdf.php">
+    <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Block/Payment/Method/Cc/Info/Cp5.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="69" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="69" />
+        <state relative-caret-position="162">
+          <caret line="27" column="58" lean-forward="true" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/var/log/system.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="-17350" />
+    <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Block/Payment/Method/Cc/Info/Cp6.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="39" column="37" lean-forward="true" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/var/log/exception.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="-4387" />
+    <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Model/Payment/Method/Custompayment4.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="31" column="58" selection-start-line="31" selection-start-column="58" selection-end-line="31" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Model/Payment/Method/Custompayment5.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="21" column="58" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Model/Payment/Method/Custompayment6.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="21" column="58" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Model/Payment/Method/Multipayment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Model/Source/Adminhtml/Multipaymentforpos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/magestore/webpos/model/checkout/checkout/payment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5639">
+          <caret line="43" column="117" selection-start-line="43" selection-start-column="108" selection-end-line="43" selection-end-column="117" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/etc/system.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="1189" column="60" selection-start-line="1189" selection-start-column="60" selection-end-line="1189" selection-end-column="60" />
+          <folding>
+            <element signature="n#cp4forpos#0;n#groups#0;n#payment#0;n#sections#0;n#config#0;n#!!top" />
+            <element signature="n#cp5forpos#0;n#groups#0;n#payment#0;n#sections#0;n#config#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/magestore/webpos/ui/components/shift/detail/sales-summary/sales-summary.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="45" column="139" selection-start-line="45" selection-start-column="139" selection-end-line="45" selection-end-column="139" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Model/Source/Adminhtml/Paymentoffline.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="34" column="116" selection-start-line="34" selection-start-column="113" selection-end-line="34" selection-end-column="116" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Model/Source/Adminhtml/Payment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5">
+          <caret line="46" column="27" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/etc/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1075">
+          <caret line="516" column="39" selection-start-line="516" selection-start-column="39" selection-end-line="516" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Helper/Payment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="117" selection-start-line="117" selection-end-line="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/skin/frontend/base/default/magestore/webpos/fonts/icomoon/icomoon.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/skin/frontend/base/default/magestore/webpos/css/general.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="33" column="55" selection-start-line="33" selection-start-column="55" selection-end-line="33" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="304" column="59" selection-start-line="304" selection-start-column="59" selection-end-line="304" selection-end-column="59" />
+        </state>
       </provider>
     </entry>
   </component>

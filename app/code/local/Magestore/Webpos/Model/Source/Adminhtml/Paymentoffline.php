@@ -32,7 +32,7 @@ class Magestore_Webpos_Model_Source_Adminhtml_Paymentoffline {
      * Magestore_Webpos_Model_Source_Adminhtml_Paymentoffline constructor.
      */
     public function __construct() {
-        $this->_allowPayments = array('cashforpos','codforpos','ccforpos','cp1forpos', 'cp2forpos', 'cp3forpos');
+        $this->_allowPayments = array('cashforpos','codforpos','ccforpos','cp1forpos', 'cp2forpos', 'cp3forpos','cp4forpos','cp5forpos','cp6forpos');
         $this->_paymentHelper = Mage::helper('webpos/payment');
     }
 

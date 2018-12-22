@@ -62,6 +62,16 @@ class Magestore_Webpos_Model_Payment_Method_Multipayment extends Mage_Payment_Mo
         if ($data->getData('cp3forpos_ref_no')) {
             $info->setData('cp3forpos_ref_no', $data->getData('cp3forpos_ref_no'));
         }
+        // Added by Adnan Ebrahimi 2018-12-18
+        if ($data->getData('cp4forpos_ref_no')) {
+            $info->setData('cp4forpos_ref_no', $data->getData('cp4forpos_ref_no'));
+        }
+        if ($data->getData('cp5forpos_ref_no')) {
+            $info->setData('cp5forpos_ref_no', $data->getData('cp5forpos_ref_no'));
+        }
+        if ($data->getData('cp6forpos_ref_no')) {
+            $info->setData('cp6forpos_ref_no', $data->getData('cp6forpos_ref_no'));
+        }
 
 
         return $this;
