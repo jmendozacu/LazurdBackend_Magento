@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Cac_Restapi_Salesperson>
+            <version>0.1.0.0</version>
+        </Cac_Restapi_Salesperson>
+    </modules>
+    <global>
+        <models>
+            <cac_restapi_salesperson>
+                <class>Cac_Restapi_Salesperson_Model</class>
+            </cac_restapi_salesperson>
+        </models>
+    </global>
+</config>

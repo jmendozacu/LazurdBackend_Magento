@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<config>
+    <api2>
+        <resource_groups>
+            <cac_restapi_salesperson translate="title" module="cac_restapi_salesperson">
+                <title>CAC Catalog</title>
+                <sort_order>10</sort_order>
+            </cac_restapi_salesperson>
+        </resource_groups>
+        <resources>
+            <cac_restapi_salesperson translate="title" module="cac_restapi_salesperson">
+                <group>cac_restapi_salesperson</group>
+                <model>cac_restapi_salesperson/api2_salesperson</model>
+                <title>CAC Sale Persons RestApi</title>
+                <sort_order>10</sort_order>
+                <privileges>
+                    <admin>
+                        <retrieve>1</retrieve>
+                    </admin>
+                </privileges>
+                <attributes translate="">
+                </attributes>
+                <routes>
+                    <route_salesperson>
+                        <route>/cac/salesperson/</route>
+                        <action_type>salesperson_list</action_type>
+                    </route_salesperson>
+                    <route_profile>
+                        <route>/cac/salesperson/:userid</route>
+                        <action_type>salesperson_profile</action_type>
+                    </route_profile>
+                    <route_orders>
+                        <route>/cac/salesperson/:userid/:from/:to</route>
+                        <action_type>salesperson_orders_history</action_type>
+                    </route_orders>
+
+                </routes>
+                <versions>1</versions>
+            </cac_restapi_salesperson>
+        </resources>
+    </api2>
+</config>
