@@ -55,170 +55,210 @@ class Magestore_Webpos_Model_Api2_Order_Rest_Admin_V1 extends Magestore_Webpos_M
      *
      *   <!--Edit by 17032018 Islam ELgarhy -->
      */
-    
+
     const OPERATION_DELETE_ORDER = 'delete';
 
 
-     /**
-      *  <!--Edit by 17032018 Islam ELgarhy -->
+    function deleteOrderCompletely(Mage_Sales_Model_Order $order)
+    {
+        /** @var Mage_Core_Model_Resource $coreResource */
+        $coreResource = Mage::getSingleton('core/resource');
+        $write = $coreResource->getConnection('core_write');
+        $orderId = $order->getId();
+
+        // delete
+        if ($order->getQuoteId()) {
+            $write->query("DELETE FROM `" . $coreResource->getTableName('sales_flat_quote') . "` WHERE `entity_id`=" . $order->getQuoteId());
+            $write->query("DELETE FROM `" . $coreResource->getTableName('sales_flat_quote_address') . "` WHERE `quote_id`=" . $order->getQuoteId());
+            $write->query("DELETE FROM `" . $coreResource->getTableName('sales_flat_quote_item') . "` WHERE `quote_id`=" . $order->getQuoteId());
+            $write->query("DELETE FROM `" . $coreResource->getTableName('sales_flat_quote_payment') . "` WHERE `quote_id`=" . $order->getQuoteId());
+        }
+
+        $order->delete();
+
+        $write->query("DELETE FROM `" . $coreResource->getTableName('sales_flat_order_grid') . "` WHERE `entity_id`=" . $orderId);
+        $write->query("DELETE FROM `" . $coreResource->getTableName('sales_flat_order_address') . "` WHERE `parent_id`=" . $orderId);
+        $write->query("DELETE FROM `" . $coreResource->getTableName('sales_flat_order_item') . "` WHERE `order_id`=" . $orderId);
+        $write->query("DELETE FROM `" . $coreResource->getTableName('sales_flat_order_payment') . "` WHERE `parent_id`=" . $orderId);
+        $write->query("DELETE FROM `" . $coreResource->getTableName('sales_payment_transaction') . "` WHERE `order_id`=" . $orderId);
+        $write->query("DELETE FROM `" . $coreResource->getTableName('sales_flat_order_status_history') . "` WHERE `parent_id`=" . $orderId);
+
+        $write->query("DELETE FROM `" . $coreResource->getTableName('sales_flat_invoice') . "` WHERE `order_id`=" . $orderId);
+        $write->query("DELETE FROM `" . $coreResource->getTableName('sales_flat_creditmemo') . "` WHERE `order_id`=" . $orderId);
+        $write->query("DELETE FROM `" . $coreResource->getTableName('sales_flat_shipment') . "` WHERE `order_id`=" . $orderId);
+        $write->query("DELETE FROM `" . $coreResource->getTableName('sales_order_tax') . "` WHERE `order_id`=" . $orderId);
+    }
+
+    /**
+     *  <!--Edit by 17032018 Islam ELgarhy -->
      * @return string
      */
     protected function deleteOrder()
-   {
-    $resource = Mage::getSingleton('core/resource');
-    $writeConnection = $resource->getConnection('core_write');
-    $requestData = $this->getRequest()->getBodyParams();
-    $orderId= $requestData['orderId'];
-    $orderQuoteId =$requestData['orderQuoteId'];
-    $order = Mage::getModel('sales/order')->load($orderId);
-    $order->cancel();
-    $order->save();
+    {
+        $resource = Mage::getSingleton('core/resource');
+        $readConnection = $resource->getConnection('core_read');
+        $requestData = $this->getRequest()->getBodyParams();
+        $orderId = $requestData['orderId'];
+        $orderQuoteId = $requestData['orderQuoteId'];
+        $order = Mage::getModel('sales/order')->load($orderId);
+//        Mage::getModel('sales/order')->loadByIncrementId($order['increment_id'])->delete();
+//    $order->cancel();
+//    $order->save();
     if (strpos($order['increment_id'], '-') !== false) {
         $orderIncrement_id = explode("-",$order['increment_id'])[0];
         $orderIncrement_index = explode("-",$order['increment_id'])[1] + 1;
         $incrementId = $orderIncrement_id . '-' . $orderIncrement_index;
     }
-    else
+    else {
+        $orderIncrement_id = $order['increment_id'];
         $incrementId = $order['increment_id'] . '-1';
 
-  
-    $condition = "UPDATE ".$prefix."sales_flat_quote SET reserved_order_id = '".$incrementId."' WHERE entity_id = '".$orderQuoteId."'";
-    $writeConnection->query( $condition);
+    }
+
+//        $prefix = Mage::getConfig()->getTablePrefix();
+
+//        $condition = "UPDATE " . $prefix . "sales_flat_quote SET reserved_order_id = '" . $incrementId . "' WHERE entity_id = '" . $orderQuoteId . "'";
+//        Mage::log("payment : " . json_encode($condition), null, 'temp.log');
+//        $readConnection->query($condition);
+        //abd CAC
+        deleteOrderCompletely($order);
+        $qur= "UPDATE eav_entity_store
+
+INNER JOIN eav_entity_type ON eav_entity_type.entity_type_id = eav_entity_store.entity_type_id
+
+SET eav_entity_store.increment_last_id='$orderIncrement_id'
+
+WHERE eav_entity_type.entity_type_code='order';";
+        $readConnection->query($qur);
     return 'Done';
 // wait Islam Elgarhy for Edit
-    Mage::register('isSecureArea', true);
-    $requestData = $this->getRequest()->getBodyParams();
-    $orderId= $requestData['orderId'];
-    $orderQuoteId =$requestData['orderQuoteId'];
-    $prefix = Mage::getConfig()->getTablePrefix();
-    $resource = Mage::getSingleton('core/resource');
-    $writeConnection = $resource->getConnection('core_write');
-    $connectionRead = Mage::getSingleton('core/resource')->getConnection('core_read');
-   
-   $order = Mage::getModel('sales/order')->load($orderId);
-   $incrementId = $order['increment_id'];
-   $quoteId = $order['quote_id'];
-   //return $order;
-/*Reset foreign checks to 1 Starts*/
-    $writeConnection->query("SET FOREIGN_KEY_CHECKS=0");
-/*Reset foreign checks to 1 Ends*/
+        Mage::register('isSecureArea', true);
+        $requestData = $this->getRequest()->getBodyParams();
+        $orderId = $requestData['orderId'];
+        $orderQuoteId = $requestData['orderQuoteId'];
+        $resource = Mage::getSingleton('core/resource');
 
-/*Delete Order Credit Memo related entries*/
-  if ($order->hasCreditmemos())
-  {
-    $creditmemos = Mage::getResourceModel('sales/order_creditmemo_collection')->setOrderFilter($orderId)->load();
-    foreach($creditmemos as $creditmemo){
-        $creditmemo = Mage::getModel('sales/order_creditmemo')->load($creditmemo->getId());
-        $creditmemo->delete();
-     }
- }
-/*Delete Order Credit Memo related entries Ends*/
+        $order = Mage::getModel('sales/order')->load($orderId);
+        $incrementId = $order['increment_id'];
+        $quoteId = $order['quote_id'];
+        //return $order;
+        /*Reset foreign checks to 1 Starts*/
+        $writeConnection->query("SET FOREIGN_KEY_CHECKS=0");
+        /*Reset foreign checks to 1 Ends*/
 
-/*Delete Order Invoice related entries*/
-    if ($order->hasInvoices())
-    {  
-        $invoices = Mage::getResourceModel('sales/order_invoice_collection')->setOrderFilter($orderId)->load();
-        foreach($invoices as $invoice){
-            $invoice = Mage::getModel('sales/order_invoice')->load($invoice->getId());
-            $invoice->delete();
+        /*Delete Order Credit Memo related entries*/
+        if ($order->hasCreditmemos()) {
+            $creditmemos = Mage::getResourceModel('sales/order_creditmemo_collection')->setOrderFilter($orderId)->load();
+            foreach ($creditmemos as $creditmemo) {
+                $creditmemo = Mage::getModel('sales/order_creditmemo')->load($creditmemo->getId());
+                $creditmemo->delete();
+            }
         }
-    }
-/*Delete Order Invoice related entries Ends*/
+        /*Delete Order Credit Memo related entries Ends*/
 
-/*Delete Order Quote related entries*/
-    
-   if ($order->hasShipments())
-   {
-        $shipments = Mage::getResourceModel('sales/order_shipment_collection')->setOrderFilter($orderId)->load();
-        foreach($shipments as $shipment){
-            $shipment = Mage::getModel('sales/order_shipment')->load($shipment->getId());
-            $shipment->delete();
+        /*Delete Order Invoice related entries*/
+        if ($order->hasInvoices()) {
+            $invoices = Mage::getResourceModel('sales/order_invoice_collection')->setOrderFilter($orderId)->load();
+            foreach ($invoices as $invoice) {
+                $invoice = Mage::getModel('sales/order_invoice')->load($invoice->getId());
+                $invoice->delete();
+            }
         }
-    }
-    
-    
-/*Delete sales flat order related entries Starts*/
+        /*Delete Order Invoice related entries Ends*/
 
-    $condition = "delete from ".$prefix."sales_flat_quote where entity_id = '".$quoteId."'";
-    $writeConnection->query($condition);
-       
-    $orderAllItems = $order->getAllItems();
-    foreach($orderAllItems as $item)
-    {
-        $quoteItemId = $item->getQuoteItemId();
-        
-        $condition = "delete from ".$prefix."sales_flat_quote_item where item_id = '".$quoteItemId."'";
+        /*Delete Order Quote related entries*/
+
+        if ($order->hasShipments()) {
+            $shipments = Mage::getResourceModel('sales/order_shipment_collection')->setOrderFilter($orderId)->load();
+            foreach ($shipments as $shipment) {
+                $shipment = Mage::getModel('sales/order_shipment')->load($shipment->getId());
+                $shipment->delete();
+            }
+        }
+
+
+        /*Delete sales flat order related entries Starts*/
+
+//        $condition = "delete from " . $prefix . "sales_flat_quote where entity_id = '" . $quoteId . "'";
+//        $writeConnection->query($condition);
+
+        $orderAllItems = $order->getAllItems();
+        foreach ($orderAllItems as $item) {
+            $quoteItemId = $item->getQuoteItemId();
+
+            $condition = "delete from " . $prefix . "sales_flat_quote_item where item_id = '" . $quoteItemId . "'";
+            $writeConnection->query($condition);
+
+            $condition = "delete from " . $prefix . "sales_flat_quote_item_option where item_id = '" . $quoteItemId . "'";
+            $writeConnection->query($condition);
+
+            $item->delete();
+        }
+
+        $addressIdReadQry = "select address_id from " . $prefix . "sales_flat_quote_address where quote_id='" . $quoteId . "' and address_type = 'billing' ";
+        $addressIdArr = $readConnection->fetchRow($addressIdReadQry);
+
+        $addressIdReadshipQry = "select address_id from " . $prefix . "sales_flat_quote_address where quote_id='" . $quoteId . "' and address_type = 'shipping' ";
+        $addressIdShippingArr = $readConnection->fetchRow($addressIdReadshipQry);
+
+        $addressIdReadQry1 = "select address_id from " . $prefix . "sales_flat_quote_address where quote_id='" . $quoteId . "'";
+        $quoteParentIdArr = $readConnection->fetchRow($addressIdReadQry1);
+
+        $condition = "delete from " . $prefix . "sales_flat_quote_address where quote_id = '" . $quoteId . "'";
         $writeConnection->query($condition);
-        
-        $condition = "delete from ".$prefix."sales_flat_quote_item_option where item_id = '".$quoteItemId."'";
+
+        $condition = "delete from " . $prefix . "sales_flat_quote_payment where quote_id = '" . $quoteId . "'";
         $writeConnection->query($condition);
-        
-        $item->delete();
-     }
 
-    $addressIdReadQry = "select address_id from ".$prefix."sales_flat_quote_address where quote_id='".$quoteId."' and address_type = 'billing' ";
-    $addressIdArr = $connectionRead->fetchRow($addressIdReadQry);
-    
-    $addressIdReadshipQry = "select address_id from ".$prefix."sales_flat_quote_address where quote_id='".$quoteId."' and address_type = 'shipping' ";
-    $addressIdShippingArr = $connectionRead->fetchRow($addressIdReadshipQry);
-    
-    $addressIdReadQry1 = "select address_id from ".$prefix."sales_flat_quote_address where quote_id='".$quoteId."'";
-    $quoteParentIdArr = $connectionRead->fetchRow($addressIdReadQry1);
-    
-    $condition = "delete from ".$prefix."sales_flat_quote_address where quote_id = '".$quoteId."'";
-    $writeConnection->query($condition);
-    
-    $condition = "delete from ".$prefix."sales_flat_quote_payment where quote_id = '".$quoteId."'";
-    $writeConnection->query( $condition);
+        $condition = "delete from " . $prefix . "sales_flat_order_status_history where parent_id = '" . $orderId . "'";
+        $writeConnection->query($condition);
 
-    $condition = "delete from ".$prefix."sales_flat_order_status_history where parent_id = '".$orderId."'";
-    $writeConnection->query( $condition);
-    
-    /*delete billing type*/
-    $condition = "delete from ".$prefix."sales_flat_quote_shipping_rate where address_id = '".$addressIdArr['address_id']."'";
-    $writeConnection->query($condition);
-    
-    /*delete shipping type*/
-    $condition = "delete from ".$prefix."sales_flat_quote_shipping_rate where address_id = '".$addressIdShippingArr['address_id']."'";
-    $writeConnection->query($condition);
-    
-    $condition = "delete from ".$prefix."sales_flat_quote_address_item where parent_item_id = '".$quoteParentIdArr['address_id']."'";
-    $writeConnection->query($condition);
-    
-    $condition = "delete from ".$prefix."sales_flat_order_grid where entity_id = '".$orderId."'";
-    $writeConnection->query( $condition);
+        /*delete billing type*/
+        $condition = "delete from " . $prefix . "sales_flat_quote_shipping_rate where address_id = '" . $addressIdArr['address_id'] . "'";
+        $writeConnection->query($condition);
 
-/*Delete Order Quote related entries Ends*/
-    
-    $condition = "delete from ".$prefix."sales_flat_order_address where parent_id = '".$orderId."'";
-    $writeConnection->query( $condition);
-    
-    $condition = "delete from ".$prefix."sales_flat_order_payment where parent_id = '".$orderId."'";
-    $writeConnection->query( $condition);
-    
-    $order->delete();
-    
-    /*Delete sales payment transactions entries Starts*/
-    //	   $condition = "delete from sales_payment_transaction where order_id = '".$orderId."'";
-    //	   $writeConnection->query('sales_payment_transaction', $condition);
-    /*Delete sales payment transactions related entries Edns*/
-    
-    /*Delete log related entries Starts*/
-    //	   $condition = "delete from log_quote where quote_id = '".$quoteId."'";
+        /*delete shipping type*/
+        $condition = "delete from " . $prefix . "sales_flat_quote_shipping_rate where address_id = '" . $addressIdShippingArr['address_id'] . "'";
+        $writeConnection->query($condition);
+
+        $condition = "delete from " . $prefix . "sales_flat_quote_address_item where parent_item_id = '" . $quoteParentIdArr['address_id'] . "'";
+        $writeConnection->query($condition);
+
+        $condition = "delete from " . $prefix . "sales_flat_order_grid where entity_id = '" . $orderId . "'";
+        $writeConnection->query($condition);
+
+        /*Delete Order Quote related entries Ends*/
+
+        $condition = "delete from " . $prefix . "sales_flat_order_address where parent_id = '" . $orderId . "'";
+        $writeConnection->query($condition);
+
+        $condition = "delete from " . $prefix . "sales_flat_order_payment where parent_id = '" . $orderId . "'";
+        $writeConnection->query($condition);
+
+        $order->delete();
+
+        /*Delete sales payment transactions entries Starts*/
+        //	   $condition = "delete from sales_payment_transaction where order_id = '".$orderId."'";
+        //	   $writeConnection->query('sales_payment_transaction', $condition);
+        /*Delete sales payment transactions related entries Edns*/
+
+        /*Delete log related entries Starts*/
+        //	   $condition = "delete from log_quote where quote_id = '".$quoteId."'";
         //   $writeConnection->query('log_quote', $condition);
-    /*Delete log related entries Edns*/
+        /*Delete log related entries Edns*/
 
-/*Reset foreign checks to 1 Starts*/
-    $writeConnection->query("SET FOREIGN_KEY_CHECKS=1");
-/*Reset foreign checks to 1 Ends*/
+        /*Reset foreign checks to 1 Starts*/
+        $writeConnection->query("SET FOREIGN_KEY_CHECKS=1");
+        /*Reset foreign checks to 1 Ends*/
 
-$condition = "UPDATE ".$prefix."sales_flat_quote SET reserved_order_id = '".$incrementId."' WHERE entity_id = '".$orderQuoteId."'";
-$writeConnection->query( $condition);
+//        $condition = "UPDATE " . $prefix . "sales_flat_quote SET reserved_order_id = '" . $incrementId . "' WHERE entity_id = '" . $orderQuoteId . "'";
+//        $writeConnection->query($condition);
 
-Mage::unregister('isSecureArea');
-return 'Done';
+        Mage::unregister('isSecureArea');
+        return 'Done';
 
-   }
+    }
+
     /**
      * @return array
      */
@@ -299,7 +339,7 @@ return 'Done';
                 $orderedProductIds[$i]['sku'] = $item->getData('sku');
                 $orderedProductIds[$i]['store_id'] = $item->getData('store_id');
                 $orderedProductIds[$i]['tax_invoiced'] = (float)$item->getData('tax_invoiced');
-                $orderedProductIds[$i]['tax_percent'] =(float) $item->getData('tax_percent');
+                $orderedProductIds[$i]['tax_percent'] = (float)$item->getData('tax_percent');
                 $orderedProductIds[$i]['updated_at'] = $item->getData('updated_at');
                 $orderedProductIds[$i]['order_id'] = $order->getId();
                 $i++;
@@ -328,7 +368,7 @@ return 'Done';
             $n++;
         }
 
-        if ($pageNumber <= ($numberOfOrder/$pageSize+1)) {
+        if ($pageNumber <= ($numberOfOrder / $pageSize + 1)) {
             $result['items'] = $ordersData;
             $result['total_count'] = $numberOfOrder;
         } else {
@@ -344,14 +384,15 @@ return 'Done';
      * @param array $params
      * @return object
      */
-    public function takePayment($params) {
+    public function takePayment($params)
+    {
         $result = array();
         $order_id = $params['order_id'];
         $order = Mage::getModel('sales/order')->load($order_id);
-        if(isset($params['payment'])) {
+        if (isset($params['payment'])) {
             $payment = $params['payment'];
             $methodData = $payment['method_data'];
-            foreach ($methodData as $item){
+            foreach ($methodData as $item) {
                 $orderPayment = Mage::getModel('webpos/payment_orderPayment');
                 $orderPayment->setData([
                     'order_id' => $order->getId(),
@@ -366,9 +407,9 @@ return 'Done';
                     'till_id' => $order->getWebposTillId()
                 ]);
 
-                $order->setBaseTotalPaid(round($order->getBaseTotalPaid() + $item['base_amount'],2));
+                $order->setBaseTotalPaid(round($order->getBaseTotalPaid() + $item['base_amount'], 2));
                 $order->setTotalPaid(round($order->getTotalPaid() + $item['amount'], 2));
-                $additional_information[] = $item['amount'].' : '.$item['title'];
+                $additional_information[] = $item['amount'] . ' : ' . $item['title'];
                 try {
                     $orderPayment->save();
                     $this->addTransaction($item, $order);
@@ -380,8 +421,8 @@ return 'Done';
 
         try {
             $order->getPayment()
-                ->setData('additional_information',$additional_information)
-                ->setData('method','multipaymentforpos')
+                ->setData('additional_information', $additional_information)
+                ->setData('method', 'multipaymentforpos')
                 ->save();
             $order->save();
         } catch (Exception $e) {
@@ -396,9 +437,10 @@ return 'Done';
      * @param object $item
      * @param object $order
      */
-    public function addTransaction($item, $order) {
+    public function addTransaction($item, $order)
+    {
         $config = Mage::helper('webpos/config');
-        if(($item[Magestore_Webpos_Api_Checkout_PaymentItemInterface::CODE] == Magestore_Webpos_Helper_Payment::CASH_PAYMENT_CODE) && $config->isEnableCashDrawer()){
+        if (($item[Magestore_Webpos_Api_Checkout_PaymentItemInterface::CODE] == Magestore_Webpos_Helper_Payment::CASH_PAYMENT_CODE) && $config->isEnableCashDrawer()) {
             $transaction = Mage::getModel('webpos/transaction');
             $transaction->setData([
                 Magestore_Webpos_Api_TransactionInterface::STAFF_ID => $order->getData('webpos_staff_id'),
@@ -418,12 +460,13 @@ return 'Done';
      * @param array $params
      * @return array
      */
-    public function cancelOrder($params) {
+    public function cancelOrder($params)
+    {
 
         $helper = Mage::helper('webpos/order');
         $result = array();
         $result['error'] = "DDD";
-        
+
         try {
             $orderId = '';
             $comment = '';
@@ -447,14 +490,15 @@ return 'Done';
         } catch (Exception $e) {
             $result['error'] = $e->getMessage();
         }
-       return $result;
+        return $result;
     }
 
     /**
      * @param array $params
      * @return array
      */
-    public function sendEmail($params) {
+    public function sendEmail($params)
+    {
         if (isset($params['email'])) {
             $email = $params['email'];
             $orderId = $params['id'];
@@ -462,7 +506,7 @@ return 'Done';
             if ($orderId) {
                 $order = Mage::getModel('sales/order')->load($orderId);
                 $order->setEmailSent(false);
-                if($email) {
+                if ($email) {
                     $order->setCustomerEmail($email);
                 }
                 $order->sendNewOrderEmail();
@@ -492,7 +536,8 @@ return 'Done';
      * @param array $params
      * @return array
      */
-    public function addComment($params) {
+    public function addComment($params)
+    {
         if (isset($params['id'])) {
             $helper = Mage::helper('webpos/order');
             $orderId = $params['id'];
