@@ -382,6 +382,70 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
                 $data['customer_phone_original'] = $customer->getData("phone");
                 //
                 $this->_assignQuoteToStaff(false);
+                // CAC
+                // ABD
+                $sessionModel = $this->_getCurrentStaffSession();
+                $sessionModel = ($sessionModel)?$sessionModel:$this->_getCurrentStaffSession();
+                Mage::log("payment : " . json_encode( $payment), null, 'mylog_staff_quote.log');
+                // ABD from CAC
+                // WRITE DOWN SALES STAFF HISTORY
+
+
+                // TODO: Create this table in DB
+//                CREATE TABLE `cac_staff_sales_history` (
+//                `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+//  `staff_id` int(11) unsigned NOT NULL DEFAULT '0',
+//  `order_increment_id` varchar(255) DEFAULT '0',
+//  `created_at` datetime DEFAULT  now(),
+//  `amount` float DEFAULT '0',
+//  `base_amount` float DEFAULT '0',
+//  `transaction_currency_code` varchar(255) NOT NULL,
+//  `base_currency_code` varchar(255) NOT NULL,
+//  `note` text,
+//  `is_manual` smallint(6) NOT NULL DEFAULT '1',
+//  `is_opening` smallint(6) NOT NULL DEFAULT '0',
+//  `status` smallint(6) NOT NULL DEFAULT '1',
+//  PRIMARY KEY (`id`)
+//) ENGINE=InnoDB AUTO_INCREMENT=2270 DEFAULT CHARSET=utf8;
+
+
+
+                $resource = Mage::getSingleton('core/resource');
+                $readConnection = $resource->getConnection('core_read');
+
+                for ($pc=0;$pc<sizeof($payment['method_data']);$pc++) {
+
+                    $insert_query = "INSERT INTO cac_staff_sales_history
+(
+`staff_id`,
+`order_increment_id`,
+`created_at`,
+`amount`,
+`base_amount`,
+`transaction_currency_code`,
+`base_currency_code`,
+`note`,
+`is_manual`,
+`is_opening`,
+`status`)
+VALUES
+(
+" . $order->getData('webpos_staff_id') . ",
+" . $order->getData('increment_id') . ",
+null,
+" . $payment['method_data'][$pc]['real_amount'] . ",
+" . $payment['method_data'][$pc]['base_real_amount'] . ",
+'" . $order->getData('order_currency_code') . "',
+'" . $order->getData('base_currency_code') . "',
+'',
+1,
+0,
+1)
+ON DUPLICATE KEY UPDATE amount=" . $order->getData('webpos_staff_id') . ",base_amount=" . $payment['method_data'][0]['base_real_amount'];
+                    $results = $readConnection->query($insert_query);
+                }
+                // END CAC
+
             } else {
                 $status = Magestore_Webpos_Api_ResponseInterface::STATUS_ERROR;
                 $message[] = $order;
