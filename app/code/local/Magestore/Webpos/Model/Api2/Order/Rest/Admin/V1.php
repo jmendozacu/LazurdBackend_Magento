@@ -66,13 +66,13 @@ class Magestore_Webpos_Model_Api2_Order_Rest_Admin_V1 extends Magestore_Webpos_M
         $write = $coreResource->getConnection('core_write');
         $orderId = $order->getId();
 
-        // delete
-        if ($order->getQuoteId()) {
-            $write->query("DELETE FROM `" . $coreResource->getTableName('sales_flat_quote') . "` WHERE `entity_id`=" . $order->getQuoteId());
-            $write->query("DELETE FROM `" . $coreResource->getTableName('sales_flat_quote_address') . "` WHERE `quote_id`=" . $order->getQuoteId());
-            $write->query("DELETE FROM `" . $coreResource->getTableName('sales_flat_quote_item') . "` WHERE `quote_id`=" . $order->getQuoteId());
-            $write->query("DELETE FROM `" . $coreResource->getTableName('sales_flat_quote_payment') . "` WHERE `quote_id`=" . $order->getQuoteId());
-        }
+        // ABD:DON'T DELTE QUOTE, WE NEED IT
+//        if ($order->getQuoteId()) {
+//            $write->query("DELETE FROM `" . $coreResource->getTableName('sales_flat_quote') . "` WHERE `entity_id`=" . $order->getQuoteId());
+//            $write->query("DELETE FROM `" . $coreResource->getTableName('sales_flat_quote_address') . "` WHERE `quote_id`=" . $order->getQuoteId());
+//            $write->query("DELETE FROM `" . $coreResource->getTableName('sales_flat_quote_item') . "` WHERE `quote_id`=" . $order->getQuoteId());
+//            $write->query("DELETE FROM `" . $coreResource->getTableName('sales_flat_quote_payment') . "` WHERE `quote_id`=" . $order->getQuoteId());
+//        }
 
         $order->delete();
 
@@ -95,42 +95,32 @@ class Magestore_Webpos_Model_Api2_Order_Rest_Admin_V1 extends Magestore_Webpos_M
      */
     protected function deleteOrder()
     {
+        Mage::register('isSecureArea', true);
         $resource = Mage::getSingleton('core/resource');
-        $readConnection = $resource->getConnection('core_read');
+        $writeConn = $resource->getConnection('core_write');
         $requestData = $this->getRequest()->getBodyParams();
         $orderId = $requestData['orderId'];
         $orderQuoteId = $requestData['orderQuoteId'];
         $order = Mage::getModel('sales/order')->load($orderId);
-//        Mage::getModel('sales/order')->loadByIncrementId($order['increment_id'])->delete();
 //    $order->cancel();
 //    $order->save();
-    if (strpos($order['increment_id'], '-') !== false) {
-        $orderIncrement_id = explode("-",$order['increment_id'])[0];
-        $orderIncrement_index = explode("-",$order['increment_id'])[1] + 1;
-        $incrementId = $orderIncrement_id . '-' . $orderIncrement_index;
-    }
-    else {
-        $orderIncrement_id = $order['increment_id'];
-        $incrementId = $order['increment_id'] . '-1';
+        if (strpos($order['increment_id'], '-') !== false) {
+            $orderIncrement_id = explode("-", $order['increment_id'])[0];
+            $orderIncrement_index = explode("-", $order['increment_id'])[1] + 1;
+            $incrementId = $orderIncrement_id . '-' . $orderIncrement_index;
+        } else {
+            $incrementId = $order['increment_id'] . '-1';
 
-    }
+        }
+        $this->deleteOrderCompletely($order);
 
-//        $prefix = Mage::getConfig()->getTablePrefix();
+        $prefix = Mage::getConfig()->getTablePrefix();
 
-//        $condition = "UPDATE " . $prefix . "sales_flat_quote SET reserved_order_id = '" . $incrementId . "' WHERE entity_id = '" . $orderQuoteId . "'";
-//        Mage::log("payment : " . json_encode($condition), null, 'temp.log');
-//        $readConnection->query($condition);
-        //abd CAC
-        deleteOrderCompletely($order);
-        $qur= "UPDATE eav_entity_store
+        $update_next_increment_id = "UPDATE " . $prefix . "sales_flat_quote SET reserved_order_id = '" . $incrementId . "' WHERE entity_id = '" . $orderQuoteId . "'";
+        $writeConn->query($update_next_increment_id);
 
-INNER JOIN eav_entity_type ON eav_entity_type.entity_type_id = eav_entity_store.entity_type_id
-
-SET eav_entity_store.increment_last_id='$orderIncrement_id'
-
-WHERE eav_entity_type.entity_type_code='order';";
-        $readConnection->query($qur);
-    return 'Done';
+        Mage::unregister('isSecureArea');
+        return 'Done';
 // wait Islam Elgarhy for Edit
         Mage::register('isSecureArea', true);
         $requestData = $this->getRequest()->getBodyParams();
@@ -186,54 +176,54 @@ WHERE eav_entity_type.entity_type_code='order';";
         foreach ($orderAllItems as $item) {
             $quoteItemId = $item->getQuoteItemId();
 
-            $condition = "delete from " . $prefix . "sales_flat_quote_item where item_id = '" . $quoteItemId . "'";
-            $writeConnection->query($condition);
+            $update_next_increment_id = "delete from " . $prefix . "sales_flat_quote_item where item_id = '" . $quoteItemId . "'";
+            $writeConnection->query($update_next_increment_id);
 
-            $condition = "delete from " . $prefix . "sales_flat_quote_item_option where item_id = '" . $quoteItemId . "'";
-            $writeConnection->query($condition);
+            $update_next_increment_id = "delete from " . $prefix . "sales_flat_quote_item_option where item_id = '" . $quoteItemId . "'";
+            $writeConnection->query($update_next_increment_id);
 
             $item->delete();
         }
 
         $addressIdReadQry = "select address_id from " . $prefix . "sales_flat_quote_address where quote_id='" . $quoteId . "' and address_type = 'billing' ";
-        $addressIdArr = $readConnection->fetchRow($addressIdReadQry);
+        $addressIdArr = $writeConn->fetchRow($addressIdReadQry);
 
         $addressIdReadshipQry = "select address_id from " . $prefix . "sales_flat_quote_address where quote_id='" . $quoteId . "' and address_type = 'shipping' ";
-        $addressIdShippingArr = $readConnection->fetchRow($addressIdReadshipQry);
+        $addressIdShippingArr = $writeConn->fetchRow($addressIdReadshipQry);
 
         $addressIdReadQry1 = "select address_id from " . $prefix . "sales_flat_quote_address where quote_id='" . $quoteId . "'";
-        $quoteParentIdArr = $readConnection->fetchRow($addressIdReadQry1);
+        $quoteParentIdArr = $writeConn->fetchRow($addressIdReadQry1);
 
-        $condition = "delete from " . $prefix . "sales_flat_quote_address where quote_id = '" . $quoteId . "'";
-        $writeConnection->query($condition);
+        $update_next_increment_id = "delete from " . $prefix . "sales_flat_quote_address where quote_id = '" . $quoteId . "'";
+        $writeConnection->query($update_next_increment_id);
 
-        $condition = "delete from " . $prefix . "sales_flat_quote_payment where quote_id = '" . $quoteId . "'";
-        $writeConnection->query($condition);
+        $update_next_increment_id = "delete from " . $prefix . "sales_flat_quote_payment where quote_id = '" . $quoteId . "'";
+        $writeConnection->query($update_next_increment_id);
 
-        $condition = "delete from " . $prefix . "sales_flat_order_status_history where parent_id = '" . $orderId . "'";
-        $writeConnection->query($condition);
+        $update_next_increment_id = "delete from " . $prefix . "sales_flat_order_status_history where parent_id = '" . $orderId . "'";
+        $writeConnection->query($update_next_increment_id);
 
         /*delete billing type*/
-        $condition = "delete from " . $prefix . "sales_flat_quote_shipping_rate where address_id = '" . $addressIdArr['address_id'] . "'";
-        $writeConnection->query($condition);
+        $update_next_increment_id = "delete from " . $prefix . "sales_flat_quote_shipping_rate where address_id = '" . $addressIdArr['address_id'] . "'";
+        $writeConnection->query($update_next_increment_id);
 
         /*delete shipping type*/
-        $condition = "delete from " . $prefix . "sales_flat_quote_shipping_rate where address_id = '" . $addressIdShippingArr['address_id'] . "'";
-        $writeConnection->query($condition);
+        $update_next_increment_id = "delete from " . $prefix . "sales_flat_quote_shipping_rate where address_id = '" . $addressIdShippingArr['address_id'] . "'";
+        $writeConnection->query($update_next_increment_id);
 
-        $condition = "delete from " . $prefix . "sales_flat_quote_address_item where parent_item_id = '" . $quoteParentIdArr['address_id'] . "'";
-        $writeConnection->query($condition);
+        $update_next_increment_id = "delete from " . $prefix . "sales_flat_quote_address_item where parent_item_id = '" . $quoteParentIdArr['address_id'] . "'";
+        $writeConnection->query($update_next_increment_id);
 
-        $condition = "delete from " . $prefix . "sales_flat_order_grid where entity_id = '" . $orderId . "'";
-        $writeConnection->query($condition);
+        $update_next_increment_id = "delete from " . $prefix . "sales_flat_order_grid where entity_id = '" . $orderId . "'";
+        $writeConnection->query($update_next_increment_id);
 
         /*Delete Order Quote related entries Ends*/
 
-        $condition = "delete from " . $prefix . "sales_flat_order_address where parent_id = '" . $orderId . "'";
-        $writeConnection->query($condition);
+        $update_next_increment_id = "delete from " . $prefix . "sales_flat_order_address where parent_id = '" . $orderId . "'";
+        $writeConnection->query($update_next_increment_id);
 
-        $condition = "delete from " . $prefix . "sales_flat_order_payment where parent_id = '" . $orderId . "'";
-        $writeConnection->query($condition);
+        $update_next_increment_id = "delete from " . $prefix . "sales_flat_order_payment where parent_id = '" . $orderId . "'";
+        $writeConnection->query($update_next_increment_id);
 
         $order->delete();
 
