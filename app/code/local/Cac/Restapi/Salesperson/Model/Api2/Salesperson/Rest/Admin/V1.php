@@ -47,7 +47,16 @@ class Cac_Restapi_Salesperson_Model_Api2_Salesperson_Rest_Admin_V1 extends Mage_
         $from = $this->getRequest()->getParam('from');
         $to = $this->getRequest()->getParam('to');
 
-        return $salesperson_id. " : " .$from. " - " .$to;
+        list($year_s,$month_s,$day_s)=explode("-",$from);
+        list($year_e,$month_e,$day_e)=explode("-",$to);
+
+        $resource = Mage::getSingleton('core/resource');
+        $readConnection = $resource->getConnection('core_read');
+        $query = "SELECT * from cac_staff_sales_history where created_at > '$year_s-$month_s-$day_s 0:0' and created_at < '$year_e-$month_e-$day_e 23:59'";
+        $results["items"] = $readConnection->fetchAll($query);
+
+
+        return $results;
 
     }
 

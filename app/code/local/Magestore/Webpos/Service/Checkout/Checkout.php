@@ -432,7 +432,7 @@ VALUES
 (
 " . $order->getData('webpos_staff_id') . ",
 '" . $order->getData('increment_id') . "',
-null,
+now(),
 " . $payment['method_data'][$pc]['real_amount'] . ",
 " . $payment['method_data'][$pc]['base_real_amount'] . ",
 '" . $order->getData('order_currency_code') . "',
