@@ -27,15 +27,15 @@ class Cac_Restapi_Salesperson_Model_Api2_Salesperson_Rest_Admin_V1 extends Mage_
         $salesperson_id = $this->getRequest()->getParam('userid');
 
         $apiUser=$this->getApiUser();
-        $user_object=Mage::getModel('admin/user')->load($salesperson_id);
-        $role_data = $user_object->getRole()->getData();
+        $user0 = Mage::getModel('webpos/user')->load($salesperson_id);
 
-        $user['user_id']=$apiUser->getUserId();
-        $user['role_id']=$role_data['role_id'];
-        $user['role_name']=$role_data['role_name'];
-        $profile=$user_object->getData();
-        $user['firstname']=$profile['firstname'];
-        $user['lastname']=$profile['lastname'];
+        $user['user_id']=$user0->getData('user_id');
+        $user['username']=$user0->getData('username');
+        $user['display_name']=$user0->getData('display_name');
+        $user['email']=$user0->getData('email');
+        $user['location_id']=$user0->getData('location_id');
+        $user['store_id']=$user0->getData('store_id');
+
         return $user;
     }
 
