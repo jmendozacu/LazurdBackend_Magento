@@ -431,7 +431,7 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
 VALUES
 (
 " . $order->getData('webpos_staff_id') . ",
-" . $order->getData('increment_id') . ",
+'" . $order->getData('increment_id') . "',
 null,
 " . $payment['method_data'][$pc]['real_amount'] . ",
 " . $payment['method_data'][$pc]['base_real_amount'] . ",
