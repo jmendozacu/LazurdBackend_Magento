@@ -95,7 +95,7 @@ define(
                 var totalsCode = [
                     { code: 'subtotal', title: 'Subtotal', required: true, sortOrder: 1, isPrice: true },
                     { code: 'shipping_amount', title: 'Shipping', required: true, sortOrder: 10, isPrice: true },
-                    //{code:'tax_amount',title:'Tax', required:true,  sortOrder: 20, isPrice: true},
+                    {code:'tax_amount',title:'Tax', required:true,  sortOrder: 20, isPrice: true},
                     { code: 'discount_amount', title: discountLabel, required: false, sortOrder: 30, isPrice: true },
                     { code: 'grand_total', title: 'Grand Total', required: true, sortOrder: 40, isPrice: true },
                     { code: 'total_paid', title: 'Total Paid', required: true, sortOrder: 50, isPrice: true },

@@ -88,7 +88,7 @@ define(
                 var totalsCode = [
                     { code: 'subtotal', title: 'Subtotal', required: true, sortOrder: 1, isPrice: true },
                     { code: 'shipping_amount', title: 'Shipping', required: true, sortOrder: 10, isPrice: true },
-                    //{code:'tax_amount',title:'Tax', required:true,  sortOrder: 20, isPrice: true},
+                    { code: 'tax_amount', title:'Tax', required: true, sortOrder: 20, isPrice: true },
                     { code: 'discount_amount', title: discountLabel, required: false, sortOrder: 30, isPrice: true },
                     { code: 'grand_total', title: 'Grand Total', required: true, sortOrder: 40, isPrice: true },
                     { code: 'total_paid', title: 'Total Paid', required: true, sortOrder: 50, isPrice: true },
@@ -381,7 +381,7 @@ define(
                 return (this.getOrderData('webpos_change') > 0) ? true : false;
             },
             getPayment: function () {
-                debugger;
+                //debugger;
                 var payments = [];
                 if (this.getOrderData('webpos_order_payments') && this.getOrderData('webpos_order_payments').length > 0) {
                     ko.utils.arrayForEach(this.getOrderData('webpos_order_payments'), function (payment) {
@@ -400,7 +400,7 @@ define(
                 var items = this.getOrderData('items');
                 var itemsOptions = this.getOrderData('items_info_buy');
                 var i = 0;
-                debugger;
+                //debugger;
                 if (typeof itemsOptions.items != 'undefined') {
                     if (itemsOptions.items.length > 0) {
                         ko.utils.arrayForEach(itemsOptions.items, function (itemsOption) {
