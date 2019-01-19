@@ -14,8 +14,21 @@ class Cac_Restapi_Salesperson_Model_Api2_Salesperson_Rest_Admin_V1 extends Mage_
      */
     public function getSalespersonList(){
 
+       $webPos_users_collection = Mage::getModel('webpos/user')->getCollection();
+       $webPos_users_collection= $webPos_users_collection->getData('items');
+       $webPos_users_collection = json_encode($webPos_users_collection);
+       $webpos_array =json_decode($webPos_users_collection);
 
-        return "List of Salesperson";
+       $webpos_users= [];
+
+        foreach ($webpos_array as $item) {
+            $user['user_id'] = $item->user_id;
+            $user['display_name'] = $item->display_name;
+            $webpos_users[] = $user;
+       }
+
+        $result = json_encode($webpos_users, JSON_UNESCAPED_SLASHES);
+        return $result;
 
     }
 
