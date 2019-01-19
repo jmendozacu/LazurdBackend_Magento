@@ -4,19 +4,19 @@ class Cac_Restapi_Salesperson_Model_Api2_Salesperson_Rest_Admin_V1 extends Mage_
 {
 
     const OPERATION_GET_SALESPERSON_LIST = "salesperson_list";
-    const OPERATION_GET_SALESPERSON_PROFILE = "salesperson_profile";
-    const OPERATION_GET_SALESPERSON_ORDERS_HISTORY = "salesperson_orders_history";
+    const OPERATION_GET_SALESPERSON_STATUS = "salesperson_status";
+    const OPERATION_GET_SALESPERSON_ORDERS_HISTORY = "salesperson_orders";
 
 
 
     /**
-     * /cac/salesperson/
+     * /cac/salesperson/list
      */
     public function getSalespersonList(){
 
        $webPos_users_collection = Mage::getModel('webpos/user')->getCollection();
-       $webPos_users_collection= $webPos_users_collection->getData('items');
-       $webPos_users_collection = json_encode($webPos_users_collection);
+       $webPos_users_collection = $webPos_users_collection->getData('items');
+    /*   $webPos_users_collection = json_encode($webPos_users_collection);
        $webpos_array =json_decode($webPos_users_collection);
 
        $webpos_users= [];
@@ -28,34 +28,31 @@ class Cac_Restapi_Salesperson_Model_Api2_Salesperson_Rest_Admin_V1 extends Mage_
        }
 
         $result = json_encode($webpos_users, JSON_UNESCAPED_SLASHES);
-        return $result;
+    */
+        return $webPos_users_collection;
 
     }
 
     /**
-     * /cac/salesperson/:userid
+     * /cac/salesperson/status/:userid/:from/:to
      */
-    public function getSalespersonProfile()
+    public function getSalespersonStatus()
     {
         $salesperson_id = $this->getRequest()->getParam('userid');
+        $from = $this->getRequest()->getParam('from');
+        $to = $this->getRequest()->getParam('to');
 
-        $apiUser=$this->getApiUser();
-        $user0 = Mage::getModel('webpos/user')->load($salesperson_id);
 
-        $user['user_id']=$user0->getData('user_id');
-        $user['username']=$user0->getData('username');
-        $user['display_name']=$user0->getData('display_name');
-        $user['email']=$user0->getData('email');
-        $user['location_id']=$user0->getData('location_id');
-        $user['store_id']=$user0->getData('store_id');
 
-        return $user;
+
+
+        return $salesperson_id;
     }
 
     /**
-     * /cac/salesperson/:userid/:from/:to
+     * /cac/salesperson/orders/:userid/:from/:to
      */
-    public function getSalespersonOrderHistory(){
+    public function getSalespersonOrders(){
         $salesperson_id = $this->getRequest()->getParam('userid');
         $from = $this->getRequest()->getParam('from');
         $to = $this->getRequest()->getParam('to');
@@ -84,13 +81,13 @@ class Cac_Restapi_Salesperson_Model_Api2_Salesperson_Rest_Admin_V1 extends Mage_
                 $this->_render($result);
                 $this->getResponse()->setHttpResponseCode(Mage_Api2_Model_Server::HTTP_OK);
                 break;
-            case self::OPERATION_GET_SALESPERSON_PROFILE:
-                $result = $this->getSalespersonProfile();
+            case self::OPERATION_GET_SALESPERSON_STATUS:
+                $result = $this->getSalespersonStatus();
                 $this->_render($result);
                 $this->getResponse()->setHttpResponseCode(Mage_Api2_Model_Server::HTTP_OK);
                 break;
             case self::OPERATION_GET_SALESPERSON_ORDERS_HISTORY:
-                $result = $this->getSalespersonOrderHistory();
+                $result = $this->getSalespersonOrders();
                 $this->_render($result);
                 $this->getResponse()->setHttpResponseCode(Mage_Api2_Model_Server::HTTP_OK);
                 break;
