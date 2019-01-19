@@ -22,16 +22,16 @@
                 </attributes>
                 <routes>
                     <route_salesperson>
-                        <route>/cac/salesperson/</route>
+                        <route>/cac/salesperson/list</route>
                         <action_type>salesperson_list</action_type>
                     </route_salesperson>
-                    <route_profile>
-                        <route>/cac/salesperson/:userid</route>
-                        <action_type>salesperson_profile</action_type>
-                    </route_profile>
+                    <route_status>
+                        <route>/cac/salesperson/status/:userid/:from/:to</route>
+                        <action_type>salesperson_status</action_type>
+                    </route_status>
                     <route_orders>
-                        <route>/cac/salesperson/:userid/:from/:to</route>
-                        <action_type>salesperson_orders_history</action_type>
+                        <route>/cac/salesperson/orders/:userid/:from/:to</route>
+                        <action_type>salesperson_orders</action_type>
                     </route_orders>
 
                 </routes>

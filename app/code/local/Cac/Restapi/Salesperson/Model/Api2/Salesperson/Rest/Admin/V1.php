@@ -46,7 +46,7 @@ class Cac_Restapi_Salesperson_Model_Api2_Salesperson_Rest_Admin_V1 extends Mage_
 
 
 
-        return $salesperson_id;
+        return [];
     }
 
     /**

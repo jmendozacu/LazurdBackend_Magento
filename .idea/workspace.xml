@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="675a0457-b9fe-45c9-bd06-8de839659577" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/Model/Api2/Salesperson/Rest/Admin/V1.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/etc/api2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/etc/config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
+    <list default="true" id="675a0457-b9fe-45c9-bd06-8de839659577" name="Default Changelist" comment="Tax in Print and Receipt js files in Magestore Webpos JS are now commented out So they are now visible in Print">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/code/local/Cac.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/etc/modules/CAC_RestAPI_All.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/etc/modules/CAC_RestAPI_All.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/Model/Api2/Salesperson/Rest/Admin/V1.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/Model/Api2/Salesperson/Rest/Admin/V1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/etc/api2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/etc/api2.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,75 +14,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/Model/Api2/Salesperson/Rest/Admin/V1.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="48" column="17" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
+              <folding>
+                <element signature="n#getSalespersonList#0;n#Cac_Restapi_Salesperson_Model_Api2_Salesperson_Rest_Admin_V1#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/etc/api2.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="28" column="47" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.htaccess">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="11" column="22" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/etc/modules/CAC_RestAPI_All.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
-              <folding>
-                <element signature="n#Cac_Restapi_Customers#0;n#modules#0;n#config#0;n#!!top" />
-                <element signature="n#Cac_Restapi_Sales#0;n#modules#0;n#config#0;n#!!top" />
-                <element signature="n#Cac_Restapi_Drivers#0;n#modules#0;n#config#0;n#!!top" />
-                <element signature="n#Cac_Restapi_Users#0;n#modules#0;n#config#0;n#!!top" />
-                <element signature="n#Cac_Restapi_Kitchen#0;n#modules#0;n#config#0;n#!!top" />
-                <element signature="n#Cac_Restapi_Salesperson#0;n#modules#0;n#config#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/etc/config.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Kitchen/etc/config.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Drivers/etc/config.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Customers/etc/config.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/Model/Api2/Salesperson/Rest/Admin/V1.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="22" column="23" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="23" />
-              <folding>
-                <element signature="n#getSalespersonList#0;n#Cac_Restapi_Salesperson_Model_Api2_Salesperson_Rest_Admin_V1#0;n#!!top" />
-                <element signature="n#getSalespersonProfile#0;n#Cac_Restapi_Salesperson_Model_Api2_Salesperson_Rest_Admin_V1#0;n#!!top" />
-                <element signature="n#getSalespersonOrderHistory#0;n#Cac_Restapi_Salesperson_Model_Api2_Salesperson_Rest_Admin_V1#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="195">
+              <caret line="24" column="52" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -111,6 +54,18 @@
       <find>Users</find>
       <find>multiviews</find>
       <find>salespersons</find>
+      <find>tax</find>
+      <find>totalsCode</find>
+      <find>print</find>
+      <find>code</find>
+      <find>Grand Due</find>
+      <find>Total Due</find>
+      <find>tax_amount</find>
+      <find>-------- **** --------</find>
+      <find>debugger;</find>
+      <find>printReceipt</find>
+      <find>getOrderTotals</find>
+      <find>title</find>
     </findStrings>
     <replaceStrings>
       <replace>cp6</replace>
@@ -119,6 +74,7 @@
       <replace>salespersons</replace>
       <replace>Salespersons</replace>
       <replace>salesperson</replace>
+      <replace>//debugger;</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -155,20 +111,26 @@
         <option value="$PROJECT_DIR$/app/code/local/Cac/Restapi/Salespersons/etc/config.xml" />
         <option value="$PROJECT_DIR$/app/code/local/Cac/Restapi/Salespersons/Model/Api2/Salespersons/Rest/Admin/V1.php" />
         <option value="$PROJECT_DIR$/app/code/local/Cac/Restapi/Salespersons/etc/api2.xml" />
-        <option value="$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/etc/api2.xml" />
-        <option value="$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/Model/Api2/Salesperson/Rest/Admin/V1.php" />
         <option value="$PROJECT_DIR$/app/etc/modules/CAC_RestAPI_All.xml" />
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/etc/config.xml" />
+        <option value="$PROJECT_DIR$/js/magestore/webpos/ui/components/order/print.js" />
+        <option value="$PROJECT_DIR$/js/magestore/webpos/ui/template/order/print.html" />
+        <option value="$PROJECT_DIR$/js/magestore/webpos/ui/components/checkout/checkout/receipt.js" />
+        <option value="$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/etc/api2.xml" />
+        <option value="$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/Model/Api2/Salesperson/Rest/Admin/V1.php" />
       </list>
     </option>
   </component>
   <component name="JoomlaConfiguration" doNotAskAgain="true" />
   <component name="PhpServers">
-    <servers />
+    <servers>
+      <server host="lazurd.localhost" id="495c22bb-cda7-49ef-929f-bc91c98b990c" name="Laz Server" />
+    </servers>
   </component>
+  <component name="PhpWebServerValidation" path_to_validation_script="D:\Projects\Narbashiyat\LAZURD\lazurd.localhost" selected_validation_type="LOCAL" web_path_to_validation_script="http://lazurd.localhost:80" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+    <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -178,7 +140,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -220,48 +181,6 @@
               <item name="local" type="462c0819:PsiDirectoryNode" />
               <item name="Cac" type="462c0819:PsiDirectoryNode" />
               <item name="Restapi" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-              <item name="Cac" type="462c0819:PsiDirectoryNode" />
-              <item name="Restapi" type="462c0819:PsiDirectoryNode" />
-              <item name="Customers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-              <item name="Cac" type="462c0819:PsiDirectoryNode" />
-              <item name="Restapi" type="462c0819:PsiDirectoryNode" />
-              <item name="Customers" type="462c0819:PsiDirectoryNode" />
-              <item name="etc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-              <item name="Cac" type="462c0819:PsiDirectoryNode" />
-              <item name="Restapi" type="462c0819:PsiDirectoryNode" />
-              <item name="Drivers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-              <item name="Cac" type="462c0819:PsiDirectoryNode" />
-              <item name="Restapi" type="462c0819:PsiDirectoryNode" />
-              <item name="Drivers" type="462c0819:PsiDirectoryNode" />
-              <item name="etc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
@@ -353,13 +272,15 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Cucumber" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -367,6 +288,11 @@
       <recent name="D:\Projects\Narbashiyat\LAZURD\lazurd.localhost\app\code\local\Magestore\Webpos\Model\Payment\Method" />
       <recent name="D:\Projects\Narbashiyat\LAZURD\lazurd.localhost\app\code\local\Magestore\Webpos\Block\Payment\Method\Cc\Info" />
     </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="format" />
+    </option>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -379,6 +305,11 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Lazurd" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="Laz Server">
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -394,7 +325,20 @@
       <workItem from="1545284500557" duration="651000" />
       <workItem from="1545288956761" duration="666000" />
       <workItem from="1545456099761" duration="2078000" />
-      <workItem from="1545627840819" duration="5495000" />
+      <workItem from="1545627840819" duration="6680000" />
+      <workItem from="1545838320671" duration="172000" />
+      <workItem from="1545838539591" duration="98000" />
+      <workItem from="1545838653367" duration="287000" />
+      <workItem from="1545918424986" duration="700000" />
+      <workItem from="1547100508716" duration="1321000" />
+      <workItem from="1547628117368" duration="194000" />
+      <workItem from="1547628350929" duration="39000" />
+      <workItem from="1547630268329" duration="4490000" />
+      <workItem from="1547653562655" duration="214000" />
+      <workItem from="1547700260710" duration="5666000" />
+      <workItem from="1547712770858" duration="1153000" />
+      <workItem from="1547885001435" duration="8208000" />
+      <workItem from="1547905157974" duration="2624000" />
     </task>
     <task id="LOCAL-00001" summary="Update 3 new Payment Method for Aramex, Spring and Transfer for KSA">
       <created>1545294959292</created>
@@ -403,31 +347,70 @@
       <option name="project" value="LOCAL" />
       <updated>1545294959292</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Salesperson has been created in app/code/local/Cac/Salespeson">
+      <created>1545636109256</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1545636109256</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Tax in Print and Receipt js files in Magestore Webpos JS are now commented out So they are now visible in Print">
+      <created>1547708694645</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1547708694645</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Update Sales Person List API (have Bug yet)">
+      <created>1547895150180</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1547895150180</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Update API routes">
+      <created>1547907693887</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1547907693887</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21468000" />
+    <option name="totallyTimeSpent" value="47819000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20948827" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21801706" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.23188406" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49733475" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49946696" weight="0.25785482" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32936078" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" weight="0.80931747" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.8251599" visible="true" weight="0.43924192" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4989339" weight="0.32936078" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" weight="0.32100108" />
+      <window_info anchor="bottom" id="REST Client" order="12" sideWeight="0.49946696" weight="0.33044422" />
+      <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -479,48 +462,21 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update 3 new Payment Method for Aramex, Spring and Transfer for KSA" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update 3 new Payment Method for Aramex, Spring and Transfer for KSA" />
+    <MESSAGE value="Salesperson has been created in app/code/local/Cac/Salespeson" />
+    <MESSAGE value="Tax in Print and Receipt js files in Magestore Webpos JS are now commented out So they are now visible in Print" />
+    <MESSAGE value="Update Sales Person List API (have Bug yet)" />
+    <MESSAGE value="Update API routes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update API routes" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="api.php">
+        <watch expression="$webpos_array" />
+        <watch expression=" $webpos_users" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/design/frontend/base/default/layout/cataloginventory.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/magestore/webpos/action/sales/order/payment/create.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/magestore/webpos/model/sales/order/payment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/magestore/webpos/action/checkout/select-customer-checkout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/magestore/webpos/action/cart/checkout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/magestore/webpos/login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -652,13 +608,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5436">
-          <caret line="302" selection-start-line="302" selection-end-line="302" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/skin/frontend/base/default/magestore/webpos/fonts/icomoon/icomoon.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -697,13 +646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Kitchen/Model/Api2/Kitchen/Rest/Admin/V1.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -722,38 +664,181 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/etc/api2.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" column="47" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/Model/Api2/Salesperson/Rest/Admin/V1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="22" column="23" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="23" />
-          <folding>
-            <element signature="n#getSalespersonList#0;n#Cac_Restapi_Salesperson_Model_Api2_Salesperson_Rest_Admin_V1#0;n#!!top" />
-            <element signature="n#getSalespersonProfile#0;n#Cac_Restapi_Salesperson_Model_Api2_Salesperson_Rest_Admin_V1#0;n#!!top" />
-            <element signature="n#getSalespersonOrderHistory#0;n#Cac_Restapi_Salesperson_Model_Api2_Salesperson_Rest_Admin_V1#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Kitchen/etc/config.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Drivers/etc/config.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Customers/etc/config.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Kitchen/etc/config.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/skin_last/frontend/rwd/theme692/js/jquery-ui.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="14764" column="11" selection-start-line="14764" selection-start-column="11" selection-end-line="14764" selection-end-column="11" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Adminhtml/controllers/Api/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="141" column="27" selection-start-line="141" selection-start-column="27" selection-end-line="141" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Adminhtml/Block/Report/Grid/Column/Renderer/Blanknumber.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/etc/config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/magestore/webpos/ui/components/order/list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5859">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Model/Api2/Order/Rest/Admin/V1.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="365" selection-start-line="365" selection-end-line="365" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/po_pdf/adminhtml/wysiwyg/tiny_mce/plugins/pdf_preview/editor_plugin_src.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-360" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/community/Potato/Pdf/Block/Sales/Print/Invoice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/magestore/webpos/ui/template/order/invoice.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="82" column="45" selection-start-line="82" selection-start-column="45" selection-end-line="82" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/community/Potato/Pdf/controllers/PrintController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/magestore/webpos/model/collection/abstract.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/magestore/webpos/ui/template/order/print.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="437" column="86" selection-start-line="437" selection-start-column="86" selection-end-line="437" selection-end-column="86" />
+          <folding>
+            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/magestore/webpos/ui/template/checkout/checkout/receipt.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="429" column="50" selection-start-line="429" selection-start-column="50" selection-end-line="429" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/magestore/webpos/ui/components/checkout/checkout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1620">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/magestore/webpos/ui/components/checkout/checkout/receipt.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="97" column="20" selection-start-line="97" selection-start-column="20" selection-end-line="97" selection-end-column="20" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/magestore/webpos/ui/components/order/print.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="474" column="26" selection-start-line="474" selection-start-column="12" selection-end-line="474" selection-end-column="26" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/etc/api2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="24" column="52" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/Model/Api2/Salesperson/Rest/Admin/V1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="48" column="17" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
+          <folding>
+            <element signature="n#getSalespersonList#0;n#Cac_Restapi_Salesperson_Model_Api2_Salesperson_Rest_Admin_V1#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
