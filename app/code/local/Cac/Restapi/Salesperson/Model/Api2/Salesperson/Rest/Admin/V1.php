@@ -42,11 +42,23 @@ class Cac_Restapi_Salesperson_Model_Api2_Salesperson_Rest_Admin_V1 extends Mage_
         $from = $this->getRequest()->getParam('from');
         $to = $this->getRequest()->getParam('to');
 
+        list($year_s,$month_s,$day_s)=explode("-",$from);
+        list($year_e,$month_e,$day_e)=explode("-",$to);
+
+
+        $resource = Mage::getSingleton('core/resource');
+        $readConnection = $resource->getConnection('core_read');
+        $date_range="created_at > '$year_s-$month_s-$day_s 0:0' and created_at < '$year_e-$month_e-$day_e 23:59'";
+        $query="select sum(amount) as sales_by_person,count(amount) as total_sales_by_person,".
+            "(select sum(amount) as sales_by_person from cac_staff_sales_history where $date_range) as total_sales,".
+            "(select count(amount) as sales_by_person from cac_staff_sales_history where $date_range) as total_number_of_orders ".
+            " from cac_staff_sales_history ".
+            " where $date_range and staff_id=$salesperson_id";
+        $results = $readConnection->fetchAll($query);
 
 
 
-
-        return [];
+        return $results[0];
     }
 
     /**
@@ -62,7 +74,7 @@ class Cac_Restapi_Salesperson_Model_Api2_Salesperson_Rest_Admin_V1 extends Mage_
 
         $resource = Mage::getSingleton('core/resource');
         $readConnection = $resource->getConnection('core_read');
-        $query = "SELECT * from cac_staff_sales_history where created_at > '$year_s-$month_s-$day_s 0:0' and created_at < '$year_e-$month_e-$day_e 23:59'";
+        $query = "SELECT * from cac_staff_sales_history where staff_id=$salesperson_id and created_at > '$year_s-$month_s-$day_s 0:0' and created_at < '$year_e-$month_e-$day_e 23:59'";
         $results["items"] = $readConnection->fetchAll($query);
 
 
