@@ -55,7 +55,10 @@ class Cac_Restapi_Salesperson_Model_Api2_Salesperson_Rest_Admin_V1 extends Mage_
             " from cac_staff_sales_history ".
             " where $date_range and staff_id=$salesperson_id";
         $results = $readConnection->fetchAll($query);
-
+        $results[0]["sales_by_person"]=(float)$results[0]["sales_by_person"];
+        $results[0]["total_sales_by_person"]=(float)$results[0]["total_sales_by_person"];
+        $results[0]["total_sales"]=(float)$results[0]["total_sales"];
+        $results[0]["total_number_of_orders"]=(float)$results[0]["total_number_of_orders"];
 
 
         return $results[0];
