@@ -2,7 +2,8 @@
 
 class Potato_App_HtmlToPdf
 {
-    const API_URL = 'http://pdf.app.potatocommerce.com:8080/htmltopdf';
+    //const API_URL = 'http://pdf.app.potatocommerce.com:8080/htmltopdf';
+    const API_URL = 'http://pdf.app.potatocommerce.com/htmltopdf';
 
     static function process($options)
     {

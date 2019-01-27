@@ -303,7 +303,9 @@ div.bottom div {
 		  <strong> <?php echo $_order->getCreatedAtdate();  ?> </strong><br />
         Payment Method:
           <strong><?php echo $_order->getPayment()->getMethodInstance()->getTitle();  ?></strong><br />
-        Delivery per:
+            Delivery Date:
+            <strong> <?php echo $_order->getData('shipping_arrival_date');  ?> </strong><br />
+            Delivery per:
           <strong><?php echo $_order->getShippingDescription()  ?></strong><br />
         </p>	
     </tr>
