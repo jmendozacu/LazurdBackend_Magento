@@ -34,6 +34,13 @@ class Cac_Restapi_Customers_Model_Api2_Customer_Rest_Admin_V1 extends Mage_Api2_
         error_log("going to write orders");
 
 
+
+
+
+
+
+
+
         $customer_orders = [];
 
 
@@ -47,7 +54,10 @@ class Cac_Restapi_Customers_Model_Api2_Customer_Rest_Admin_V1 extends Mage_Api2_
             $data_array[$value->getUserId()] = $value->getUsername();
         }
 
+        $_shippingAdd=null;
         foreach ($orders as $order) {
+            if (is_null($_shippingAdd))
+                $_shippingAdd= $order->getShippingAddress();
             $this_order = [];
             $items = [];
             foreach ($order->getItemsCollection() as $item) {
@@ -132,6 +142,20 @@ class Cac_Restapi_Customers_Model_Api2_Customer_Rest_Admin_V1 extends Mage_Api2_
          * Execute the query and store the results in $results
          */
         $results = $readConnection->fetchAll($query)[0];
+
+
+
+        if (!is_null($_shippingAdd)) {
+            $block = $_shippingAdd->getCompany();
+            $street = $_shippingAdd->getStreet()[0];
+            $building = $_shippingAdd->getCity();
+            $country = Mage::getModel('directory/country')->loadByCode($_shippingAdd->getCountryId())->getName();
+            $area = $_shippingAdd->getRegion();
+
+            $results["FullAddress"] = "Block:$block, Street:$street, Building:$building, Area:$area, Country:$country";
+        }
+        else
+            $results["FullAddress"]="";
 
         $results["orders"] = $customer_orders;
 

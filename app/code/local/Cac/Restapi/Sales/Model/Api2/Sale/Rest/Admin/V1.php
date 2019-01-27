@@ -214,7 +214,6 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
                     $country = Mage::getModel('directory/country')->loadByCode($_shippingAdd->getCountryId())->getName();
                     $area=$_shippingAdd->getRegion();
 
-
                     $delivery["Address"] = "Block:$block, Street:$street, Building:$building, Area:$area, Country:$country";
                 }
                 $delivery["DeliveryDate"] = $order->getData('shipping_delivery_date');
