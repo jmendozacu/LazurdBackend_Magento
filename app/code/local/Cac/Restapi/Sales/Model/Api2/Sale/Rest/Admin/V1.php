@@ -194,6 +194,7 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
 
                 foreach ($order->getItemsCollection() as $item) {
                     $simple_item["ProductName"] = $item->getProduct()->getName();
+                    $simple_item["Message"] = $item->getData("text_custom_options_value");
                     $items[] = $simple_item;
                 }
                 $this_order["OrderNo"] = $order->getRealOrderId();
