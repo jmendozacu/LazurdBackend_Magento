@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="675a0457-b9fe-45c9-bd06-8de839659577" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Potato/App/HtmlToPdf.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Potato/App/HtmlToPdf.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,83 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/design/adminhtml/default/default/template/paj/htmlinvoice/invoice.phtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="298" column="46" selection-start-line="298" selection-start-column="28" selection-end-line="298" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/code/local/PAJ/HTMLinvoice/controllers/Adminhtml/Htmlinvoice/PrintController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Sales/Model/Api2/Sale/Rest/Admin/V1.php">
+        <entry file="file://$PROJECT_DIR$/lib/Potato/App/HtmlToPdf.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="197" selection-start-line="197" selection-end-line="197" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/code/community/Potato/Pdf/Helper/Data.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3690">
-              <caret line="123" selection-start-line="123" selection-end-line="123" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/code/community/Potato/Pdf/controllers/Adminhtml/Sales/OrderController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5340">
-              <caret line="178" selection-start-line="178" selection-end-line="178" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Core/Controller/Varien/Action.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12810">
-              <caret line="450" selection-start-line="450" selection-end-line="450" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Core/Controller/Varien/Router/Standard.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6960">
-              <caret line="255" selection-start-line="255" selection-end-line="255" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Core/Controller/Varien/Front.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4620">
-              <caret line="177" selection-start-line="177" selection-end-line="177" />
+            <state relative-caret-position="373">
+              <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -110,8 +39,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1770">
-              <caret line="82" selection-start-line="82" selection-end-line="82" />
+            <state relative-caret-position="90">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -120,8 +52,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tax</find>
-      <find>totalsCode</find>
       <find>print</find>
       <find>code</find>
       <find>Grand Due</find>
@@ -149,7 +79,9 @@
       <find>getShippingAddress()</find>
       <find>getShippingAddress</find>
       <find>Regi</find>
+      <find>$simple_item[&quot;ProductName&quot;] =</find>
       <find>$item</find>
+      <find>system.log</find>
     </findStrings>
     <replaceStrings>
       <replace>cp6</replace>
@@ -205,16 +137,17 @@
         <option value="$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/Model/Api2/Salesperson/Rest/Admin/V1.php" />
         <option value="$PROJECT_DIR$/app/code/core/Mage/Core/functions.php" />
         <option value="C:/wamp64/bin/php/php7.1.22/php.ini" />
-        <option value="$PROJECT_DIR$/lib/Potato/App/HtmlToPdf.php" />
         <option value="$PROJECT_DIR$/app/code/local/PAJ/HTMLinvoice/controllers/Adminhtml/Htmlinvoice/PrintController.php" />
         <option value="$PROJECT_DIR$/app/design/adminhtml/default/admintheme/template/paj/htmlinvoice/invoice.phtml" />
         <option value="$PROJECT_DIR$/app/design/adminhtml/default/default/template/paj/htmlinvoice/invoice.phtml" />
         <option value="$PROJECT_DIR$/app/code/local/Cac/Restapi/Sales/Model/Api2/Sale/Rest/Admin/V1.php" />
+        <option value="$PROJECT_DIR$/app/code/local/Cac/Restapi/Customers/Model/Api2/Customer/Rest/Admin/V1.php" />
+        <option value="$PROJECT_DIR$/lib/Potato/App/HtmlToPdf.php" />
       </list>
     </option>
   </component>
   <component name="JoomlaConfiguration" doNotAskAgain="true" />
-  <component name="PhpDebugGeneral" break_at_first_line="true" />
+  <component name="PhpDebugGeneral" break_at_first_line="true" listening_started="true" />
   <component name="PhpServers">
     <servers>
       <server host="lazurd.localhost" id="495c22bb-cda7-49ef-929f-bc91c98b990c" name="Laz Server" use_path_mappings="true">
@@ -232,6 +165,11 @@
           <mapping local-root="$PROJECT_DIR$/lib" remote-root="D:/Projects/Narbashiyat/LAZURD/lazurd.localhost/lib" />
         </path_mappings>
       </server>
+      <server host="lazurd.adad.ws" id="c9f192a0-cc11-43d8-bd48-2936f8662e81" name="Lazurd.adad.ws" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$" remote-root="D:/Projects/Narbashiyat/LAZURD/lazurd.localhost" />
+        </path_mappings>
+      </server>
     </servers>
   </component>
   <component name="PhpWebServerValidation" path_to_validation_script="D:\Projects\Narbashiyat\LAZURD\lazurd.localhost" selected_validation_type="LOCAL" web_path_to_validation_script="http://lazurd.localhost:80" />
@@ -247,6 +185,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -376,29 +315,6 @@
               <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
               <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="design" type="462c0819:PsiDirectoryNode" />
-              <item name="adminhtml" type="462c0819:PsiDirectoryNode" />
-              <item name="default" type="462c0819:PsiDirectoryNode" />
-              <item name="admintheme" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
-              <item name="paj" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="design" type="462c0819:PsiDirectoryNode" />
-              <item name="adminhtml" type="462c0819:PsiDirectoryNode" />
-              <item name="default" type="462c0819:PsiDirectoryNode" />
-              <item name="admintheme" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
-              <item name="paj" type="462c0819:PsiDirectoryNode" />
-              <item name="htmlinvoice" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="etc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -423,7 +339,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -432,7 +347,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -504,7 +419,9 @@
       <workItem from="1548487417493" duration="608000" />
       <workItem from="1548600842519" duration="2781000" />
       <workItem from="1548653387611" duration="1210000" />
-      <workItem from="1548737755494" duration="9807000" />
+      <workItem from="1548737755494" duration="12268000" />
+      <workItem from="1548774182794" duration="2514000" />
+      <workItem from="1548828709255" duration="3883000" />
     </task>
     <task id="LOCAL-00001" summary="Update 3 new Payment Method for Aramex, Spring and Transfer for KSA">
       <created>1545294959292</created>
@@ -569,11 +486,25 @@
       <option name="project" value="LOCAL" />
       <updated>1548752260810</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add Custom Message to the Customer Orders API">
+      <created>1548752451172</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1548752451172</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Fix Order Status and Add Delivery Date to Customer Orders API">
+      <created>1548758221700</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1548758221700</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80095000" />
+    <option name="totallyTimeSpent" value="88953000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -588,7 +519,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25799572" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -601,7 +532,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.62100214" weight="0.2664437" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4989339" weight="0.32936078" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4989339" weight="0.32887402" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.37899786" side_tool="true" weight="0.43924192" />
       <window_info anchor="bottom" id="REST Client" order="12" sideWeight="0.49946696" weight="0.33044422" />
       <window_info anchor="bottom" id="Messages" order="13" />
@@ -664,7 +595,9 @@
     <MESSAGE value="Update HTML INVOICE ( Add Delivery Date )" />
     <MESSAGE value="Update HTML INVOICE ( Change Delivery Date to Shipping Arrival Date )" />
     <MESSAGE value="Add Custom Message to the Sales List API" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Custom Message to the Sales List API" />
+    <MESSAGE value="Add Custom Message to the Customer Orders API" />
+    <MESSAGE value="Fix Order Status and Add Delivery Date to Customer Orders API" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix Order Status and Add Delivery Date to Customer Orders API" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -736,22 +669,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/lib/Potato/App/HtmlToPdf.php</url>
-          <line>26</line>
+          <line>28</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/lib/Potato/App/HtmlToPdf.php</url>
-          <line>29</line>
+          <line>31</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/lib/Potato/App/HtmlToPdf.php</url>
-          <line>30</line>
+          <line>32</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/lib/Potato/App/HtmlToPdf.php</url>
-          <line>33</line>
+          <line>35</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -784,9 +717,17 @@
           <line>398</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Customers/Model/Api2/Customer/Rest/Admin/V1.php</url>
+          <line>70</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
+      <configuration name="index.php">
+        <watch expression="curl_setopt" />
+      </configuration>
       <configuration name="api.php">
         <watch expression=" $this_order" />
         <watch expression="$order" />
@@ -808,9 +749,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Kitchen/etc/config.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/skin_last/frontend/rwd/theme692/js/jquery-ui.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -1050,13 +988,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Varien/Autoload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="126" selection-start-line="126" selection-end-line="126" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/wamp64/bin/php/php7.1.22/php.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
@@ -1088,24 +1019,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Potato/App/HtmlToPdf.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/design/adminhtml/default/admintheme/template/paj/htmlinvoice/invoice.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="11040">
           <caret line="398" column="71" selection-start-line="398" selection-start-column="71" selection-end-line="398" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/community/Potato/Pdf/Helper/Data.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3690">
-          <caret line="123" selection-start-line="123" selection-end-line="123" />
         </state>
       </provider>
     </entry>
@@ -1137,13 +1054,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1770">
-          <caret line="82" selection-start-line="82" selection-end-line="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Sales/Model/Quote.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="537">
@@ -1165,6 +1075,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Sales/Model/Api2/Sale/Rest/Admin/V1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6060">
+          <caret line="202" column="77" selection-start-line="202" selection-start-column="45" selection-end-line="202" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Customers/Model/Api2/Customer/Rest/Admin/V1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2100">
+          <caret line="70" column="73" selection-start-line="70" selection-start-column="73" selection-end-line="70" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/api.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1172,10 +1096,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Sales/Model/Api2/Sale/Rest/Admin/V1.php">
+    <entry file="file://$PROJECT_DIR$/app/code/community/Potato/Pdf/Helper/Data.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="197" selection-start-line="197" selection-end-line="197" />
+        <state relative-caret-position="144">
+          <caret line="123" selection-start-line="123" selection-end-line="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Varien/Autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="126" selection-start-line="126" selection-end-line="126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Potato/App/HtmlToPdf.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
         </state>
       </provider>
     </entry>
