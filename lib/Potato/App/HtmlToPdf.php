@@ -24,8 +24,8 @@ class Potato_App_HtmlToPdf
             )
         );
         $_result = curl_exec($ch);
-        Mage::log($data, null, 'potato.log', true);
-        Mage::log($_result, null, 'potato.log', true);
+        Mage::log("data : " . $data, null, 'potato.log');
+        Mage::log("result : " . $_result, null, 'potato.log');
         if (curl_getinfo($ch, CURLINFO_HTTP_CODE) !== 200) {
             throw new Exception('Service not available');
         }

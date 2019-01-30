@@ -30,8 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/Potato/App/HtmlToPdf.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+            <state relative-caret-position="313">
+              <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -52,7 +52,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>print</find>
       <find>code</find>
       <find>Grand Due</find>
       <find>Total Due</find>
@@ -82,6 +81,7 @@
       <find>$simple_item[&quot;ProductName&quot;] =</find>
       <find>$item</find>
       <find>system.log</find>
+      <find>mylog_staff_quote</find>
     </findStrings>
     <replaceStrings>
       <replace>cp6</replace>
@@ -147,7 +147,7 @@
     </option>
   </component>
   <component name="JoomlaConfiguration" doNotAskAgain="true" />
-  <component name="PhpDebugGeneral" break_at_first_line="true" listening_started="true" />
+  <component name="PhpDebugGeneral" break_at_first_line="true" />
   <component name="PhpServers">
     <servers>
       <server host="lazurd.localhost" id="495c22bb-cda7-49ef-929f-bc91c98b990c" name="Laz Server" use_path_mappings="true">
@@ -421,7 +421,7 @@
       <workItem from="1548653387611" duration="1210000" />
       <workItem from="1548737755494" duration="12268000" />
       <workItem from="1548774182794" duration="2514000" />
-      <workItem from="1548828709255" duration="3883000" />
+      <workItem from="1548828709255" duration="4853000" />
     </task>
     <task id="LOCAL-00001" summary="Update 3 new Payment Method for Aramex, Spring and Transfer for KSA">
       <created>1545294959292</created>
@@ -500,11 +500,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548758221700</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Fix Order Status and Add Delivery Date to Customer Orders API">
+      <created>1548832650128</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1548832650128</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88953000" />
+    <option name="totallyTimeSpent" value="89923000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -525,13 +532,13 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.81023455" visible="true" weight="0.44927537" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.81023455" weight="0.44927537" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49733475" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.62100214" weight="0.2664437" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.62100214" visible="true" weight="0.2664437" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4989339" weight="0.32887402" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.37899786" side_tool="true" weight="0.43924192" />
       <window_info anchor="bottom" id="REST Client" order="12" sideWeight="0.49946696" weight="0.33044422" />
@@ -1122,8 +1129,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/Potato/App/HtmlToPdf.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+        <state relative-caret-position="313">
+          <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
         </state>
       </provider>
     </entry>
