@@ -1,0 +1,5 @@
+CREATE TRIGGER trig_add_original_staff after insert
+ON sales_flat_order FOR EACH ROW
+BEGIN
+  set new.original_webpos_staff_id=new.webpos_staff_id;
+END;

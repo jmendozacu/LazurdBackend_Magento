@@ -23,7 +23,7 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
 
         $resource = Mage::getSingleton('core/resource');
         $readConnection = $resource->getConnection('core_read');
-        $query = "SELECT entity_id,increment_id as order_id,webpos_staff_name,order_status,total_qty_ordered,total_invoiced,concat(customer_firstname,\" \",customer_lastname,\" \") as customer_name, customer_id FROM sales_flat_order where DATE_FORMAT(shipping_delivery_date, \"%Y-%m-%d\")=\"$year-$month-$day\" order by created_at ";
+        $query = "SELECT entity_id,increment_id as order_id,webpos_staff_name,order_status,total_qty_ordered,subtotal_invoiced,concat(customer_firstname,\" \",customer_lastname,\" \") as customer_name, customer_id FROM sales_flat_order where DATE_FORMAT(shipping_delivery_date, \"%Y-%m-%d\")=\"$year-$month-$day\" order by created_at ";
         $results["items"] = $readConnection->fetchAll($query);
         $results["count"]= count($results["items"]);
 
