@@ -384,9 +384,9 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
                 $this->_assignQuoteToStaff(false);
                 // CAC
                 // ABD
-                $sessionModel = $this->_getCurrentStaffSession();
-                $sessionModel = ($sessionModel)?$sessionModel:$this->_getCurrentStaffSession();
-                Mage::log("payment : " . json_encode( $payment), null, 'mylog_staff_quote.log');
+//                $sessionModel = $this->_getCurrentStaffSession();
+//                $sessionModel = ($sessionModel)?$sessionModel:$this->_getCurrentStaffSession();
+//                Mage::log("payment : " . json_encode( $payment), null, 'mylog_staff_quote.log');
                 // ABD from CAC
                 // WRITE DOWN SALES STAFF HISTORY
 
@@ -410,40 +410,40 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
 
 
 
-                $resource = Mage::getSingleton('core/resource');
-                $readConnection = $resource->getConnection('core_read');
-
-                for ($pc=0;$pc<sizeof($payment['method_data']);$pc++) {
-
-                    $insert_query = "INSERT INTO cac_staff_sales_history
-(
-`staff_id`,
-`order_increment_id`,
-`created_at`,
-`amount`,
-`base_amount`,
-`transaction_currency_code`,
-`base_currency_code`,
-`note`,
-`is_manual`,
-`is_opening`,
-`status`)
-VALUES
-(
-" . $order->getData('webpos_staff_id') . ",
-'" . $order->getData('increment_id') . "',
-now(),
-" . $payment['method_data'][$pc]['real_amount'] . ",
-" . $payment['method_data'][$pc]['base_real_amount'] . ",
-'" . $order->getData('order_currency_code') . "',
-'" . $order->getData('base_currency_code') . "',
-'',
-1,
-0,
-1)
-ON DUPLICATE KEY UPDATE amount=" . $order->getData('webpos_staff_id') . ",base_amount=" . $payment['method_data'][0]['base_real_amount'];
-                    $results = $readConnection->query($insert_query);
-                }
+//                $resource = Mage::getSingleton('core/resource');
+//                $readConnection = $resource->getConnection('core_read');
+//
+//                for ($pc=0;$pc<sizeof($payment['method_data']);$pc++) {
+//
+//                    $insert_query = "INSERT INTO cac_staff_sales_history
+//(
+//`staff_id`,
+//`order_increment_id`,
+//`created_at`,
+//`amount`,
+//`base_amount`,
+//`transaction_currency_code`,
+//`base_currency_code`,
+//`note`,
+//`is_manual`,
+//`is_opening`,
+//`status`)
+//VALUES
+//(
+//" . $order->getData('webpos_staff_id') . ",
+//'" . $order->getData('increment_id') . "',
+//now(),
+//" . $payment['method_data'][$pc]['real_amount'] . ",
+//" . $payment['method_data'][$pc]['base_real_amount'] . ",
+//'" . $order->getData('order_currency_code') . "',
+//'" . $order->getData('base_currency_code') . "',
+//'',
+//1,
+//0,
+//1)
+//ON DUPLICATE KEY UPDATE amount=" . $order->getData('webpos_staff_id') . ",base_amount=" . $payment['method_data'][0]['base_real_amount'];
+//                    $results = $readConnection->query($insert_query);
+//                }
                 // END CAC
 
             } else {
