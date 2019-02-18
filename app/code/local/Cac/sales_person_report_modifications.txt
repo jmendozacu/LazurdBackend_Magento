@@ -177,175 +177,339 @@ create table sales_flat_order_journal
     END;
 
 #sfo_clone_update_subtotal_invoiced
-    DELIMITER //
-    CREATE TRIGGER sfo_clone_update_subtotal_invoiced AFTER UPDATE ON sales_flat_order
-    FOR EACH ROW BEGIN
-        update sales_flat_order_journal set subtotal_invoiced=NEW.subtotal_invoiced
-        state                                    =NEW.state                                    ,
-        status                                   =NEW.status                                   ,
-        coupon_code                              =NEW.coupon_code                              ,
-        protect_code                             =NEW.protect_code                             ,
-        shipping_description                     =NEW.shipping_description                     ,
-        is_virtual                               =NEW.is_virtual                               ,
-        store_id                                 =NEW.store_id                                 ,
-        customer_id                              =NEW.customer_id                              ,
-        base_discount_amount                     =NEW.base_discount_amount                     ,
-        base_discount_canceled                   =NEW.base_discount_canceled                   ,
-        base_discount_invoiced                   =NEW.base_discount_invoiced                   ,
-        base_discount_refunded                   =NEW.base_discount_refunded                   ,
-        base_grand_total                         =NEW.base_grand_total                         ,
-        base_shipping_amount                     =NEW.base_shipping_amount                     ,
-        base_shipping_canceled                   =NEW.base_shipping_canceled                   ,
-        base_shipping_invoiced                   =NEW.base_shipping_invoiced                   ,
-        base_shipping_refunded                   =NEW.base_shipping_refunded                   ,
-        base_shipping_tax_amount                 =NEW.base_shipping_tax_amount                 ,
-        base_shipping_tax_refunded               =NEW.base_shipping_tax_refunded               ,
-        base_subtotal                            =NEW.base_subtotal                            ,
-        base_subtotal_canceled                   =NEW.base_subtotal_canceled                   ,
-        base_subtotal_invoiced                   =NEW.base_subtotal_invoiced                   ,
-        base_subtotal_refunded                   =NEW.base_subtotal_refunded                   ,
-        base_tax_amount                          =NEW.base_tax_amount                          ,
-        base_tax_canceled                        =NEW.base_tax_canceled                        ,
-        base_tax_invoiced                        =NEW.base_tax_invoiced                        ,
-        base_tax_refunded                        =NEW.base_tax_refunded                        ,
-        base_to_global_rate                      =NEW.base_to_global_rate                      ,
-        base_to_order_rate                       =NEW.base_to_order_rate                       ,
-        base_total_canceled                      =NEW.base_total_canceled                      ,
-        base_total_invoiced                      =NEW.base_total_invoiced                      ,
-        base_total_invoiced_cost                 =NEW.base_total_invoiced_cost                 ,
-        base_total_offline_refunded              =NEW.base_total_offline_refunded              ,
-        base_total_online_refunded               =NEW.base_total_online_refunded               ,
-        base_total_paid                          =NEW.base_total_paid                          ,
-        base_total_qty_ordered                   =NEW.base_total_qty_ordered                   ,
-        base_total_refunded                      =NEW.base_total_refunded                      ,
-        discount_amount                          =NEW.discount_amount                          ,
-        discount_canceled                        =NEW.discount_canceled                        ,
-        discount_invoiced                        =NEW.discount_invoiced                        ,
-        discount_refunded                        =NEW.discount_refunded                        ,
-        grand_total                              =NEW.grand_total                              ,
-        shipping_amount                          =NEW.shipping_amount                          ,
-        shipping_canceled                        =NEW.shipping_canceled                        ,
-        shipping_invoiced                        =NEW.shipping_invoiced                        ,
-        shipping_refunded                        =NEW.shipping_refunded                        ,
-        shipping_tax_amount                      =NEW.shipping_tax_amount                      ,
-        shipping_tax_refunded                    =NEW.shipping_tax_refunded                    ,
-        store_to_base_rate                       =NEW.store_to_base_rate                       ,
-        store_to_order_rate                      =NEW.store_to_order_rate                      ,
-        subtotal                                 =NEW.subtotal                                 ,
-        subtotal_canceled                        =NEW.subtotal_canceled                        ,
-        subtotal_invoiced                        =NEW.subtotal_invoiced                        ,
-        subtotal_refunded                        =NEW.subtotal_refunded                        ,
-        tax_amount                               =NEW.tax_amount                               ,
-        tax_canceled                             =NEW.tax_canceled                             ,
-        tax_invoiced                             =NEW.tax_invoiced                             ,
-        tax_refunded                             =NEW.tax_refunded                             ,
-        total_canceled                           =NEW.total_canceled                           ,
-        total_invoiced                           =NEW.total_invoiced                           ,
-        total_offline_refunded                   =NEW.total_offline_refunded                   ,
-        total_online_refunded                    =NEW.total_online_refunded                    ,
-        total_paid                               =NEW.total_paid                               ,
-        total_qty_ordered                        =NEW.total_qty_ordered                        ,
-        total_refunded                           =NEW.total_refunded                           ,
-        can_ship_partially                       =NEW.can_ship_partially                       ,
-        can_ship_partially_item                  =NEW.can_ship_partially_item                  ,
-        customer_is_guest                        =NEW.customer_is_guest                        ,
-        customer_note_notify                     =NEW.customer_note_notify                     ,
-        billing_address_id                       =NEW.billing_address_id                       ,
-        customer_group_id                        =NEW.customer_group_id                        ,
-        edit_increment                           =NEW.edit_increment                           ,
-        email_sent                               =NEW.email_sent                               ,
-        forced_shipment_with_invoice             =NEW.forced_shipment_with_invoice             ,
-        payment_auth_expiration                  =NEW.payment_auth_expiration                  ,
-        quote_address_id                         =NEW.quote_address_id                         ,
-        quote_id                                 =NEW.quote_id                                 ,
-        shipping_address_id                      =NEW.shipping_address_id                      ,
-        adjustment_negative                      =NEW.adjustment_negative                      ,
-        adjustment_positive                      =NEW.adjustment_positive                      ,
-        base_adjustment_negative                 =NEW.base_adjustment_negative                 ,
-        base_adjustment_positive                 =NEW.base_adjustment_positive                 ,
-        base_shipping_discount_amount            =NEW.base_shipping_discount_amount            ,
-        base_subtotal_incl_tax                   =NEW.base_subtotal_incl_tax                   ,
-        base_total_due                           =NEW.base_total_due                           ,
-        payment_authorization_amount             =NEW.payment_authorization_amount             ,
-        shipping_discount_amount                 =NEW.shipping_discount_amount                 ,
-        subtotal_incl_tax                        =NEW.subtotal_incl_tax                        ,
-        total_due                                =NEW.total_due                                ,
-        weight                                   =NEW.weight                                   ,
-        customer_dob                             =NEW.customer_dob                             ,
-        increment_id                             =NEW.increment_id                             ,
-        applied_rule_ids                         =NEW.applied_rule_ids                         ,
-        base_currency_code                       =NEW.base_currency_code                       ,
-        customer_email                           =NEW.customer_email                           ,
-        customer_firstname                       =NEW.customer_firstname                       ,
-        customer_lastname                        =NEW.customer_lastname                        ,
-        customer_middlename                      =NEW.customer_middlename                      ,
-        customer_prefix                          =NEW.customer_prefix                          ,
-        customer_suffix                          =NEW.customer_suffix                          ,
-        customer_taxvat                          =NEW.customer_taxvat                          ,
-        discount_description                     =NEW.discount_description                     ,
-        ext_customer_id                          =NEW.ext_customer_id                          ,
-        ext_order_id                             =NEW.ext_order_id                             ,
-        global_currency_code                     =NEW.global_currency_code                     ,
-        hold_before_state                        =NEW.hold_before_state                        ,
-        hold_before_status                       =NEW.hold_before_status                       ,
-        order_currency_code                      =NEW.order_currency_code                      ,
-        original_increment_id                    =NEW.original_increment_id                    ,
-        relation_child_id                        =NEW.relation_child_id                        ,
-        relation_child_real_id                   =NEW.relation_child_real_id                   ,
-        relation_parent_id                       =NEW.relation_parent_id                       ,
-        relation_parent_real_id                  =NEW.relation_parent_real_id                  ,
-        remote_ip                                =NEW.remote_ip                                ,
-        shipping_method                          =NEW.shipping_method                          ,
-        store_currency_code                      =NEW.store_currency_code                      ,
-        store_name                               =NEW.store_name                               ,
-        x_forwarded_for                          =NEW.x_forwarded_for                          ,
-        customer_note                            =NEW.customer_note                            ,
-        created_at                               =NEW.created_at                               ,
-        updated_at                               =NEW.updated_at                               ,
-        total_item_count                         =NEW.total_item_count                         ,
-        customer_gender                          =NEW.customer_gender                          ,
-        hidden_tax_amount                        =NEW.hidden_tax_amount                        ,
-        base_hidden_tax_amount                   =NEW.base_hidden_tax_amount                   ,
-        shipping_hidden_tax_amount               =NEW.shipping_hidden_tax_amount               ,
-        base_shipping_hidden_tax_amnt            =NEW.base_shipping_hidden_tax_amnt            ,
-        hidden_tax_invoiced                      =NEW.hidden_tax_invoiced                      ,
-        base_hidden_tax_invoiced                 =NEW.base_hidden_tax_invoiced                 ,
-        hidden_tax_refunded                      =NEW.hidden_tax_refunded                      ,
-        base_hidden_tax_refunded                 =NEW.base_hidden_tax_refunded                 ,
-        shipping_incl_tax                        =NEW.shipping_incl_tax                        ,
-        base_shipping_incl_tax                   =NEW.base_shipping_incl_tax                   ,
-        coupon_rule_name                         =NEW.coupon_rule_name                         ,
-        paypal_ipn_customer_notified             =NEW.paypal_ipn_customer_notified             ,
-        gift_message_id                          =NEW.gift_message_id                          ,
-        webpos_order_id                          =NEW.webpos_order_id                          ,
-        webpos_delivery_date                     =NEW.webpos_delivery_date                     ,
-        location_id                              =NEW.location_id                              ,
-        webpos_change                            =NEW.webpos_change                            ,
-        webpos_base_change                       =NEW.webpos_base_change                       ,
-        webpos_staff_id                          =NEW.webpos_staff_id                          ,
-        webpos_staff_name                        =NEW.webpos_staff_name                        ,
-        webpos_till_id                           =NEW.webpos_till_id                           ,
-        kitchen_user_ids                         =NEW.kitchen_user_ids                         ,
-        order_status                             =NEW.order_status                             ,
-        driver_id                                =NEW.driver_id                                ,
-        is_survey                                =NEW.is_survey                                ,
-        is_customer_notify                       =NEW.is_customer_notify                       ,
-        is_delay_notify                          =NEW.is_delay_notify                          ,
-        shipping_arrival_date                    =NEW.shipping_arrival_date                    ,
-        shipping_arrival_comments                =NEW.shipping_arrival_comments                ,
-        shipping_arrival_time_slot               =NEW.shipping_arrival_time_slot               ,
-        shipping_delivery_date                   =NEW.shipping_delivery_date                   ,
-        customercredit_discount                  =NEW.customercredit_discount                  ,
-        base_customercredit_discount             =NEW.base_customercredit_discount             ,
-        base_customercredit_discount_for_shipping=NEW.base_customercredit_discount_for_shipping,
-        customercredit_discount_for_shipping     =NEW.customercredit_discount_for_shipping     ,
-        base_customercredit_hidden_tax           =NEW.base_customercredit_hidden_tax           ,
-        customercredit_hidden_tax                =NEW.customercredit_hidden_tax                ,
-        base_customercredit_shipping_hidden_tax  =NEW.base_customercredit_shipping_hidden_tax  ,
-        customercredit_shipping_hidden_tax       =NEW.customercredit_shipping_hidden_tax
 
-        where entity_id=new.entity_id;
-    END;
-DELIMITER ;
+CREATE TRIGGER sfo_clone_update_subtotal_invoiced
+  AFTER UPDATE
+  ON sales_flat_order
+  FOR EACH ROW
+BEGIN
+  update sales_flat_order_journal
+  set subtotal_invoiced=NEW.subtotal_invoiced,
+      state =NEW.state
+      ,
+      status =NEW.status
+      ,
+      coupon_code =NEW.coupon_code
+      ,
+      protect_code =NEW.protect_code
+      ,
+      shipping_description =NEW.shipping_description
+      ,
+      is_virtual =NEW.is_virtual
+      ,
+      store_id =NEW.store_id
+      ,
+      customer_id =NEW.customer_id
+      ,
+      base_discount_amount =NEW.base_discount_amount
+      ,
+      base_discount_canceled =NEW.base_discount_canceled
+      ,
+      base_discount_invoiced =NEW.base_discount_invoiced
+      ,
+      base_discount_refunded =NEW.base_discount_refunded
+      ,
+      base_grand_total =NEW.base_grand_total
+      ,
+      base_shipping_amount =NEW.base_shipping_amount
+      ,
+      base_shipping_canceled =NEW.base_shipping_canceled
+      ,
+      base_shipping_invoiced =NEW.base_shipping_invoiced
+      ,
+      base_shipping_refunded =NEW.base_shipping_refunded
+      ,
+      base_shipping_tax_amount =NEW.base_shipping_tax_amount
+      ,
+      base_shipping_tax_refunded =NEW.base_shipping_tax_refunded
+      ,
+      base_subtotal =NEW.base_subtotal
+      ,
+      base_subtotal_canceled =NEW.base_subtotal_canceled
+      ,
+      base_subtotal_invoiced =NEW.base_subtotal_invoiced
+      ,
+      base_subtotal_refunded =NEW.base_subtotal_refunded
+      ,
+      base_tax_amount =NEW.base_tax_amount
+      ,
+      base_tax_canceled =NEW.base_tax_canceled
+      ,
+      base_tax_invoiced =NEW.base_tax_invoiced
+      ,
+      base_tax_refunded =NEW.base_tax_refunded
+      ,
+      base_to_global_rate =NEW.base_to_global_rate
+      ,
+      base_to_order_rate =NEW.base_to_order_rate
+      ,
+      base_total_canceled =NEW.base_total_canceled
+      ,
+      base_total_invoiced =NEW.base_total_invoiced
+      ,
+      base_total_invoiced_cost =NEW.base_total_invoiced_cost
+      ,
+      base_total_offline_refunded =NEW.base_total_offline_refunded
+      ,
+      base_total_online_refunded =NEW.base_total_online_refunded
+      ,
+      base_total_paid =NEW.base_total_paid
+      ,
+      base_total_qty_ordered =NEW.base_total_qty_ordered
+      ,
+      base_total_refunded =NEW.base_total_refunded
+      ,
+      discount_amount =NEW.discount_amount
+      ,
+      discount_canceled =NEW.discount_canceled
+      ,
+      discount_invoiced =NEW.discount_invoiced
+      ,
+      discount_refunded =NEW.discount_refunded
+      ,
+      grand_total =NEW.grand_total
+      ,
+      shipping_amount =NEW.shipping_amount
+      ,
+      shipping_canceled =NEW.shipping_canceled
+      ,
+      shipping_invoiced =NEW.shipping_invoiced
+      ,
+      shipping_refunded =NEW.shipping_refunded
+      ,
+      shipping_tax_amount =NEW.shipping_tax_amount
+      ,
+      shipping_tax_refunded =NEW.shipping_tax_refunded
+      ,
+      store_to_base_rate =NEW.store_to_base_rate
+      ,
+      store_to_order_rate =NEW.store_to_order_rate
+      ,
+      subtotal =NEW.subtotal
+      ,
+      subtotal_canceled =NEW.subtotal_canceled
+      ,
+      subtotal_invoiced =NEW.subtotal_invoiced
+      ,
+      subtotal_refunded =NEW.subtotal_refunded
+      ,
+      tax_amount =NEW.tax_amount
+      ,
+      tax_canceled =NEW.tax_canceled
+      ,
+      tax_invoiced =NEW.tax_invoiced
+      ,
+      tax_refunded =NEW.tax_refunded
+      ,
+      total_canceled =NEW.total_canceled
+      ,
+      total_invoiced =NEW.total_invoiced
+      ,
+      total_offline_refunded =NEW.total_offline_refunded
+      ,
+      total_online_refunded =NEW.total_online_refunded
+      ,
+      total_paid =NEW.total_paid
+      ,
+      total_qty_ordered =NEW.total_qty_ordered
+      ,
+      total_refunded =NEW.total_refunded
+      ,
+      can_ship_partially =NEW.can_ship_partially
+      ,
+      can_ship_partially_item =NEW.can_ship_partially_item
+      ,
+      customer_is_guest =NEW.customer_is_guest
+      ,
+      customer_note_notify =NEW.customer_note_notify
+      ,
+      billing_address_id =NEW.billing_address_id
+      ,
+      customer_group_id =NEW.customer_group_id
+      ,
+      edit_increment =NEW.edit_increment
+      ,
+      email_sent =NEW.email_sent
+      ,
+      forced_shipment_with_invoice =NEW.forced_shipment_with_invoice
+      ,
+      payment_auth_expiration =NEW.payment_auth_expiration
+      ,
+      quote_address_id =NEW.quote_address_id
+      ,
+      quote_id =NEW.quote_id
+      ,
+      shipping_address_id =NEW.shipping_address_id
+      ,
+      adjustment_negative =NEW.adjustment_negative
+      ,
+      adjustment_positive =NEW.adjustment_positive
+      ,
+      base_adjustment_negative =NEW.base_adjustment_negative
+      ,
+      base_adjustment_positive =NEW.base_adjustment_positive
+      ,
+      base_shipping_discount_amount =NEW.base_shipping_discount_amount
+      ,
+      base_subtotal_incl_tax =NEW.base_subtotal_incl_tax
+      ,
+      base_total_due =NEW.base_total_due
+      ,
+      payment_authorization_amount =NEW.payment_authorization_amount
+      ,
+      shipping_discount_amount =NEW.shipping_discount_amount
+      ,
+      subtotal_incl_tax =NEW.subtotal_incl_tax
+      ,
+      total_due =NEW.total_due
+      ,
+      weight =NEW.weight
+      ,
+      customer_dob =NEW.customer_dob
+      ,
+      increment_id =NEW.increment_id
+      ,
+      applied_rule_ids =NEW.applied_rule_ids
+      ,
+      base_currency_code =NEW.base_currency_code
+      ,
+      customer_email =NEW.customer_email
+      ,
+      customer_firstname =NEW.customer_firstname
+      ,
+      customer_lastname =NEW.customer_lastname
+      ,
+      customer_middlename =NEW.customer_middlename
+      ,
+      customer_prefix =NEW.customer_prefix
+      ,
+      customer_suffix =NEW.customer_suffix
+      ,
+      customer_taxvat =NEW.customer_taxvat
+      ,
+      discount_description =NEW.discount_description
+      ,
+      ext_customer_id =NEW.ext_customer_id
+      ,
+      ext_order_id =NEW.ext_order_id
+      ,
+      global_currency_code =NEW.global_currency_code
+      ,
+      hold_before_state =NEW.hold_before_state
+      ,
+      hold_before_status =NEW.hold_before_status
+      ,
+      order_currency_code =NEW.order_currency_code
+      ,
+      original_increment_id =NEW.original_increment_id
+      ,
+      relation_child_id =NEW.relation_child_id
+      ,
+      relation_child_real_id =NEW.relation_child_real_id
+      ,
+      relation_parent_id =NEW.relation_parent_id
+      ,
+      relation_parent_real_id =NEW.relation_parent_real_id
+      ,
+      remote_ip =NEW.remote_ip
+      ,
+      shipping_method =NEW.shipping_method
+      ,
+      store_currency_code =NEW.store_currency_code
+      ,
+      store_name =NEW.store_name
+      ,
+      x_forwarded_for =NEW.x_forwarded_for
+      ,
+      customer_note =NEW.customer_note
+      ,
+      created_at =NEW.created_at
+      ,
+      updated_at =NEW.updated_at
+      ,
+      total_item_count =NEW.total_item_count
+      ,
+      customer_gender =NEW.customer_gender
+      ,
+      hidden_tax_amount =NEW.hidden_tax_amount
+      ,
+      base_hidden_tax_amount =NEW.base_hidden_tax_amount
+      ,
+      shipping_hidden_tax_amount =NEW.shipping_hidden_tax_amount
+      ,
+      base_shipping_hidden_tax_amnt =NEW.base_shipping_hidden_tax_amnt
+      ,
+      hidden_tax_invoiced =NEW.hidden_tax_invoiced
+      ,
+      base_hidden_tax_invoiced =NEW.base_hidden_tax_invoiced
+      ,
+      hidden_tax_refunded =NEW.hidden_tax_refunded
+      ,
+      base_hidden_tax_refunded =NEW.base_hidden_tax_refunded
+      ,
+      shipping_incl_tax =NEW.shipping_incl_tax
+      ,
+      base_shipping_incl_tax =NEW.base_shipping_incl_tax
+      ,
+      coupon_rule_name =NEW.coupon_rule_name
+      ,
+      paypal_ipn_customer_notified =NEW.paypal_ipn_customer_notified
+      ,
+      gift_message_id =NEW.gift_message_id
+      ,
+      webpos_order_id =NEW.webpos_order_id
+      ,
+      webpos_delivery_date =NEW.webpos_delivery_date
+      ,
+      location_id =NEW.location_id
+      ,
+      webpos_change =NEW.webpos_change
+      ,
+      webpos_base_change =NEW.webpos_base_change
+      ,
+      webpos_staff_id =NEW.webpos_staff_id
+      ,
+      webpos_staff_name =NEW.webpos_staff_name
+      ,
+      webpos_till_id =NEW.webpos_till_id
+      ,
+      kitchen_user_ids =NEW.kitchen_user_ids
+      ,
+      order_status =NEW.order_status
+      ,
+      driver_id =NEW.driver_id
+      ,
+      is_survey =NEW.is_survey
+      ,
+      is_customer_notify =NEW.is_customer_notify
+      ,
+      is_delay_notify =NEW.is_delay_notify
+      ,
+      shipping_arrival_date =NEW.shipping_arrival_date
+      ,
+      shipping_arrival_comments =NEW.shipping_arrival_comments
+      ,
+      shipping_arrival_time_slot =NEW.shipping_arrival_time_slot
+      ,
+      shipping_delivery_date =NEW.shipping_delivery_date
+      ,
+      customercredit_discount =NEW.customercredit_discount
+      ,
+      base_customercredit_discount =NEW.base_customercredit_discount
+      ,
+      base_customercredit_discount_for_shipping=NEW.base_customercredit_discount_for_shipping
+      ,
+      customercredit_discount_for_shipping =NEW.customercredit_discount_for_shipping
+      ,
+      base_customercredit_hidden_tax =NEW.base_customercredit_hidden_tax
+      ,
+      customercredit_hidden_tax =NEW.customercredit_hidden_tax
+      ,
+      base_customercredit_shipping_hidden_tax =NEW.base_customercredit_shipping_hidden_tax
+      ,
+      customercredit_shipping_hidden_tax =NEW.customercredit_shipping_hidden_tax
+
+  where entity_id = new.entity_id;
+END;
 
 
