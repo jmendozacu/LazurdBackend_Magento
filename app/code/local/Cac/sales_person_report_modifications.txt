@@ -165,7 +165,6 @@ create table sales_flat_order_journal
   customercredit_hidden_tax                 decimal(12, 4)                   null,
   base_customercredit_shipping_hidden_tax   decimal(12, 4)                   null,
   customercredit_shipping_hidden_tax        decimal(12, 4)                   null,
-  original_webpos_staff_id                  int                  default -1  not null
 )
   comment 'Sales Flat Order Journal';
 
