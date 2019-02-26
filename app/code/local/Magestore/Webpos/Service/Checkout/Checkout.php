@@ -451,6 +451,61 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
                 $message[] = $order;
             }
         }
+        $baseUrl = Mage::getBaseUrl();
+        $token = "";
+        $toTopic = "";
+        if ($baseUrl == "")
+        {
+            $toTopic = "KWT_ORDER";
+            $token = "";
+        }
+        else if ($baseUrl == "")
+        {
+            $toTopic = "KSA_ORDER";
+            $token = "";
+        }
+        else if ($baseUrl == "")
+        {
+            $toTopic = "DEV_ORDER";
+            $token = "";
+        }
+        $title = '';
+        $body = '';
+        $httpHeaders = new \Zend\Http\Headers();
+        $httpHeaders->addHeaders([
+            'Authorization' => 'key=' . $token,
+            'Accept' => 'application/json',
+            'Content-Type' => 'application/json'
+        ]);
+        $request = new \Zend\Http\Request();
+        $request->setHeaders($httpHeaders);
+        $request->setUri('https://fcm.googleapis.com/fcm/send');
+        $request->setMethod(\Zend\Http\Request::METHOD_GET);
+
+        $params = new \Zend\Stdlib\Parameters([
+            'notification' => [
+                'title' => $title,
+                'body' => $body
+            ],
+            'data' => [
+
+            ],
+            'content_available' => true,
+            'priority' => 'high',
+            'to' => $toTopic
+        ]);
+
+        $request->setQuery($params);
+        $client = new \Zend\Http\Client();
+        $options = [
+            'adapter'   => 'Zend\Http\Client\Adapter\Curl',
+            'curloptions' => [CURLOPT_FOLLOWLOCATION => true],
+            'maxredirects' => 0,
+            'timeout' => 30
+        ];
+        $client->setOptions($options);
+
+        $response = $client->send($request);
         return $this->getResponseData($data, $message, $status);
     }
 
