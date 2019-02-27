@@ -454,23 +454,47 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
         $baseUrl = Mage::getBaseUrl();
         $token = "";
         $toTopic = "";
-        if ($baseUrl == "")
+        $title = "";
+        $body = "";
+        $click_action = "";
+        $icon = "";
+        if ($baseUrl == "https://kwt.lazurd.com")
         {
             $toTopic = "KWT_ORDER";
             $token = "";
+            $title = "";
+            $body = "";
+            $click_action = "";
+            $icon = "";
         }
-        else if ($baseUrl == "")
+        else if ($baseUrl == "https://ksa.lazurd.com")
         {
             $toTopic = "KSA_ORDER";
             $token = "";
+            $title = "";
+            $body = "";
+            $click_action = "";
+            $icon = "";
         }
-        else if ($baseUrl == "")
+        else if ($baseUrl == "https://lazurd.adad.ws")
         {
             $toTopic = "DEV_ORDER";
             $token = "";
+            $title = "";
+            $body = "";
+            $click_action = "";
+            $icon = "";
         }
-        $title = '';
-        $body = '';
+        else if ($baseUrl == "http://lazurd.localhost")
+        {
+            $toTopic = "LOCAL_ORDER";
+            $token = "AAAAFYUJun4:APA91bGyZlqmvwRAN5VxgIYnesc33SXPjNolQW0fwPYnIxe3VlzYN-KtzOndfmAvSB7vvPSiaJGV1zdE3aatBedklzJnRVKxz6ubgiCuxycGOV1kQAwA6Ii47ziehoy4snD2WIMqwBGa";
+            $title = "";
+            $body = "";
+            $click_action = "https://report.localhost:4200";
+            $icon = "https://report.localhost:4200/assets/images/logo-menu.png";
+        }
+        // TODO: Error in this line :  Fatal error: Uncaught Error: Class 'Zend\Http\Headers' not found
         $httpHeaders = new \Zend\Http\Headers();
         $httpHeaders->addHeaders([
             'Authorization' => 'key=' . $token,
@@ -485,7 +509,9 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
         $params = new \Zend\Stdlib\Parameters([
             'notification' => [
                 'title' => $title,
-                'body' => $body
+                'body' => $body,
+                'click_action' => $click_action,
+                'icon' => $icon
             ],
             'data' => [
 
