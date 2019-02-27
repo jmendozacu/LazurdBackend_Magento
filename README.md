@@ -6,6 +6,8 @@
 ## How to Run:
 - Create DB in Mysql
 - Import Backup
+- Execute SQL Commands for Generating Sales_flat_order_journal (IF not Exist)
+- Execute SQL Create Transaction Commands for On Insert and ON Update of SFO to SFOJ (IF Transaction in SFO DOES NOT EXIST)
 - Update local.xml File for DB Connection
 - Config SSL If neccessary
 ## How to Config The Virtual Host:   
