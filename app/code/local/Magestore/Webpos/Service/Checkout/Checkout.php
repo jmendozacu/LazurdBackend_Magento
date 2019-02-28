@@ -476,8 +476,8 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
             $token = "AAAAFYUJun4:APA91bGyZlqmvwRAN5VxgIYnesc33SXPjNolQW0fwPYnIxe3VlzYN-KtzOndfmAvSB7vvPSiaJGV1zdE3aatBedklzJnRVKxz6ubgiCuxycGOV1kQAwA6Ii47ziehoy4snD2WIMqwBGa";
             $title = "ORDER PLACED";
             $body = "Please Open your Dashboard";
-            $click_action = "https://lazurd.adad.ws";
-            $icon = "https://lazurd.adad.ws/assets/images/logo-menu.png";
+            $click_action = "https://lazurdreport.adad.ws";
+            $icon = "https://lazurdreport.adad.ws/assets/images/logo-menu.png";
         } else if ( $baseUrl == "http://lazurd.localhost/index.php/") {
             $toTopic = "LOCAL_ORDER";
             $token = "AAAAFYUJun4:APA91bGyZlqmvwRAN5VxgIYnesc33SXPjNolQW0fwPYnIxe3VlzYN-KtzOndfmAvSB7vvPSiaJGV1zdE3aatBedklzJnRVKxz6ubgiCuxycGOV1kQAwA6Ii47ziehoy4snD2WIMqwBGa";
