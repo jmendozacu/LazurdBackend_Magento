@@ -457,21 +457,21 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
         $body = "";
         $click_action = "";
         $icon = "";
-        if ($baseUrl == "https://kwt.lazurd.com/index.php/") {
+        if ($baseUrl == "http://kwt.lazurd.com/index.php/") {
             $toTopic = "KWT_ORDER";
             $token = "";
             $title = "";
             $body = "";
             $click_action = "";
             $icon = "";
-        } else if ($baseUrl == "https://ksa.lazurd.com/index.php/") {
+        } else if ($baseUrl == "http://ksa.lazurd.com/index.php/") {
             $toTopic = "KSA_ORDER";
             $token = "";
             $title = "";
             $body = "";
             $click_action = "";
             $icon = "";
-        } else if ($baseUrl == "https://lazurd.adad.ws/index.php/") {
+        } else if ($baseUrl == "http://lazurd.adad.ws/index.php/") {
             $toTopic = "LOCAL_ORDER";
             $token = "AAAAFYUJun4:APA91bGAhRgPwaXxUH9e1479rodgscgOJPnm13LopN_w3nvtKCFiPCaeDjNeK_Xpip73EpnYmqbX7GWaC4sCuVjC7e05iNjT-6HD2nJjUiOcPGCliykVAV6wu5BtH0_E876ZkM0F9kuh";
             $title = "ORDER PLACED";
