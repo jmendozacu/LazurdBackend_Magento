@@ -496,9 +496,6 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
                 'click_action' => $click_action,
                 'icon' => $icon
             ],
-            'data' => [
-
-            ],
             'content_available' => true,
             'priority' => 'high',
             'to' => $toTopic
