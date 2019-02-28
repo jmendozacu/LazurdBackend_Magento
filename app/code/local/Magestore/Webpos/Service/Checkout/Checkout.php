@@ -473,14 +473,14 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
             $icon = "";
         } else if ($baseUrl == "https://lazurd.adad.ws/index.php/") {
             $toTopic = "DEV_ORDER";
-            $token = "AAAAFYUJun4:APA91bGyZlqmvwRAN5VxgIYnesc33SXPjNolQW0fwPYnIxe3VlzYN-KtzOndfmAvSB7vvPSiaJGV1zdE3aatBedklzJnRVKxz6ubgiCuxycGOV1kQAwA6Ii47ziehoy4snD2WIMqwBGa";
+            $token = "AAAAFYUJun4:APA91bGAhRgPwaXxUH9e1479rodgscgOJPnm13LopN_w3nvtKCFiPCaeDjNeK_Xpip73EpnYmqbX7GWaC4sCuVjC7e05iNjT-6HD2nJjUiOcPGCliykVAV6wu5BtH0_E876ZkM0F9kuh";
             $title = "ORDER PLACED";
             $body = "Please Open your Dashboard";
             $click_action = "https://lazurdreport.adad.ws";
             $icon = "https://lazurdreport.adad.ws/assets/images/logo-menu.png";
         } else if ( $baseUrl == "http://lazurd.localhost/index.php/") {
             $toTopic = "LOCAL_ORDER";
-            $token = "AAAAFYUJun4:APA91bGyZlqmvwRAN5VxgIYnesc33SXPjNolQW0fwPYnIxe3VlzYN-KtzOndfmAvSB7vvPSiaJGV1zdE3aatBedklzJnRVKxz6ubgiCuxycGOV1kQAwA6Ii47ziehoy4snD2WIMqwBGa";
+            $token = "AAAAFYUJun4:APA91bGAhRgPwaXxUH9e1479rodgscgOJPnm13LopN_w3nvtKCFiPCaeDjNeK_Xpip73EpnYmqbX7GWaC4sCuVjC7e05iNjT-6HD2nJjUiOcPGCliykVAV6wu5BtH0_E876ZkM0F9kuh";
             $title = "ORDER PLACED";
             $body = "Please Open your Dashboard";
             $click_action = "https://report.localhost:4200";
