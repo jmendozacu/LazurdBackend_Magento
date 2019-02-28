@@ -498,7 +498,7 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
             ],
             'content_available' => true,
             'priority' => 'high',
-            'to' => $toTopic
+            'to' => 'topics/'.$toTopic
         ];
         $data_string = json_encode($post_body);
         $curl = curl_init();
