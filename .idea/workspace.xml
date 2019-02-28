@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="675a0457-b9fe-45c9-bd06-8de839659577" name="Default Changelist" comment="Update SFOJ Update Trigger">
+    <list default="true" id="675a0457-b9fe-45c9-bd06-8de839659577" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php" afterDir="false" />
     </list>
@@ -30,8 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-191">
-              <caret line="475" column="175" selection-start-line="475" selection-start-column="175" selection-end-line="475" selection-end-column="175" />
+            <state relative-caret-position="-444">
+              <caret line="500" column="39" selection-start-line="500" selection-start-column="39" selection-end-line="500" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -423,7 +423,7 @@
       <workItem from="1551248065775" duration="4008000" />
       <workItem from="1551330440520" duration="1845000" />
       <workItem from="1551340408242" duration="7270000" />
-      <workItem from="1551361820201" duration="5367000" />
+      <workItem from="1551361820201" duration="8552000" />
     </task>
     <task id="LOCAL-00001" summary="Update 3 new Payment Method for Aramex, Spring and Transfer for KSA">
       <created>1545294959292</created>
@@ -579,11 +579,60 @@
       <option name="project" value="LOCAL" />
       <updated>1551368554925</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Update curl serverKey">
+      <created>1551369568973</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1551369568973</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Update curl Topic">
+      <created>1551370182196</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1551370182196</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Update curl Topic">
+      <created>1551371269381</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1551371269381</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Update curl Topic">
+      <created>1551371543586</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1551371543586</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Update curl Topic">
+      <created>1551371779555</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1551371779555</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Update curl Topic">
+      <created>1551372167908</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1551372167908</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Update curl Topic">
+      <created>1551372348385</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1551372348385</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143139000" />
+    <option name="totallyTimeSpent" value="146324000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -611,7 +660,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.62100214" weight="0.4180602" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4989339" visible="true" weight="0.36789298" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4989339" visible="true" weight="0.5005574" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.37899786" side_tool="true" weight="0.43924192" />
       <window_info anchor="bottom" id="REST Client" order="12" sideWeight="0.49946696" weight="0.33044422" />
       <window_info anchor="bottom" id="Messages" order="13" />
@@ -685,7 +734,9 @@
     <MESSAGE value="Update Lazurd development conditions for push notification" />
     <MESSAGE value="Update CURL Log" />
     <MESSAGE value="Fix Firebase request - Add Authorization in header" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix Firebase request - Add Authorization in header" />
+    <MESSAGE value="Update curl serverKey" />
+    <MESSAGE value="Update curl Topic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update curl Topic" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -712,17 +763,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php</url>
-          <line>575</line>
+          <line>572</line>
           <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php</url>
-          <line>532</line>
+          <line>529</line>
           <option name="timeStamp" value="56" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php</url>
-          <line>529</line>
+          <line>526</line>
           <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -1123,8 +1174,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-191">
-          <caret line="475" column="175" selection-start-line="475" selection-start-column="175" selection-end-line="475" selection-end-column="175" />
+        <state relative-caret-position="-444">
+          <caret line="500" column="39" selection-start-line="500" selection-start-column="39" selection-end-line="500" selection-end-column="39" />
         </state>
       </provider>
     </entry>

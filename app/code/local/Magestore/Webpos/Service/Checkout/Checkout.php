@@ -498,7 +498,7 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
             ],
             'content_available' => true,
             'priority' => 'high',
-            'to' => '/topics/LOCAL_ORDER'
+            'to' => '/topics/'.$toTopic
         ];
         $data_string = json_encode($post_body);
         $curl = curl_init();
@@ -513,7 +513,7 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_POSTFIELDS => $data_string,
             CURLOPT_HTTPHEADER => array(
-                "Authorization: key=AAAAFYUJun4:APA91bGAhRgPwaXxUH9e1479rodgscgOJPnm13LopN_w3nvtKCFiPCaeDjNeK_Xpip73EpnYmqbX7GWaC4sCuVjC7e05iNjT-6HD2nJjUiOcPGCliykVAV6wu5BtH0_E876ZkM0F9kuh",
+                "Authorization: key=".$token,
                 "Content-Type: application/json"
             ),
         ));
@@ -522,7 +522,7 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
         $err = curl_error($curl);
 
         curl_close($curl);
-
+        Mage::log("baseurl :" . $baseUrl, null, 'curl.log', true);
         if ($err) {
 
             Mage::log("cURL Error :" . $err, null, 'curl.log', true);
