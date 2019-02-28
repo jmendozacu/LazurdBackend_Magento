@@ -516,7 +516,7 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_POSTFIELDS => $data_string,
             CURLOPT_HTTPHEADER => array(
-                "key=".$token,
+                "Authorization: key=".$token,
                 "content-type: application/json"
             ),
         ));
