@@ -152,7 +152,7 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
      */
     public function saveShippingMethod($quoteData, $method)
     {
-        
+
         $data = array();
         $message = array();
         $status = Magestore_Webpos_Api_ResponseInterface::STATUS_SUCCESS;
@@ -169,7 +169,7 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
 
         return $this->getResponseData($data, $message, $status);
     }
-    
+
 
     /**
      * @param Magestore_Webpos_Api_Cart_QuoteDataInitInterface $quoteData
@@ -279,7 +279,7 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
      */
     public function placeOrder($quoteData, $payment, $fields, $actions, $integration)
     {
-        
+
         $data = array();
         $message = array();
         // $message[] = $actions;
@@ -324,7 +324,7 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
                     if ($delivery->getData()) {
                         $deliverydate = $delivery['fromtime'] . ' - ' . $delivery['totime'];
                     }
-                    if(isset($actions['shipping_arrival_date']) && !empty($actions['shipping_arrival_date'])):
+                    if (isset($actions['shipping_arrival_date']) && !empty($actions['shipping_arrival_date'])):
                         $arrival_date = date('Y-m-d ', strtotime($actions['shipping_arrival_date']));
                         $ShippingArrivalDate = date('Y-m-d ', strtotime($actions['shipping_arrival_date'])) . ' ' . $deliverydate;
                         $ShippingDeliveryDate_ori = date('Y-m-d ', strtotime($actions['shipping_arrival_date'])) . ' ' . $delivery['totime'];
@@ -377,7 +377,7 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
                 $store = Mage::getModel('core/store')->load($order->getData('store_id'));
                 $name = $store->getName();
                 $data['store_nameOnly'] = $name;
-                
+
                 $customer = Mage::getModel('customer/customer')->load($order->getData('customer_id'));
                 $data['customer_phone_original'] = $customer->getData("phone");
                 //
@@ -407,7 +407,6 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
 //  `status` smallint(6) NOT NULL DEFAULT '1',
 //  PRIMARY KEY (`id`)
 //) ENGINE=InnoDB AUTO_INCREMENT=2270 DEFAULT CHARSET=utf8;
-
 
 
 //                $resource = Mage::getSingleton('core/resource');
@@ -458,43 +457,82 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
         $body = "";
         $click_action = "";
         $icon = "";
-        if ($baseUrl == "https://kwt.lazurd.com")
-        {
+        if ($baseUrl == "https://kwt.lazurd.com/index.php/") {
             $toTopic = "KWT_ORDER";
             $token = "";
             $title = "";
             $body = "";
             $click_action = "";
             $icon = "";
-        }
-        else if ($baseUrl == "https://ksa.lazurd.com")
-        {
+        } else if ($baseUrl == "https://ksa.lazurd.com/index.php/") {
             $toTopic = "KSA_ORDER";
             $token = "";
             $title = "";
             $body = "";
             $click_action = "";
             $icon = "";
-        }
-        else if ($baseUrl == "https://lazurd.adad.ws")
-        {
+        } else if ($baseUrl == "https://lazurd.adad.ws/index.php/") {
             $toTopic = "DEV_ORDER";
-            $token = "";
-            $title = "";
-            $body = "";
-            $click_action = "";
-            $icon = "";
-        }
-        else if ($baseUrl == "http://lazurd.localhost")
-        {
+            $token = "AAAAFYUJun4:APA91bGyZlqmvwRAN5VxgIYnesc33SXPjNolQW0fwPYnIxe3VlzYN-KtzOndfmAvSB7vvPSiaJGV1zdE3aatBedklzJnRVKxz6ubgiCuxycGOV1kQAwA6Ii47ziehoy4snD2WIMqwBGa";
+            $title = "ORDER PLACED";
+            $body = "Please Open your Dashboard";
+            $click_action = "https://lazurd.adad.ws";
+            $icon = "https://lazurd.adad.ws/assets/images/logo-menu.png";
+        } else if ( $baseUrl == "http://lazurd.localhost/index.php/") {
             $toTopic = "LOCAL_ORDER";
             $token = "AAAAFYUJun4:APA91bGyZlqmvwRAN5VxgIYnesc33SXPjNolQW0fwPYnIxe3VlzYN-KtzOndfmAvSB7vvPSiaJGV1zdE3aatBedklzJnRVKxz6ubgiCuxycGOV1kQAwA6Ii47ziehoy4snD2WIMqwBGa";
-            $title = "";
-            $body = "";
+            $title = "ORDER PLACED";
+            $body = "Please Open your Dashboard";
             $click_action = "https://report.localhost:4200";
             $icon = "https://report.localhost:4200/assets/images/logo-menu.png";
         }
+
+
+        $url = "https://fcm.googleapis.com/fcm/send";
+        $post_body = [
+            'notification' => [
+                'title' => $title,
+                'body' => $body,
+                'click_action' => $click_action,
+                'icon' => $icon
+            ],
+            'data' => [
+
+            ],
+            'content_available' => true,
+            'priority' => 'high',
+            'to' => $toTopic
+        ];
+        $data_string = json_encode($post_body);
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL =>  $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => $data_string,
+            CURLOPT_HTTPHEADER => array(
+                "key=".$token,
+                "content-type: application/json"
+            ),
+        ));
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) {
+            echo "cURL Error #:" . $err;
+        } else {
+            echo $response;
+        }
         // TODO: Error in this line :  Fatal error: Uncaught Error: Class 'Zend\Http\Headers' not found
+        /*
         $httpHeaders = new \Zend\Http\Headers();
         $httpHeaders->addHeaders([
             'Authorization' => 'key=' . $token,
@@ -532,6 +570,7 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
         $client->setOptions($options);
 
         $response = $client->send($request);
+        */
         return $this->getResponseData($data, $message, $status);
     }
 
@@ -746,7 +785,7 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
     /**
      * @param $orderCreateModel
      * @return bool|string
-     */ 
+     */
     protected function _setDefaultData($orderCreateModel)
     {
         $result = true;
@@ -804,118 +843,120 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
     }
 
     // End Ryan Edit
+
     /**
      * Prepare Sql
      * @param array $ids
      * @return array
      */
-    public function prepareSql($ids = []){
+    public function prepareSql($ids = [])
+    {
         $ids = implode(",", $ids);
         $sql = [];
         $resource = $this->orderResource;
-        
+
         /*DELETE All Related Invoice Item*/
         $sql[] = "DELETE FROM {$resource->getTable('sales_invoice_item')}
             WHERE parent_id IN (SELECT entity_id FROM
             {$resource->getTable('sales_invoice')}
             WHERE order_id IN({$ids}));";
-        
+
         /*DELETE all invoice comment*/
         $sql[] = "DELETE FROM {$resource->getTable('sales_invoice_comment')}
             WHERE parent_id IN
             (SELECT entity_id FROM {$resource->getTable('sales_invoice')}
             WHERE order_id IN({$ids}));";
-        
+
         /*Delete All invoice in invoice grid*/
         $sql[] = "DELETE FROM {$resource->getTable('sales_invoice_grid')}
             WHERE order_id IN({$ids});";
-        
+
         /*Delete All invoices*/
         $sql[] = "DELETE FROM {$resource->getTable('sales_invoice')}
             WHERE order_id IN({$ids});";
-        
-        
+
+
         /*DELETE All Related Shipment Item*/
         $sql[] = "DELETE FROM {$resource->getTable('sales_shipment_item')}
             WHERE parent_id IN (SELECT entity_id FROM
             {$resource->getTable('sales_shipment')}
             WHERE order_id IN({$ids}));";
-        
+
         /*DELETE all shipment comment*/
         $sql[] = "DELETE FROM {$resource->getTable('sales_shipment_comment')}
             WHERE parent_id IN
             (SELECT entity_id FROM {$resource->getTable('sales_shipment')}
             WHERE order_id IN({$ids}));";
-        
+
         /*DELETE all shipment tracks*/
         $sql[] = "DELETE FROM {$resource->getTable('sales_shipment_track')}
             WHERE parent_id IN
             (SELECT entity_id FROM {$resource->getTable('sales_shipment')}
             WHERE order_id IN({$ids}));";
-        
-         /*Delete All shipments in shipment grid*/
-         $sql[] = "DELETE FROM {$resource->getTable('sales_shipment_grid')}
+
+        /*Delete All shipments in shipment grid*/
+        $sql[] = "DELETE FROM {$resource->getTable('sales_shipment_grid')}
             WHERE order_id IN({$ids});";
 
         /*Delete All shipments*/
         $sql[] = "DELETE FROM {$resource->getTable('sales_shipment')}
             WHERE order_id IN({$ids});";
-        
+
         /*DELETE All Related Creditmemo Item*/
         $sql[] = "DELETE FROM {$resource->getTable('sales_creditmemo_item')}
             WHERE parent_id IN (SELECT entity_id FROM
             {$resource->getTable('sales_creditmemo')}
             WHERE order_id IN({$ids}));";
-        
+
         /*DELETE all creditmemo comment*/
         $sql[] = "DELETE FROM {$resource->getTable('sales_creditmemo_comment')}
             WHERE parent_id IN
             (SELECT entity_id FROM {$resource->getTable('sales_creditmemo')}
             WHERE order_id IN({$ids}));";
-        
+
         /*Delete All creditmemos in creditmemo grid*/
         $sql[] = "DELETE FROM {$resource->getTable('sales_creditmemo_grid')}
             WHERE order_id IN({$ids});";
-        
+
         /*Delete All shipments*/
         $sql[] = "DELETE FROM {$resource->getTable('sales_creditmemo')}
             WHERE order_id IN({$ids});";
-        
-        
+
+
         /*DELETE all order tax item*/
         $sql[] = "DELETE FROM {$resource->getTable('sales_order_tax_item')}
             WHERE tax_id IN
             (SELECT tax_id FROM {$resource->getTable('sales_order_tax')}
             WHERE order_id IN({$ids}));";
-        
+
         /*DELETE all order tax*/
         $sql[] = "DELETE FROM {$resource->getTable('sales_order_tax')}
             WHERE order_id IN({$ids});";
-        
+
         /*DELETE All Related order Item*/
         $sql[] = "DELETE FROM {$resource->getTable('sales_order_item')}
             WHERE order_id IN({$ids});";
-        
+
         /*DELETE all order payment*/
         $sql[] = "DELETE FROM {$resource->getTable('sales_order_payment')}
             WHERE parent_id IN({$ids});";
-        
+
         /*DELETE all order status history*/
         $sql[] = "DELETE FROM {$resource->getTable('sales_order_status_history')}
             WHERE parent_id IN({$ids});";
-        
+
         /*DELETE all order address*/
         $sql[] = "DELETE FROM {$resource->getTable('sales_order_address')}
             WHERE parent_id IN({$ids});";
-        
+
         /*Delete All order in order grid*/
         $sql[] = "DELETE FROM {$resource->getTable('sales_order_grid')}
             WHERE entity_id IN({$ids});";
-        
+
         /*Delete All orders*/
         $sql[] = "DELETE FROM {$resource->getTable('sales_order')}
             WHERE entity_id IN({$ids});";
-        
+
         return $sql;
     }
 
@@ -929,17 +970,17 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
     {
         try {
             $ids = $this->getRequest()->getParam('selected');
-            if(!$ids || !is_array($ids) || !sizeof($ids))
+            if (!$ids || !is_array($ids) || !sizeof($ids))
                 throw new \Exception(__("Please select an item to process."));
-            
+
             $sqls = $this->prepareSql($ids);
-            foreach($sqls as $sql){
+            foreach ($sqls as $sql) {
                 $this->orderResource->getConnection()->query($sql);
             }
             $this->messageManager->addSuccess(
                 __('We deleted %1 order(s).', sizeof($ids))
             );
-            
+
         } catch (\Exception $e) {
             $this->messageManager->addError($e->getMessage());
             /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
@@ -949,7 +990,6 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
     }
 
     // End Ryan Edit
-
 
 
 }
