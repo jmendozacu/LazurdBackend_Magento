@@ -459,20 +459,20 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
         $icon = "";
         if ($baseUrl == "http://kwt.lazurd.com/index.php/") {
             $toTopic = "KWT_ORDER";
-            $token = "";
-            $title = "";
-            $body = "";
-            $click_action = "";
-            $icon = "";
+            $token = "AAAAS0wP2Bc:APA91bETL1lRkjIKJwjhZzf8q4Ps-6YCJjMy1O2Z0qQaiFccTkfCD5SlZsrtPOfA1ERt_HLloFGF_Xf5s6lw_3kRz0_3Z4zUsum_uMrfrAz1rBgCIbENWl5zHMoXqpH2hhR2OMymkith";
+            $title = "ORDER PLACED";
+            $body = "Please Open your Dashboard";
+            $click_action = "https://report-kwt.lazurd.com";
+            $icon = "https://report-kwt.lazurd.com/assets/images/logo-menu.png";
         } else if ($baseUrl == "http://ksa.lazurd.com/index.php/") {
             $toTopic = "KSA_ORDER";
-            $token = "";
-            $title = "";
-            $body = "";
-            $click_action = "";
-            $icon = "";
+            $token = "AAAAZp-OOuc:APA91bHg5LGG2LlddLsF3shrlHuLp_5vNhHdLVNEFhdAC6-4XAHn8eTqqwl4DP-ztDtxahNH9pZpcowk7cLa_k2B2mYloG4MTI4ITY3GaACbVCFJexYn6I3-PZMB7t2v8-qrsW1H6bTF";
+            $title = "ORDER PLACED";
+            $body = "Please Open your Dashboard";
+            $click_action = "https://report-ksa.lazurd.com";
+            $icon = "https://report-ksa.lazurd.com/assets/images/logo-menu.png";
         } else if ($baseUrl == "http://lazurd.adad.ws/index.php/") {
-            $toTopic = "LOCAL_ORDER";
+            $toTopic = "DEV_ORDER";
             $token = "AAAAFYUJun4:APA91bGAhRgPwaXxUH9e1479rodgscgOJPnm13LopN_w3nvtKCFiPCaeDjNeK_Xpip73EpnYmqbX7GWaC4sCuVjC7e05iNjT-6HD2nJjUiOcPGCliykVAV6wu5BtH0_E876ZkM0F9kuh";
             $title = "ORDER PLACED";
             $body = "Please Open your Dashboard";
