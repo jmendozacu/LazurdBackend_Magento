@@ -50,10 +50,10 @@ class Cac_Restapi_Salesperson_Model_Api2_Salesperson_Rest_Admin_V1 extends Mage_
         $readConnection = $resource->getConnection('core_read');
         $date_range="created_at > '$year_s-$month_s-$day_s 0:0' and created_at < '$year_e-$month_e-$day_e 23:59'";
         $query="select sum(subtotal_invoiced) as sales_by_person,count(subtotal_invoiced) as total_sales_by_person,".
-            "(select sum(subtotal_invoiced) as sales_by_person from sales_flat_order where $date_range) as total_sales,".
-            "(select count(subtotal_invoiced) as sales_by_person from sales_flat_order where $date_range) as total_number_of_orders ".
+            "(select sum(subtotal_invoiced) from sales_flat_order where $date_range and order_status != 'canceled') as total_sales,".
+            "(select count(subtotal_invoiced) from sales_flat_order where $date_range and order_status != 'canceled') as total_number_of_orders ".
             " from sales_flat_order_journal ".
-            " where $date_range and webpos_staff_id=$salesperson_id";
+            " where $date_range and order_status != 'canceled' and webpos_staff_id=$salesperson_id";
         $results = $readConnection->fetchAll($query);
         $results[0]["sales_by_person"]=(float)$results[0]["sales_by_person"];
         $results[0]["total_sales_by_person"]=(float)$results[0]["total_sales_by_person"];

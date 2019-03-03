@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="675a0457-b9fe-45c9-bd06-8de839659577" name="Default Changelist" comment="Update Firebase Config Environments">
+    <list default="true" id="675a0457-b9fe-45c9-bd06-8de839659577" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/Model/Api2/Salesperson/Rest/Admin/V1.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/Model/Api2/Salesperson/Rest/Admin/V1.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,10 +28,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php">
+        <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/Model/Api2/Salesperson/Rest/Admin/V1.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
-              <caret line="484" column="100" selection-start-line="484" selection-start-column="100" selection-end-line="484" selection-end-column="100" />
+            <state relative-caret-position="390">
+              <caret line="55" column="35" selection-start-line="55" selection-start-column="35" selection-end-line="55" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -130,9 +130,9 @@
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/app/code/local/Cac/sales_person_report_modifications.txt" />
-        <option value="$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/Model/Api2/Salesperson/Rest/Admin/V1.php" />
         <option value="$PROJECT_DIR$/app/code/core/Mage/Core/functions.php" />
         <option value="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php" />
+        <option value="$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/Model/Api2/Salesperson/Rest/Admin/V1.php" />
       </list>
     </option>
   </component>
@@ -428,7 +428,10 @@
       <workItem from="1551502907318" duration="827000" />
       <workItem from="1551505024616" duration="3981000" />
       <workItem from="1551541938354" duration="1199000" />
-      <workItem from="1551600782994" duration="1891000" />
+      <workItem from="1551600782994" duration="2532000" />
+      <workItem from="1551603935425" duration="221000" />
+      <workItem from="1551607543799" duration="1134000" />
+      <workItem from="1551621425754" duration="837000" />
     </task>
     <task id="LOCAL-00001" summary="Update 3 new Payment Method for Aramex, Spring and Transfer for KSA">
       <created>1545294959292</created>
@@ -661,11 +664,32 @@
       <option name="project" value="LOCAL" />
       <updated>1551602430615</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Update Firebase Config Environments">
+      <created>1551602814002</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1551602814002</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Update Firebase Config Environments">
+      <created>1551602852897</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1551602852897</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Comment Curl Log for Firebase on Checkout ( Place Order )">
+      <created>1551603269980</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1551603269980</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155110000" />
+    <option name="totallyTimeSpent" value="157943000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -680,7 +704,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3065032" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.3160981" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -692,7 +716,7 @@
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49733475" weight="0.32887402" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.62100214" weight="0.4180602" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.62100214" weight="0.3199554" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4989339" weight="0.5005574" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.3192964" side_tool="true" weight="0.13154961" />
       <window_info anchor="bottom" id="REST Client" order="12" sideWeight="0.49946696" weight="0.33044422" />
@@ -770,7 +794,8 @@
     <MESSAGE value="Update curl serverKey" />
     <MESSAGE value="Update curl Topic" />
     <MESSAGE value="Update Firebase Config Environments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Firebase Config Environments" />
+    <MESSAGE value="Comment Curl Log for Firebase on Checkout ( Place Order )" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comment Curl Log for Firebase on Checkout ( Place Order )" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1085,13 +1110,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/Model/Api2/Salesperson/Rest/Admin/V1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="55" column="69" selection-start-line="50" selection-start-column="8" selection-end-line="55" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/code/local/Ewall/Dirvermanagement/controllers/Adminhtml/DriverController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="457">
@@ -1198,8 +1216,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="484" column="100" selection-start-line="484" selection-start-column="100" selection-end-line="484" selection-end-column="100" />
+        <state relative-caret-position="153">
+          <caret line="525" column="19" selection-start-line="525" selection-start-column="19" selection-end-line="525" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/Model/Api2/Salesperson/Rest/Admin/V1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="55" column="35" selection-start-line="55" selection-start-column="35" selection-end-line="55" selection-end-column="35" />
         </state>
       </provider>
     </entry>
