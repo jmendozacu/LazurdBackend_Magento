@@ -522,13 +522,13 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
         $err = curl_error($curl);
 
         curl_close($curl);
-        Mage::log("baseurl :" . $baseUrl, null, 'curl.log', true);
+      //  Mage::log("baseurl :" . $baseUrl, null, 'curl.log', true);
         if ($err) {
 
-            Mage::log("cURL Error :" . $err, null, 'curl.log', true);
+         //   Mage::log("cURL Error :" . $err, null, 'curl.log', true);
         } else {
 
-            Mage::log("cURL Success :" . $response, null, 'curl.log', true);
+       //     Mage::log("cURL Success :" . $response, null, 'curl.log', true);
         }
         // TODO: Error in this line :  Fatal error: Uncaught Error: Class 'Zend\Http\Headers' not found
         /*
