@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="675a0457-b9fe-45c9-bd06-8de839659577" name="Default Changelist" comment="">
+    <list default="true" id="675a0457-b9fe-45c9-bd06-8de839659577" name="Default Changelist" comment="Update Firebase Config Environments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php" afterDir="false" />
     </list>
@@ -30,8 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-444">
-              <caret line="500" column="39" selection-start-line="500" selection-start-column="39" selection-end-line="500" selection-end-column="39" />
+            <state relative-caret-position="780">
+              <caret line="484" column="100" selection-start-line="484" selection-start-column="100" selection-end-line="484" selection-end-column="100" />
             </state>
           </provider>
         </entry>
@@ -137,7 +137,7 @@
     </option>
   </component>
   <component name="JoomlaConfiguration" doNotAskAgain="true" />
-  <component name="PhpDebugGeneral" break_at_first_line="true" listening_started="true" />
+  <component name="PhpDebugGeneral" break_at_first_line="true" />
   <component name="PhpServers">
     <servers>
       <server host="lazurd.localhost" id="495c22bb-cda7-49ef-929f-bc91c98b990c" name="Laz Server">
@@ -423,7 +423,12 @@
       <workItem from="1551248065775" duration="4008000" />
       <workItem from="1551330440520" duration="1845000" />
       <workItem from="1551340408242" duration="7270000" />
-      <workItem from="1551361820201" duration="8552000" />
+      <workItem from="1551361820201" duration="9375000" />
+      <workItem from="1551502765578" duration="65000" />
+      <workItem from="1551502907318" duration="827000" />
+      <workItem from="1551505024616" duration="3981000" />
+      <workItem from="1551541938354" duration="1199000" />
+      <workItem from="1551600782994" duration="1891000" />
     </task>
     <task id="LOCAL-00001" summary="Update 3 new Payment Method for Aramex, Spring and Transfer for KSA">
       <created>1545294959292</created>
@@ -628,11 +633,39 @@
       <option name="project" value="LOCAL" />
       <updated>1551372348385</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Update curl Topic">
+      <created>1551372699583</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1551372699583</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Update curl Topic">
+      <created>1551372866793</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1551372866793</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Update Firebase Config Environments">
+      <created>1551505370581</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1551505370581</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Update Firebase Config Environments">
+      <created>1551602430615</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1551602430615</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146324000" />
+    <option name="totallyTimeSpent" value="155110000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -647,21 +680,21 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29051173" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3065032" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.81023455" weight="0.3979933" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.68070364" weight="0.3979933" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49733475" weight="0.32887402" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.62100214" weight="0.4180602" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4989339" visible="true" weight="0.5005574" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.37899786" side_tool="true" weight="0.43924192" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4989339" weight="0.5005574" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.3192964" side_tool="true" weight="0.13154961" />
       <window_info anchor="bottom" id="REST Client" order="12" sideWeight="0.49946696" weight="0.33044422" />
       <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -736,7 +769,8 @@
     <MESSAGE value="Fix Firebase request - Add Authorization in header" />
     <MESSAGE value="Update curl serverKey" />
     <MESSAGE value="Update curl Topic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update curl Topic" />
+    <MESSAGE value="Update Firebase Config Environments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Firebase Config Environments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -765,16 +799,6 @@
           <url>file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php</url>
           <line>572</line>
           <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php</url>
-          <line>529</line>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php</url>
-          <line>526</line>
-          <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php</url>
@@ -1157,7 +1181,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-90">
+        <state relative-caret-position="30">
           <caret line="26" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
@@ -1174,8 +1198,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-444">
-          <caret line="500" column="39" selection-start-line="500" selection-start-column="39" selection-end-line="500" selection-end-column="39" />
+        <state relative-caret-position="780">
+          <caret line="484" column="100" selection-start-line="484" selection-start-column="100" selection-end-line="484" selection-end-column="100" />
         </state>
       </provider>
     </entry>
