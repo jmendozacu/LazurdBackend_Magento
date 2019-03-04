@@ -45,23 +45,39 @@ class Cac_Restapi_Salesperson_Model_Api2_Salesperson_Rest_Admin_V1 extends Mage_
         list($year_s,$month_s,$day_s)=explode("-",$from);
         list($year_e,$month_e,$day_e)=explode("-",$to);
 
-
+        // first get stores
+        $allStores = Mage::app()->getStores();
         $resource = Mage::getSingleton('core/resource');
         $readConnection = $resource->getConnection('core_read');
         $date_range="created_at > '$year_s-$month_s-$day_s 0:0' and created_at < '$year_e-$month_e-$day_e 23:59'";
-        $query="select sum(subtotal_invoiced) as sales_by_person,count(subtotal_invoiced) as total_sales_by_person,".
-            "(select sum(subtotal_invoiced) from sales_flat_order where $date_range and order_status != 'canceled') as total_sales,".
-            "(select count(subtotal_invoiced) from sales_flat_order where $date_range and order_status != 'canceled') as total_number_of_orders ".
+        $date_range_delivery="shipping_delivery_date > '$year_s-$month_s-$day_s 0:0' and shipping_delivery_date < '$year_e-$month_e-$day_e 23:59'";
+       // second get webpos users total_sales and count
+        $query="select sum(subtotal_invoiced) as daily_sales,count(*) as total_sales_by_person".
             " from sales_flat_order_journal ".
-            " where $date_range and order_status != 'canceled' and webpos_staff_id=$salesperson_id";
-        $results = $readConnection->fetchAll($query);
-        $results[0]["sales_by_person"]=(float)$results[0]["sales_by_person"];
-        $results[0]["total_sales_by_person"]=(float)$results[0]["total_sales_by_person"];
-        $results[0]["total_sales"]=(float)$results[0]["total_sales"];
-        $results[0]["total_number_of_orders"]=(float)$results[0]["total_number_of_orders"];
+            " where $date_range_delivery and order_status != 'canceled' and webpos_staff_id=$salesperson_id";
+        $results = $readConnection->fetchAll($query)[0];
+        $i=0;
+        $stores=[];
+        // finally get total sales and count of each store
+        foreach ($allStores as $_eachStoreId => $val)
+        {
+            $_storeCode = Mage::app()->getStore($_eachStoreId)->getCode();
+            $_storeName = Mage::app()->getStore($_eachStoreId)->getName();
+            $_storeId = Mage::app()->getStore($_eachStoreId)->getId();
 
-
-        return $results[0];
+            $stores_q = "SELECT count(*) as total_number_of_orders,sum(subtotal_invoiced) as total_sales".
+                " FROM sales_flat_order ".
+                " where store_id=$_storeId and $date_range and order_status!='canceled'";
+            $stores[$i] = $readConnection->fetchAll($stores_q)[0];
+            $stores[$i]["store_name"] = $_storeName;
+            $stores[$i]["total_number_of_orders"] = (float)$stores[$i]["total_number_of_orders"];
+            $stores[$i]["total_sales"] = (float)$stores[$i]["total_sales"];
+            $i++;
+        }
+        $results["daily_sales"]=(float)$results["daily_sales"];
+        $results["total_sales_by_person"]=(float)$results["total_sales_by_person"];
+        $results["stores"]=$stores;
+        return $results;
     }
 
     /**
