@@ -67,7 +67,7 @@ class Cac_Restapi_Salesperson_Model_Api2_Salesperson_Rest_Admin_V1 extends Mage_
 
             $stores_q = "SELECT count(*) as total_number_of_orders,sum(subtotal_invoiced) as total_sales".
                 " FROM sales_flat_order ".
-                " where store_id=$_storeId and $date_range and order_status!='canceled'";
+                " where store_id=$_storeId and $date_range_delivery and order_status!='canceled'";
             $stores[$i] = $readConnection->fetchAll($stores_q)[0];
             $stores[$i]["store_name"] = $_storeName;
             $stores[$i]["total_number_of_orders"] = (float)$stores[$i]["total_number_of_orders"];
@@ -93,7 +93,7 @@ class Cac_Restapi_Salesperson_Model_Api2_Salesperson_Rest_Admin_V1 extends Mage_
 
         $resource = Mage::getSingleton('core/resource');
         $readConnection = $resource->getConnection('core_read');
-        $query = "SELECT * from sales_flat_order_journal where webpos_staff_id=$salesperson_id and created_at > '$year_s-$month_s-$day_s 0:0' and created_at < '$year_e-$month_e-$day_e 23:59'";
+        $query = "SELECT * from sales_flat_order_journal where webpos_staff_id=$salesperson_id and shipping_delivery_date > '$year_s-$month_s-$day_s 0:0' and shipping_delivery_date < '$year_e-$month_e-$day_e 23:59'";
         $results["items"] = $readConnection->fetchAll($query);
 
 
