@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="675a0457-b9fe-45c9-bd06-8de839659577" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/Model/Api2/Salesperson/Rest/Admin/V1.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/Model/Api2/Salesperson/Rest/Admin/V1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,38 +27,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/Model/Api2/Salesperson/Rest/Admin/V1.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="56" column="26" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
+            <state relative-caret-position="-1342">
+              <caret line="57" selection-start-line="57" selection-end-line="57" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Kitchen/Model/Api2/Kitchen/Rest/Admin/V1.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5370">
-              <caret line="179" column="42" selection-start-line="179" selection-start-column="37" selection-end-line="179" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Sales/Model/Api2/Sale/Rest/Admin/V1.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7440">
-              <caret line="248" column="3" selection-start-line="248" selection-start-column="3" selection-end-line="258" selection-end-column="9" />
+            <state relative-caret-position="351">
+              <caret line="484" column="101" selection-start-line="484" selection-start-column="101" selection-end-line="484" selection-end-column="101" />
             </state>
           </provider>
         </entry>
@@ -158,8 +140,8 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/app/code/local/Cac/sales_person_report_modifications.txt" />
         <option value="$PROJECT_DIR$/app/code/core/Mage/Core/functions.php" />
-        <option value="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php" />
         <option value="$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/Model/Api2/Salesperson/Rest/Admin/V1.php" />
+        <option value="$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php" />
       </list>
     </option>
   </component>
@@ -230,267 +212,89 @@
               <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
               <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="design" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
               <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
+              <item name="design" type="462c0819:PsiDirectoryNode" />
+              <item name="adminhtml" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
               <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-              <item name="Cac" type="462c0819:PsiDirectoryNode" />
+              <item name="design" type="462c0819:PsiDirectoryNode" />
+              <item name="adminhtml" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
               <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-              <item name="Cac" type="462c0819:PsiDirectoryNode" />
-              <item name="Restapi" type="462c0819:PsiDirectoryNode" />
+              <item name="design" type="462c0819:PsiDirectoryNode" />
+              <item name="adminhtml" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
               <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-              <item name="Cac" type="462c0819:PsiDirectoryNode" />
-              <item name="Restapi" type="462c0819:PsiDirectoryNode" />
-              <item name="Kitchen" type="462c0819:PsiDirectoryNode" />
+              <item name="design" type="462c0819:PsiDirectoryNode" />
+              <item name="adminhtml" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+              <item name="template" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
               <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-              <item name="Cac" type="462c0819:PsiDirectoryNode" />
-              <item name="Restapi" type="462c0819:PsiDirectoryNode" />
-              <item name="Kitchen" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="design" type="462c0819:PsiDirectoryNode" />
+              <item name="adminhtml" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+              <item name="template" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
               <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-              <item name="Cac" type="462c0819:PsiDirectoryNode" />
-              <item name="Restapi" type="462c0819:PsiDirectoryNode" />
-              <item name="Kitchen" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="Api2" type="462c0819:PsiDirectoryNode" />
+              <item name="skin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
               <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-              <item name="Cac" type="462c0819:PsiDirectoryNode" />
-              <item name="Restapi" type="462c0819:PsiDirectoryNode" />
-              <item name="Kitchen" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="Api2" type="462c0819:PsiDirectoryNode" />
-              <item name="Kitchen" type="462c0819:PsiDirectoryNode" />
+              <item name="skin" type="462c0819:PsiDirectoryNode" />
+              <item name="adminhtml" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
               <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-              <item name="Cac" type="462c0819:PsiDirectoryNode" />
-              <item name="Restapi" type="462c0819:PsiDirectoryNode" />
-              <item name="Kitchen" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="Api2" type="462c0819:PsiDirectoryNode" />
-              <item name="Kitchen" type="462c0819:PsiDirectoryNode" />
-              <item name="Rest" type="462c0819:PsiDirectoryNode" />
+              <item name="skin" type="462c0819:PsiDirectoryNode" />
+              <item name="adminhtml" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
               <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-              <item name="Cac" type="462c0819:PsiDirectoryNode" />
-              <item name="Restapi" type="462c0819:PsiDirectoryNode" />
-              <item name="Kitchen" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="Api2" type="462c0819:PsiDirectoryNode" />
-              <item name="Kitchen" type="462c0819:PsiDirectoryNode" />
-              <item name="Rest" type="462c0819:PsiDirectoryNode" />
-              <item name="Admin" type="462c0819:PsiDirectoryNode" />
+              <item name="skin" type="462c0819:PsiDirectoryNode" />
+              <item name="adminhtml" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
               <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-              <item name="Cac" type="462c0819:PsiDirectoryNode" />
-              <item name="Restapi" type="462c0819:PsiDirectoryNode" />
-              <item name="Sales" type="462c0819:PsiDirectoryNode" />
+              <item name="skin_last" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
               <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-              <item name="Cac" type="462c0819:PsiDirectoryNode" />
-              <item name="Restapi" type="462c0819:PsiDirectoryNode" />
-              <item name="Sales" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-              <item name="Cac" type="462c0819:PsiDirectoryNode" />
-              <item name="Restapi" type="462c0819:PsiDirectoryNode" />
-              <item name="Sales" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="Api2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-              <item name="Cac" type="462c0819:PsiDirectoryNode" />
-              <item name="Restapi" type="462c0819:PsiDirectoryNode" />
-              <item name="Sales" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="Api2" type="462c0819:PsiDirectoryNode" />
-              <item name="Sale" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-              <item name="Cac" type="462c0819:PsiDirectoryNode" />
-              <item name="Restapi" type="462c0819:PsiDirectoryNode" />
-              <item name="Sales" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="Api2" type="462c0819:PsiDirectoryNode" />
-              <item name="Sale" type="462c0819:PsiDirectoryNode" />
-              <item name="Rest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-              <item name="Cac" type="462c0819:PsiDirectoryNode" />
-              <item name="Restapi" type="462c0819:PsiDirectoryNode" />
-              <item name="Sales" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="Api2" type="462c0819:PsiDirectoryNode" />
-              <item name="Sale" type="462c0819:PsiDirectoryNode" />
-              <item name="Rest" type="462c0819:PsiDirectoryNode" />
-              <item name="Admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-              <item name="Cac" type="462c0819:PsiDirectoryNode" />
-              <item name="Restapi" type="462c0819:PsiDirectoryNode" />
-              <item name="Salesperson" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-              <item name="Cac" type="462c0819:PsiDirectoryNode" />
-              <item name="Restapi" type="462c0819:PsiDirectoryNode" />
-              <item name="Salesperson" type="462c0819:PsiDirectoryNode" />
-              <item name="etc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-              <item name="Cac" type="462c0819:PsiDirectoryNode" />
-              <item name="Restapi" type="462c0819:PsiDirectoryNode" />
-              <item name="Salesperson" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-              <item name="Cac" type="462c0819:PsiDirectoryNode" />
-              <item name="Restapi" type="462c0819:PsiDirectoryNode" />
-              <item name="Salesperson" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="Api2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-              <item name="Cac" type="462c0819:PsiDirectoryNode" />
-              <item name="Restapi" type="462c0819:PsiDirectoryNode" />
-              <item name="Salesperson" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="Api2" type="462c0819:PsiDirectoryNode" />
-              <item name="Salesperson" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-              <item name="Cac" type="462c0819:PsiDirectoryNode" />
-              <item name="Restapi" type="462c0819:PsiDirectoryNode" />
-              <item name="Salesperson" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="Api2" type="462c0819:PsiDirectoryNode" />
-              <item name="Salesperson" type="462c0819:PsiDirectoryNode" />
-              <item name="Rest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lazurd.localhost" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lazurd.localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-              <item name="Cac" type="462c0819:PsiDirectoryNode" />
-              <item name="Restapi" type="462c0819:PsiDirectoryNode" />
-              <item name="Salesperson" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="Api2" type="462c0819:PsiDirectoryNode" />
-              <item name="Salesperson" type="462c0819:PsiDirectoryNode" />
-              <item name="Rest" type="462c0819:PsiDirectoryNode" />
-              <item name="Admin" type="462c0819:PsiDirectoryNode" />
+              <item name="skin_last" type="462c0819:PsiDirectoryNode" />
+              <item name="adminhtml" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -611,6 +415,8 @@
       <workItem from="1551621425754" duration="4601000" />
       <workItem from="1551685344479" duration="5271000" />
       <workItem from="1551711453592" duration="1790000" />
+      <workItem from="1552746968708" duration="643000" />
+      <workItem from="1553106274532" duration="939000" />
     </task>
     <task id="LOCAL-00001" summary="Update 3 new Payment Method for Aramex, Spring and Transfer for KSA">
       <created>1545294959292</created>
@@ -875,7 +681,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="168768000" />
+    <option name="totallyTimeSpent" value="170408000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -890,7 +696,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3192964" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18443497" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -902,7 +708,7 @@
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49733475" weight="0.32887402" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.62100214" weight="0.3199554" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.62100214" visible="true" weight="0.3199554" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4989339" weight="0.5005574" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.3192964" side_tool="true" weight="0.13154961" />
       <window_info anchor="bottom" id="REST Client" order="12" sideWeight="0.49946696" weight="0.33044422" />
@@ -1022,16 +828,6 @@
           <line>459</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/Model/Api2/Salesperson/Rest/Admin/V1.php</url>
-          <line>57</line>
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/Model/Api2/Salesperson/Rest/Admin/V1.php</url>
-          <line>58</line>
-          <option name="timeStamp" value="62" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -1082,19 +878,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/downloader/config.ini">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/etc/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3990">
-          <caret line="133" column="58" selection-start-line="133" selection-start-column="58" selection-end-line="133" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/bootstrap.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/locale/en_US/template/pdf/sales/po_pdf_order_admin_template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -1393,13 +1176,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="525" column="19" selection-start-line="525" selection-start-column="19" selection-end-line="525" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Kitchen/Model/Api2/Kitchen/Rest/Admin/V1.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5370">
@@ -1421,10 +1197,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/design/adminhtml/default/admintheme/template/media/editor.phtml" />
+    <entry file="file://$PROJECT_DIR$/app/design/adminhtml/default/default/template/media/uploader.phtml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/design/adminhtml/default/default/template/media/editor.phtml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/code/local/Cac/Restapi/Salesperson/Model/Api2/Salesperson/Rest/Admin/V1.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="56" column="26" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
+        <state relative-caret-position="-1342">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/local/Magestore/Webpos/Service/Checkout/Checkout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="484" column="101" selection-start-line="484" selection-start-column="101" selection-end-line="484" selection-end-column="101" />
         </state>
       </provider>
     </entry>
