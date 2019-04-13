@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="675a0457-b9fe-45c9-bd06-8de839659577" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -315,7 +314,7 @@
       <workItem from="1551711453592" duration="1790000" />
       <workItem from="1552746968708" duration="643000" />
       <workItem from="1553106274532" duration="1560000" />
-      <workItem from="1555148205923" duration="1523000" />
+      <workItem from="1555148205923" duration="1833000" />
     </task>
     <task id="LOCAL-00001" summary="Update 3 new Payment Method for Aramex, Spring and Transfer for KSA">
       <created>1545294959292</created>
@@ -597,11 +596,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555149560641</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Increase php memory limit to 2gb">
+      <created>1555149738666</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1555149738666</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172552000" />
+    <option name="totallyTimeSpent" value="172862000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -683,7 +689,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update Sales Person List API (have Bug yet)" />
     <MESSAGE value="Update API routes" />
     <MESSAGE value="UPDATE ROUTES OF SALESPERSONS" />
     <MESSAGE value="Update HTML INVOICE ( Add Delivery Date )" />
@@ -708,7 +713,8 @@
     <MESSAGE value="Update Push Message Body" />
     <MESSAGE value="Update .htaccess to increase php memory limit&#10;Delete Exploid thread files (bridge_NXsZlJjV.php)" />
     <MESSAGE value="Increase php memory limit to 1gb" />
-    <option name="LAST_COMMIT_MESSAGE" value="Increase php memory limit to 1gb" />
+    <MESSAGE value="Increase php memory limit to 2gb" />
+    <option name="LAST_COMMIT_MESSAGE" value="Increase php memory limit to 2gb" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
