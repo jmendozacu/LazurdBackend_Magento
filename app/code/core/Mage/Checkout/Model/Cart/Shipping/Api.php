@@ -63,10 +63,11 @@ class Mage_Checkout_Model_Cart_Shipping_Api extends Mage_Checkout_Model_Api_Reso
         }
 
         try {
-           
-            
 
-            if((float)$quote->getGrandTotal() < 50 ) 
+            $freeShippingMargin = Mage::getStoreConfig('carriers/freeshipping/free_shipping_subtotal');
+
+
+            if((float)$quote->getGrandTotal() < $freeShippingMargin )
             { 
                 $quote->getShippingAddress()->setShippingMethod($shippingMethod);
                 // Mage::log('hhh  '.$quote->getGrandTotal()  , null, 'mylog3.log');
