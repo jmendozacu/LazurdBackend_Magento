@@ -125,10 +125,14 @@ class Cac_Restapi_Kitchen_Model_Api2_Kitchen_Rest_Admin_V1 extends Mage_Api2_Mod
         if (isset($product_id) && $product_id!=-1)
             $filter_products="and sfoi.product_id=$product_id";
 
+        $category_filter = $cat_id > 0 ? "ccp.category_id=$cat_id and " : "";
+
         $query="select sfo.increment_id as order_id, sfoi.item_id,sfoi.item_status,sfoi.product_id,name as product_name,qty_ordered as quantity,shipping_delivery_date,sfoi.text_custom_options_value as custom_text ".
             " from sales_flat_order as sfo join sales_flat_order_item as sfoi on sfo.entity_id=sfoi.order_id join catalog_category_product as ccp on ccp.product_id=sfoi.product_id  ".
-            "where ccp.category_id=$cat_id and (sfo.shipping_delivery_date >= '$year_s-$month_s-$day_s 0:0' AND sfo.shipping_delivery_date <= '$year_e-$month_e-$day_e 23:59') ".
+            "where {$category_filter} (sfo.shipping_delivery_date >= '$year_s-$month_s-$day_s 0:0' AND sfo.shipping_delivery_date <= '$year_e-$month_e-$day_e 23:59') ".
             "$filter_products order by name";
+
+
         $resource = Mage::getSingleton('core/resource');
         $readConnection = $resource->getConnection('core_read');
         $results = $readConnection->fetchAll($query);
