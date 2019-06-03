@@ -167,11 +167,47 @@ class Cac_Restapi_Customers_Model_Api2_Customer_Rest_Admin_V1 extends Mage_Api2_
         echo json_encode($results, JSON_UNESCAPED_UNICODE);
         exit();
     }
-    public function getCustomersRegion(){
+    public function getCustomersRegion()
+    {
         // route:
-        // /cac/customer/regions
+        // /cac/regions
 
-        return "Regions";
+        $results['error'] = null;
+        try {
+            $resource = Mage::getSingleton('core/resource');
+            $readConnection = $resource->getConnection('core_read');
+
+            switch ($_SERVER['SERVER_NAME']) {
+                case 'lazurd.adad.ws':
+                    $countryId = 'kw';
+                    break;
+                case 'kwt.lazurd.com':
+                    $countryId = 'kw';
+                    break;
+                case 'ksa.lazurd.com':
+                    $countryId = 'ksa';
+                    break;
+                case 'lazurd.localhost':
+                    $countryId = 'kw';
+                    break;
+                default:
+                    throw new Exception('Unknown server');
+                    break;
+            }
+
+
+            $query = "select r.`region_id`, rn.name from `directory_country_region` r
+                    join `directory_country_region_name` rn using (region_id)
+                    where r.country_id = '{$countryId}'";
+
+            $results['data'] = $readConnection->fetchAll($query);
+        } catch (Exception $exception) {
+            $results['error'] = true;
+            $results['errorMessage'] = $exception->getMessage();
+            $results['errorCode'] = $exception->getCode();
+        }
+        echo json_encode($results, JSON_UNESCAPED_UNICODE);
+        exit();
     }
     /**
      * Action Dispatcher
