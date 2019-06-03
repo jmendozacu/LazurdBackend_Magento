@@ -26,7 +26,7 @@
                         <action_type>entity</action_type>
                     </route_entity>
                     <route_regions>
-                        <route>/cac/customer/regions</route>
+                        <route>/cac/regions</route>
                         <action_type>regions</action_type>
                     </route_regions>
                 </routes>
