@@ -177,24 +177,13 @@ class Cac_Restapi_Customers_Model_Api2_Customer_Rest_Admin_V1 extends Mage_Api2_
             $resource = Mage::getSingleton('core/resource');
             $readConnection = $resource->getConnection('core_read');
 
-            switch ($_SERVER['SERVER_NAME']) {
-                case 'lazurd.adad.ws':
-                    $countryId = 'kw';
-                    break;
-                case 'kwt.lazurd.com':
-                    $countryId = 'kw';
-                    break;
-                case 'ksa.lazurd.com':
-                    $countryId = 'sa';
-                    break;
-                case 'lazurd.localhost':
-                    $countryId = 'kw';
-                    break;
-                default:
-                    throw new Exception('Unknown server');
-                    break;
+            $countryId = Mage::getStoreConfig('shipping/origin/country_id');
+
+            if (!$countryId) {
+                throw new Exception('Unknown country. Can not get regions list');
             }
 
+            $countryId = strtolower($countryId);
 
             $query = "select r.`region_id`, rn.name from `directory_country_region` r
                     join `directory_country_region_name` rn using (region_id)
