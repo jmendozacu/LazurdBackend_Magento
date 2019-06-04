@@ -185,7 +185,7 @@ class Cac_Restapi_Customers_Model_Api2_Customer_Rest_Admin_V1 extends Mage_Api2_
                     $countryId = 'kw';
                     break;
                 case 'ksa.lazurd.com':
-                    $countryId = 'ksa';
+                    $countryId = 'sa';
                     break;
                 case 'lazurd.localhost':
                     $countryId = 'kw';
