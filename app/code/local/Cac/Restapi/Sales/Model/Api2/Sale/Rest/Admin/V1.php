@@ -9,6 +9,7 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
     const OPERATION_GET_ORDER_LIST_24H = 'list24h';
     const OPERATION_GET_ORDERS_KITCHEN = 'kitchen';
     const OPERATION_GET_ORDERS_KITCHEN_DEPARTMENTS = 'kitchen_departments';
+    const OPERATION_GET_ORDERS_BY_PAYMENT_METHOD = 'by_payment_method';
 
 
     //customized _retrieve method
@@ -193,6 +194,7 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
                 $items = [];
 
                 foreach ($order->getItemsCollection() as $item) {
+                    if ($order->increment_id)
                     $simple_item["ProductName"] = $item->getProduct()->getName();
                     $simple_item["Message"] = $item->getData("text_custom_options_value");
                     $items[] = $simple_item;
@@ -237,6 +239,106 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
         } catch (Exception $e) {
             return [];
         }
+    }
+
+    /**
+     * @return array
+     * @throws Exception
+     */
+    public function getSalesByPaymentMethod()
+    {
+        $from = $this->getRequest()->getParam('from');
+        $to = $this->getRequest()->getParam('to');
+        $paymentMethod = $this->getRequest()->getParam('method');
+        if (!$paymentMethod) {
+            throw new Exception('No payment method is specified');
+        }
+
+        $whereFrom = $whereTo = '';
+        if ($from) {
+            $fromDate = date('Y-m-d H:i:s', $from);
+            $whereFrom = $fromDate ? " AND sfo.created_at >= '{$fromDate}'" : "";
+        }
+        if ($to) {
+            $toDate = date('Y-m-d H:i:s', $to);
+            $whereTo = $toDate ? " AND sfo.created_at < '{$toDate}'" : "";
+        }
+
+
+
+        $page=0;
+        $pageSize=32;
+
+        if ($this->getRequest()->getParam('page')!=null)
+            $page = $this->getRequest()->getParam('page');
+        if ($this->getRequest()->getParam('limit')!=null)
+            $pageSize = $this->getRequest()->getParam('limit');
+
+        $offset = $page * $pageSize;
+
+        $resource = Mage::getSingleton('core/resource');
+        $readConnection = $resource->getConnection('core_read');
+
+        $query = "select
+                  sfo.entity_id as order_number,
+                  sfo.subtotal,
+                  sfo.subtotal_invoiced,
+                  sfo.total_paid,
+                  op.method,
+                  op.method_title,
+                  sfo.store_name,
+                  sfo.shipping_description,
+                  sfo.order_status,
+                  sfo.shipping_delivery_date,
+                  sfo.webpos_delivery_date,
+                  sfo.created_at
+                from sales_flat_order sfo
+                  left join webpos_order_payment op on sfo.entity_id = op.order_id
+                where op.method = '{$paymentMethod}' {$whereFrom} {$whereTo}
+                limit {$offset}, {$pageSize}
+        ";
+
+        $salesList = $readConnection->fetchAll($query);
+
+
+        $query = "select
+                      sfo.store_name,
+                      count(*)            as total_orders,
+                      sum(sfo.total_paid) as total_sales
+                    from sales_flat_order sfo
+                      left join webpos_order_payment op on sfo.entity_id = op.order_id
+                    where op.method = '{$paymentMethod}' {$whereFrom} {$whereTo}
+                    group by sfo.store_name
+        ";
+
+        $storeData = $readConnection->fetchAll($query);
+
+        $totalOrders = array_sum(array_column($storeData,'total_orders'));
+        $totalSales = array_sum(array_column($storeData,'total_sales'));
+
+
+        $result['stats'][] =
+            [
+                'store' => 'total',
+                'total_orders' => (float)$totalOrders,
+                'total_sales' => (float)number_format($totalSales, 2, '.', ''),
+            ];
+
+
+        foreach ($storeData as $store) {
+            $nameParts = explode(PHP_EOL, $store['store_name']);
+            $storeName = end($nameParts);
+            $result['stats'][] = [
+                'store' => $storeName,
+                'total_orders' => (float)$store['total_orders'],
+                'total_sales' => (float)number_format($store['total_sales'], 2, '.', ''),
+            ];
+        }
+        $result['orders'] = $salesList;
+
+        return $result;
+
+
     }
 
     public function getOrders24h()
@@ -362,6 +464,21 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
                 $result = $this->getKitchenDepartments();
                 $this->_render($result);
                 $this->getResponse()->setHttpResponseCode(Mage_Api2_Model_Server::HTTP_OK);
+                break;
+
+            case self::OPERATION_GET_ORDERS_BY_PAYMENT_METHOD:
+                try {
+                    $result = $this->getSalesByPaymentMethod();
+                    $status = Mage_Api2_Model_Server::HTTP_OK;
+                } catch (Exception $exception) {
+                    $result = [
+                      'error' => 'Error getting list of orders',
+                      'message' => $exception->getMessage()
+                    ];
+                    $status = Mage_Api2_Model_Server::HTTP_BAD_REQUEST;
+                }
+                $this->_render($result);
+                $this->getResponse()->setHttpResponseCode($status);
                 break;
 
         }
