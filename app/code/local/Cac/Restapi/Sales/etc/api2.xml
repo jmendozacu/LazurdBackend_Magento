@@ -52,6 +52,10 @@
                         <route>/cac/sale/by_payment_method</route>
                         <action_type>by_payment_method</action_type>
                     </route_orders>
+                    <route_methods>
+                        <route>/cac/sale/payment_methods</route>
+                        <action_type>payment_methods</action_type>
+                    </route_methods>
                 </routes>
                 <versions>1</versions>
             </cac_restapi_sales>
