@@ -299,7 +299,7 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
                   sfo.total_paid,
                   op.method,
                   op.method_title,
-                  sfo.store_name,
+                  cs.name as store_name,
                   sfo.shipping_description,
                   sfo.order_status,
                   sfo.shipping_delivery_date,
@@ -307,6 +307,7 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
                   sfo.created_at
                 from sales_flat_order sfo
                   left join webpos_order_payment op on sfo.entity_id = op.order_id
+                  left join core_store cs on sfo.store_id = cs.store_id
                 where op.method = '{$paymentMethod}' {$whereFrom} {$whereTo}
                 limit {$offset}, {$pageSize}
         ";
@@ -315,13 +316,14 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
 
 
         $query = "select
-                      sfo.store_name,
+                      cs.name as store_name,
                       count(*)            as total_orders,
                       sum(sfo.total_paid) as total_sales
                     from sales_flat_order sfo
                       left join webpos_order_payment op on sfo.entity_id = op.order_id
+                      left join core_store cs on sfo.store_id = cs.store_id
                     where op.method = '{$paymentMethod}' {$whereFrom} {$whereTo}
-                    group by sfo.store_name
+                    group by store_name
         ";
 
         $storeData = $readConnection->fetchAll($query);
@@ -339,10 +341,8 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
 
 
         foreach ($storeData as $store) {
-            $nameParts = explode(PHP_EOL, $store['store_name']);
-            $storeName = end($nameParts);
             $result['stats'][] = [
-                'store' => $storeName,
+                'store' => $store['store_name'],
                 'total_orders' => (float)$store['total_orders'],
                 'total_sales' => (float)number_format($store['total_sales'], 2, '.', ''),
             ];
