@@ -246,6 +246,7 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
         $query = "
                 select method as code, method_title as title from webpos_order_payment
                 group by method, method_title
+                order by title
                 ";
 
         $paymentMethods = $readConnection->fetchAll($query);
