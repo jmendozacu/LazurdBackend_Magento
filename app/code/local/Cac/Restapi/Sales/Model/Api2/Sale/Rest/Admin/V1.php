@@ -300,7 +300,8 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
         $readConnection = $resource->getConnection('core_read');
 
         $query = "select
-                  sfo.entity_id as order_number,
+                  sfo.entity_id,
+                  sfo.increment_id,
                   sfo.subtotal,
                   sfo.subtotal_invoiced,
                   sfo.total_paid,
@@ -310,6 +311,7 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
                   sfo.shipping_description,
                   sfo.order_status,
                   sfo.shipping_delivery_date,
+                  sfo.shipping_arrival_date,
                   sfo.webpos_delivery_date,
                   sfo.created_at
                 from sales_flat_order sfo
