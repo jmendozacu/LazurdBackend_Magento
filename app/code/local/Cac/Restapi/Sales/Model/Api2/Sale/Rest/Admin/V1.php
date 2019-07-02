@@ -11,6 +11,7 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
     const OPERATION_GET_ORDERS_KITCHEN_DEPARTMENTS = 'kitchen_departments';
     const OPERATION_GET_ORDERS_BY_PAYMENT_METHOD = 'by_payment_method';
     const OPERATION_GET_PAYMENT_METHODS = 'payment_methods';
+    const OPERATION_GET_ORDER_DETAIL = 'order_detail';
 
 
     //customized _retrieve method
@@ -360,6 +361,99 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
 
     }
 
+
+    /**
+     * @return mixed
+     * @throws Exception
+     */
+    public function getOrderDetail()
+    {
+        $helper = Mage::helper('webpos/order');
+
+        $orderId = $this->getRequest()->getParam('entity_id');
+        if (!$orderId) {
+            throw new Exception('Order ID (entity_id) is not specified.');
+        }
+        $order = Mage::getModel('sales/order')->load($orderId);
+        // Get nesscessary information of order
+        $i = 0;
+        $orderedItems = $order->getAllVisibleItems();
+        $orderedProductIds = array();
+        foreach ($orderedItems as $item) {
+            $orderedProductIds[$i]['item_id'] = $item->getData('item_id');
+            $orderedProductIds[$i]['name'] = $item->getData('name');
+            $orderedProductIds[$i]['created_at'] = $item->getData('created_at');
+            $orderedProductIds[$i]['amount_refunded'] = (float)$item->getData('amount_refunded');
+            $orderedProductIds[$i]['base_amount_refunded'] = (float)$item->getData('base_amount_refunded');
+            $orderedProductIds[$i]['base_discount_amount'] = (float)$item->getData('base_discount_amount');
+            $orderedProductIds[$i]['base_gift_voucher_discount'] = (float)$item->getData('base_gift_voucher_discount');
+            $orderedProductIds[$i]['gift_voucher_discount'] = (float)$item->getData('gift_voucher_discount');
+            $orderedProductIds[$i]['discount_amount'] = (float)$item->getData('discount_amount');
+            $orderedProductIds[$i]['base_discount_invoiced'] = (float)$item->getData('base_discount_invoiced');
+            $orderedProductIds[$i]['base_price'] = (float)$item->getData('base_price');
+            $orderedProductIds[$i]['base_price_incl_tax'] = (float)$item->getData('base_price_incl_tax');
+            $orderedProductIds[$i]['base_row_invoiced'] = (float)$item->getData('base_row_invoiced');
+            $orderedProductIds[$i]['base_row_total'] = (float)$item->getData('base_row_total');
+            $orderedProductIds[$i]['base_row_total_incl_tax'] = (float)$item->getData('base_row_total_incl_tax');
+            $orderedProductIds[$i]['base_tax_amount'] = (float)$item->getData('base_tax_amount');
+            $orderedProductIds[$i]['tax_amount'] = (float)$item->getData('tax_amount');
+            $orderedProductIds[$i]['base_tax_invoiced'] = (float)$item->getData('base_tax_invoiced');
+            $orderedProductIds[$i]['discount_invoiced'] = (float)$item->getData('discount_invoiced');
+            $orderedProductIds[$i]['discount_percent'] = (float)$item->getData('discount_percent');
+            $orderedProductIds[$i]['discount_invoiced'] = (float)$item->getData('discount_invoiced');
+            $orderedProductIds[$i]['rewardpoints_base_discount'] = (float)$item->getData('rewardpoints_base_discount');
+            $orderedProductIds[$i]['free_shipping'] = $item->getData('free_shipping');
+            $orderedProductIds[$i]['is_qty_decimal'] = $item->getData('is_qty_decimal');
+            $orderedProductIds[$i]['is_virtual'] = $item->getData('is_virtual');
+            $orderedProductIds[$i]['original_price'] = (float)$item->getData('original_price');
+            $orderedProductIds[$i]['base_original_price'] = (float)$item->getData('base_original_price');
+            $orderedProductIds[$i]['price'] = (float)$item->getData('price');
+            $orderedProductIds[$i]['price_incl_tax'] = (float)$item->getData('price_incl_tax');
+            $orderedProductIds[$i]['product_id'] = $item->getData('product_id');
+            $orderedProductIds[$i]['product_type'] = $item->getData('product_type');
+            $orderedProductIds[$i]['qty_canceled'] = (float)$item->getData('qty_canceled');
+            $orderedProductIds[$i]['qty_invoiced'] = (float)$item->getData('qty_invoiced');
+            $orderedProductIds[$i]['qty_ordered'] = (float)$item->getData('qty_ordered');
+            $orderedProductIds[$i]['qty_refunded'] = (float)$item->getData('qty_refunded');
+            $orderedProductIds[$i]['qty_shipped'] = (float)$item->getData('qty_shipped');
+            $orderedProductIds[$i]['quote_item_id'] = $item->getData('quote_item_id');
+            $orderedProductIds[$i]['row_invoiced'] = $item->getData('row_invoiced');
+            $orderedProductIds[$i]['row_total'] = (float)$item->getData('row_total');
+            $orderedProductIds[$i]['row_total_incl_tax'] = (float)$item->getData('row_total_incl_tax');
+            $orderedProductIds[$i]['row_weight'] = $item->getData('row_weight');
+            $orderedProductIds[$i]['sku'] = $item->getData('sku');
+            $orderedProductIds[$i]['store_id'] = $item->getData('store_id');
+            $orderedProductIds[$i]['tax_invoiced'] = (float)$item->getData('tax_invoiced');
+            $orderedProductIds[$i]['tax_percent'] = (float)$item->getData('tax_percent');
+            $orderedProductIds[$i]['updated_at'] = $item->getData('updated_at');
+            $orderedProductIds[$i]['order_id'] = $order->getId();
+            $i++;
+        }
+        $billingAddress = $order->getBillingAddress();
+        $shippingAddress = $order->getShippingAddress();
+        $payment = $helper->getPayment($order);
+        $itemInfoBuy = $helper->getItemsInfoBuy($order);
+        $commentsHistory = $order->getStatusHistoryCollection()->addAttributeToSort('created_at', 'DESC');
+        $comments = array();
+        $j = 0;
+        foreach ($commentsHistory as $comment) {
+            $comments[$j]['comment'] = $comment->getComment();
+            $comments[$j]['created_at'] = $comment->getCreatedAt();
+            $j++;
+        }
+        $orderData = $helper->getOrderData($order);
+        $orderData['items'] = $orderedProductIds;
+        $orderData['status_histories'] = $comments;    // Comments history
+        $orderData['items_info_buy']['items'] = $itemInfoBuy;  // Info items to reorder
+        $orderData['billing_address'] = $billingAddress->getData();
+        $orderData['payment'] = $payment;
+        // Shipping address - output rest api
+        if ($shippingAddress)
+            $orderData['extension_attributes']['shipping_assignments'][]['shipping']['address'] = $shippingAddress->getData();
+
+        return $orderData;
+    }
+
     public function getOrders24h()
     {
         $year = $this->getRequest()->getParam('year');
@@ -494,6 +588,21 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
                 } catch (Exception $exception) {
                     $result = [
                         'error' => 'Error getting list of orders',
+                        'message' => $exception->getMessage()
+                    ];
+                    $status = Mage_Api2_Model_Server::HTTP_BAD_REQUEST;
+                }
+                $this->_render($result);
+                $this->getResponse()->setHttpResponseCode($status);
+                break;
+
+            case self::OPERATION_GET_ORDER_DETAIL:
+                try {
+                    $result = $this->getOrderDetail();
+                    $status = Mage_Api2_Model_Server::HTTP_OK;
+                } catch (Exception $exception) {
+                    $result = [
+                        'error' => 'Error getting order detail',
                         'message' => $exception->getMessage()
                     ];
                     $status = Mage_Api2_Model_Server::HTTP_BAD_REQUEST;

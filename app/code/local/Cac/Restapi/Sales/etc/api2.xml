@@ -56,6 +56,10 @@
                         <route>/cac/sale/payment_methods</route>
                         <action_type>payment_methods</action_type>
                     </route_methods>
+                    <route_detail>
+                        <route>/cac/sale/detail/:entity_id</route>
+                        <action_type>order_detail</action_type>
+                    </route_detail>
                 </routes>
                 <versions>1</versions>
             </cac_restapi_sales>
