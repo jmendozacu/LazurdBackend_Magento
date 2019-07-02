@@ -485,6 +485,13 @@ class Magestore_Webpos_Service_Checkout_Checkout extends Magestore_Webpos_Servic
             $body = "Order ".$order->getIncrementId()." has been placed on ". $order->getCreatedAt();
             $click_action = "https://report.localhost:4200";
             $icon = "https://report.localhost:4200/assets/images/logo-menu.png";
+        } else if ( $baseUrl == "http://ksa.lazurd.test/index.php/" || $baseUrl == "http://ksa.lazurd.test/" || $baseUrl == "http://kwt.lazurd.test/index.php/" || $baseUrl == "http://kwt.lazurd.test/") {
+            $toTopic = "LOCAL_ORDER";
+            $token = "AAAAFYUJun4:APA91bGAhRgPwaXxUH9e1479rodgscgOJPnm13LopN_w3nvtKCFiPCaeDjNeK_Xpip73EpnYmqbX7GWaC4sCuVjC7e05iNjT-6HD2nJjUiOcPGCliykVAV6wu5BtH0_E876ZkM0F9kuh";
+            $title = "LAZURD LOCAL - NEW ORDER: ".$order->getIncrementId();
+            $body = "Order ".$order->getIncrementId()." has been placed on ". $order->getCreatedAt();
+            $click_action = "https://report.localhost:4200";
+            $icon = "https://report.localhost:4200/assets/images/logo-menu.png";
         }
 
 
