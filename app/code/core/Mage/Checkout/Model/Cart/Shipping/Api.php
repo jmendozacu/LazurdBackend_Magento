@@ -63,40 +63,34 @@ class Mage_Checkout_Model_Cart_Shipping_Api extends Mage_Checkout_Model_Api_Reso
         }
 
         try {
-            $quote->getShippingAddress()->setShippingMethod($shippingMethod);
-            $quote->collectTotals()->save();
+
+
+
+            $freeShippingMargin = Mage::getStoreConfig('carriers/freeshipping/free_shipping_subtotal');
+
+
+            if((float)$quote->getGrandTotal() < $freeShippingMargin )
+            {
+                $quote->getShippingAddress()->setShippingMethod($shippingMethod);
+                // Mage::log('hhh  '.$quote->getGrandTotal()  , null, 'mylog3.log');
+                $quote->collectTotals()->save();
+            }
+            else
+            {
+                $shippingMethod = 'freeshipping_freeshipping';
+                $quote->getShippingAddress()->setShippingMethod($shippingMethod);
+                $quote->collectTotals()->save();
+
+                // Mage::log('xxxx  '.$quote->getGrandTotal()  , null, 'mylog3.log');
+                // $resource = Mage::getSingleton('core/resource');
+                // $writeConnection = $resource->getConnection('core_write');
+                // $condition = "update sales_flat_quote_address set shipping_amount = 0, base_shipping_amount = 0, shipping_incl_tax = 0 , base_shipping_incl_tax = 0 where quote_id = 2855  ";
+                // $writeConnection->query($condition);
+            }
+
         } catch(Mage_Core_Exception $e) {
             $this->_fault('shipping_method_is_not_set', $e->getMessage());
         }
-
-
-//        try {
-//
-//            $freeShippingMargin = Mage::getStoreConfig('carriers/freeshipping/free_shipping_subtotal');
-//
-//
-//            if((float)$quote->getGrandTotal() < $freeShippingMargin )
-//            {
-//                $quote->getShippingAddress()->setShippingMethod($shippingMethod);
-//                // Mage::log('hhh  '.$quote->getGrandTotal()  , null, 'mylog3.log');
-//                $quote->collectTotals()->save();
-//            }
-//            else
-//            {
-//                $shippingMethod = 'freeshipping_freeshipping';
-//                $quote->getShippingAddress()->setShippingMethod($shippingMethod);
-//                $quote->collectTotals()->save();
-//
-//                // Mage::log('xxxx  '.$quote->getGrandTotal()  , null, 'mylog3.log');
-//                // $resource = Mage::getSingleton('core/resource');
-//                // $writeConnection = $resource->getConnection('core_write');
-//                // $condition = "update sales_flat_quote_address set shipping_amount = 0, base_shipping_amount = 0, shipping_incl_tax = 0 , base_shipping_incl_tax = 0 where quote_id = 2855  ";
-//                // $writeConnection->query($condition);
-//            }
-//
-//        } catch(Mage_Core_Exception $e) {
-//            $this->_fault('shipping_method_is_not_set', $e->getMessage());
-//        }
 
 
 
