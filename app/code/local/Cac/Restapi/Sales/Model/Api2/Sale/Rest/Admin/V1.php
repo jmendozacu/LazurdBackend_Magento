@@ -270,12 +270,18 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
 
         $whereFrom = $whereTo = '';
         if ($from) {
-            $fromDate = date('Y-m-d H:i:s', $from);
-            $whereFrom = $fromDate ? " AND sfo.created_at >= '{$fromDate}'" : "";
+            if (strlen($from) > 10) {
+                $from = (int) ($from / 1000);
+            }
+            $fromDate = date('Y-m-d', $from);
+            $whereFrom = $fromDate ? " AND DATE(sfo.created_at) >= '{$fromDate}'" : "";
         }
         if ($to) {
-            $toDate = date('Y-m-d H:i:s', $to);
-            $whereTo = $toDate ? " AND sfo.created_at < '{$toDate}'" : "";
+            if (strlen($to) > 10) {
+                $to = (int) ($to / 1000);
+            }
+            $toDate = date('Y-m-d', $to);
+            $whereTo = $toDate ? " AND DATE(sfo.created_at) <= '{$toDate}'" : "";
         }
 
 
