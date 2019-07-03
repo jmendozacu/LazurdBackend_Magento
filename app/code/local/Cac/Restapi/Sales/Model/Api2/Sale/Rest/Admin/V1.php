@@ -265,11 +265,13 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
         $from = $this->getRequest()->getParam('from');
         $to = $this->getRequest()->getParam('to');
         $paymentMethod = $this->getRequest()->getParam('method');
-        if (!$paymentMethod) {
-            throw new Exception('No payment method is specified');
+
+        $wherePaymentMethod = $whereFrom = $whereTo = '';
+
+        if ($paymentMethod) {
+            $wherePaymentMethod = " AND op.method = '{$paymentMethod}'";
         }
 
-        $whereFrom = $whereTo = '';
         if ($from) {
             if (strlen($from) > 10) {
                 $from = (int) ($from / 1000);
@@ -317,7 +319,7 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
                 from sales_flat_order sfo
                   left join webpos_order_payment op on sfo.entity_id = op.order_id
                   left join core_store cs on sfo.store_id = cs.store_id
-                where op.method = '{$paymentMethod}' {$whereFrom} {$whereTo}
+                where 1 = 1 {$wherePaymentMethod} {$whereFrom} {$whereTo}
                 limit {$offset}, {$pageSize}
         ";
 
@@ -332,7 +334,7 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
                     from sales_flat_order sfo
                       left join webpos_order_payment op on sfo.entity_id = op.order_id
                       left join core_store cs on sfo.store_id = cs.store_id
-                    where op.method = '{$paymentMethod}' {$whereFrom} {$whereTo}
+                    where 1 = 1 {$wherePaymentMethod} {$whereFrom} {$whereTo}
                     group by store_name
         ";
 
