@@ -327,7 +327,8 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
         $query = "select
                       cs.name as store_name,
                       count(*)            as total_orders,
-                      sum(sfo.total_paid) as total_sales
+                      sum(sfo.total_paid) as total_sales,
+                      sum(sfo.total_due) as total_due
                     from sales_flat_order sfo
                       left join webpos_order_payment op on sfo.entity_id = op.order_id
                       left join core_store cs on sfo.store_id = cs.store_id
@@ -339,6 +340,7 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
 
         $totalOrders = array_sum(array_column($storeData, 'total_orders'));
         $totalSales = array_sum(array_column($storeData, 'total_sales'));
+        $totalDue = array_sum(array_column($storeData, 'total_due'));
 
 
         $result['stats'][] =
@@ -346,6 +348,7 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
                 'store' => 'total',
                 'total_orders' => (float)$totalOrders,
                 'total_sales' => (float)number_format($totalSales, 2, '.', ''),
+                'total_due' => (float)number_format($totalDue, 2, '.', ''),
             ];
 
 
@@ -354,6 +357,7 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
                 'store' => $store['store_name'],
                 'total_orders' => (float)$store['total_orders'],
                 'total_sales' => (float)number_format($store['total_sales'], 2, '.', ''),
+                'total_due' => (float)number_format($store['total_due'], 2, '.', ''),
             ];
         }
         $result['orders'] = $salesList;
