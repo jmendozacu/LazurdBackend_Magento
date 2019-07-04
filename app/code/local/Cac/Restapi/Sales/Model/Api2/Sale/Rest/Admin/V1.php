@@ -268,7 +268,7 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
 
         $wherePaymentMethod = $whereFrom = $whereTo = '';
 
-        if ($paymentMethod) {
+        if ($paymentMethod !== 'all') {
             $wherePaymentMethod = " AND op.method = '{$paymentMethod}'";
         }
 
@@ -305,17 +305,15 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
                   sfo.entity_id,
                   sfo.increment_id,
                   sfo.subtotal,
-                  sfo.subtotal_invoiced,
                   sfo.total_paid,
+                  sfo.total_due,
                   op.method,
                   op.method_title,
                   cs.name as store_name,
                   sfo.shipping_description,
                   sfo.order_status,
                   sfo.shipping_delivery_date,
-                  sfo.shipping_arrival_date,
-                  sfo.webpos_delivery_date,
-                  sfo.created_at
+                  sfo.shipping_arrival_date
                 from sales_flat_order sfo
                   left join webpos_order_payment op on sfo.entity_id = op.order_id
                   left join core_store cs on sfo.store_id = cs.store_id
