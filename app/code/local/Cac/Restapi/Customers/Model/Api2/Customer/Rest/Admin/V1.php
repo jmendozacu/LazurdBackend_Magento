@@ -66,6 +66,7 @@ class Cac_Restapi_Customers_Model_Api2_Customer_Rest_Admin_V1 extends Mage_Api2_
                 $items[] = $simple_item;
             }
             $this_order["OrderNo"] = $order->getRealOrderId();
+            $this_order["EntityID"] = $order->getData('entity_id');
             $this_order["OrderDate"] = $order->getUpdatedAt();
             $this_order["ArrivalDate"] = $order->getData('shipping_arrival_date');
             $this_order["OrderStatus"] = $order->getData("order_status");
