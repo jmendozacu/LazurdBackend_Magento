@@ -274,66 +274,65 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
 
         if ($from) {
             if (strlen($from) > 10) {
-                $from = (int) ($from / 1000);
+                $from = (int)($from / 1000);
             }
             $fromDate = date('Y-m-d', $from);
             $whereFrom = $fromDate ? " AND DATE(sfo.shipping_delivery_date) >= '{$fromDate}'" : "";
         }
         if ($to) {
             if (strlen($to) > 10) {
-                $to = (int) ($to / 1000);
+                $to = (int)($to / 1000);
             }
             $toDate = date('Y-m-d', $to);
             $whereTo = $toDate ? " AND DATE(sfo.shipping_delivery_date) <= '{$toDate}'" : "";
         }
 
-
-        $page = 0;
-        $pageSize = 32;
-
-        if ($this->getRequest()->getParam('page') != null)
-            $page = $this->getRequest()->getParam('page');
-        if ($this->getRequest()->getParam('limit') != null)
-            $pageSize = $this->getRequest()->getParam('limit');
-
-        $offset = $page * $pageSize;
+        $paginate = '';
+        $pageSize = $this->getRequest()->getParam('limit') ?? null;
+        $page = $this->getRequest()->getParam('page') ?? ($pageSize ? 1 : null);
+        if ($page && $pageSize) {
+            $offset = $page * $pageSize;
+            $paginate = "limit {$offset}, {$pageSize}";
+        }
 
         $resource = Mage::getSingleton('core/resource');
         $readConnection = $resource->getConnection('core_read');
 
-        $query = "select
-                  sfo.entity_id,
-                  sfo.increment_id,
-                  sfo.subtotal,
-                  sfo.total_paid,
-                  sfo.total_due,
-                  op.method,
-                  op.method_title,
-                  cs.name as store_name,
-                  sfo.shipping_description,
-                  sfo.order_status,
-                  sfo.shipping_delivery_date,
-                  sfo.shipping_arrival_date
-                from sales_flat_order sfo
-                  left join webpos_order_payment op on sfo.entity_id = op.order_id
-                  left join core_store cs on sfo.store_id = cs.store_id
-                where `status` <> 'canceled' {$wherePaymentMethod} {$whereFrom} {$whereTo}
-                limit {$offset}, {$pageSize}
+        $query = "
+            select
+              sfo.entity_id,
+              sfo.increment_id,
+              sfo.subtotal,
+              sfo.total_paid,
+              sfo.total_due,
+              op.method,
+              op.method_title,
+              cs.name as store_name,
+              sfo.shipping_description,
+              sfo.order_status,
+              sfo.shipping_delivery_date,
+              sfo.shipping_arrival_date
+            from sales_flat_order sfo
+              left join webpos_order_payment op on sfo.entity_id = op.order_id
+              left join core_store cs on sfo.store_id = cs.store_id
+            where `status` <> 'canceled' {$wherePaymentMethod} {$whereFrom} {$whereTo}
+            {$paginate}
         ";
 
         $salesList = $readConnection->fetchAll($query);
 
 
-        $query = "select
-                      cs.name as store_name,
-                      count(*)            as total_orders,
-                      sum(sfo.total_paid) as total_sales,
-                      sum(sfo.total_due) as total_due
-                    from sales_flat_order sfo
-                      left join webpos_order_payment op on sfo.entity_id = op.order_id
-                      left join core_store cs on sfo.store_id = cs.store_id
-                    where `status` <> 'canceled' {$wherePaymentMethod} {$whereFrom} {$whereTo}
-                    group by store_name
+        $query = "
+            select
+              cs.name as store_name,
+              count(*)            as total_orders,
+              sum(sfo.total_paid) as total_sales,
+              sum(sfo.total_due) as total_due
+            from sales_flat_order sfo
+              left join webpos_order_payment op on sfo.entity_id = op.order_id
+              left join core_store cs on sfo.store_id = cs.store_id
+            where `status` <> 'canceled' {$wherePaymentMethod} {$whereFrom} {$whereTo}
+            group by store_name
         ";
 
         $storeData = $readConnection->fetchAll($query);
