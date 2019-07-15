@@ -326,7 +326,7 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
             from sales_flat_order sfo
               left join webpos_order_payment op on sfo.entity_id = op.order_id
               left join core_store cs on sfo.store_id = cs.store_id
-            where `status` <> 'canceled' {$wherePaymentMethod} {$whereFrom} {$whereTo}
+            where `order_status` <> 'canceled' {$wherePaymentMethod} {$whereFrom} {$whereTo}
         ";
 
         $totalCount = $readConnection->fetchOne($query);
@@ -368,9 +368,9 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
                 'total_due' => (float)number_format($store['total_due'], 2, '.', ''),
             ];
         }
-        $result['orders'] = $salesList;
+        $result['data'] = $salesList;
 
-        $result['_meta'] = [
+        $result['pagination'] = [
             "page" => $page,
             "per_page" => $pageSize,
             "total_count" => $totalCount,
