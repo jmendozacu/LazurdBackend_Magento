@@ -371,8 +371,8 @@ class Cac_Restapi_Sales_Model_Api2_Sale_Rest_Admin_V1 extends Mage_Api2_Model_Re
         $result['data'] = $salesList;
 
         $result['pagination'] = [
-            "page" => (int)$page,
-            "per_page" => (int)$pageSize,
+            "page" => $page ? (int)$page : 1,
+            "per_page" => $pageSize ? (int)$pageSize : $totalCount,
             "total_count" => (int)$totalCount,
             "page_count" => $pageSize ? ceil($totalCount / $pageSize) : 1,
         ];
